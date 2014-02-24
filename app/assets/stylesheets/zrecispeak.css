@@ -1,0 +1,85 @@
+
+header {
+  text-align: center;
+  background: url('recispeakcover.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: white;
+  height: 660px;
+
+}
+
+header a{
+  color: white;
+}
+
+#logo {
+  font-family: 'Allura', cursive;
+  font-size: 40px;
+}
+#logo h1 {
+  margin-top: -20px;
+}
+span {
+  font-size: 200px;
+}
+
+ul {
+  padding: 10px;
+  background: black;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  opacity: 0.80;
+}
+
+li {
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+#speakblurb {
+  width: 350px;
+  color: white;
+  positioin: absolute;
+  margin-top: -150px;
+  margin-left: 10px;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 277px 3px black;
+}
+
+#speakblurb button{
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+fieldset {
+  width: 500px;
+  margin: 20px auto;
+  text-align: right;
+  box-shadow: inset 0px 0px 800px 15px white;
+  color: black;
+  border-radius: 10px;
+}
+
+fieldset h1 {
+  text-align: center;
+}
+
+fieldset h3 {
+  font-family: baskerville;
+  font-style: italic;
+}
+
+input[type="submit"], button{
+  background-color: darkslategrey;
+  color: white;
+  border-radius: 10px;
+  width: 215px;
+}
+
+

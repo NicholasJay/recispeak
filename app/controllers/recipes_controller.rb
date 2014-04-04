@@ -11,14 +11,13 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = @user.recipes.create(category: params[:category], title: params[:title], notes: params[:notes], public_private: params[:public_private])
-
+    @recipe = @user.recipes.create(recipe_params)
 
     if @recipe.save
       redirect_to user_recipe_path(@recipe.id)
     else
-      @message = "Recipe not created! Try Again!"
-      redirect_to user_path(@user)
+      @message = "Recipe not created!"
+      redirect_to new_user_recipes_path(@user)
     end
   end
 

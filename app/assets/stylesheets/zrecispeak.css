@@ -1,3 +1,7 @@
+
+nav ul li{
+  display: inline;
+}
 .page-left-container {
   width: 40%;
   margin-left: 20px;
@@ -29,6 +33,14 @@ form input{
 
 button {
   width: 200px;
+}
+
+#adding-recipe-form {
+  text-align: center;
+}
+
+#recipe-form {
+  display: none;
 }
 
 /*

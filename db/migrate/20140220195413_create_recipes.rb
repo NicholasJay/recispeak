@@ -1,10 +1,11 @@
 class CreateRecipes < ActiveRecord::Migration
   def change
     create_table :recipes do |t|
+      t.string :category
       t.string :title
-      t.text :recipe_info
+      t.text :notes
       t.string :recipe_photo
-      t.string :public_private
+      t.boolean :public_private
       t.references :user
       t.timestamps
     end

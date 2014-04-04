@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% unless session["user_id"].nil? %>
+  <nav>
+    <ul>
+      <li><%= @current_user.first_name %></li>
+      <li><span>ReciSpeak</span></li>
+      <li><%= link_to "Log Out", "/session", method: "delete", class: "logout" unless session[:user_id].nil? %>
+      </li>
+  </nav>
+  <% end %>
 
 <%= yield %>
 

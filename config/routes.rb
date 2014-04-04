@@ -1,10 +1,18 @@
 Recispeak::Application.routes.draw do
   resources :users do
-    resources :recipe_books
+    # /recipes/:id
+    # /users/:id/recipes
+    resources :recipes do 
+      resources :ingredients
+      resources :steps
+    end
   end
 
-  resources :recipes do
+  resources :recipes, only: [:index, :show] do
+    resources :ingredients, only: [:index]
+    resources :steps, only: [:index]
   end
+
 
   get '/session', to: 'session#new'
   post '/session', to: 'session#create'

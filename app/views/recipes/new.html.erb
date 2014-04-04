@@ -1,0 +1,36 @@
+<div class="page-left-container">
+  <h1>Add A Recipe</h1>
+  <ul>
+    <li><button id="new-recipe">New Recipe</button></li>
+    <li><button id="add-ingredients">Add Ingredients</button></li>
+    <li><button id="add-instructions">Add Instructions</button></li>
+  </ul>
+</div>
+
+<div class="page-right-container">
+  <div id="banner-right">
+    <h2>Click New Recipe</h2>
+    <h2>To get Started!</h2>
+  </div>
+  <div id="recipe-form">
+    <%= render "form" %>
+  </div>
+</div>
+
+<script>
+$('#new-recipe').click(function(){
+  $('#recipe-form').toggle("slow", function(){
+    $('#banner-right').hide("slow");
+  });
+});
+
+$('#add-ingredients').click(function(){
+  $('#ingredient-form').toggle("slow", function(){
+    $('#banner-right').hide("slow");
+  });
+});
+
+$('#add-instructions').click(function(){
+  $('#instructions-form').toggle("slow");
+});
+</script>

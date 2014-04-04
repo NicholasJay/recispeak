@@ -1,0 +1,13 @@
+<%= form_for user_recipes_path(@user) do |f| %>
+<%= f.label :category %>
+<%= f.text_field :category %><br />
+<%= f.label :title %>
+<%= f.text_field :title %><br />
+<%= f.label :notes %>
+<%= f.text_field :notes %><br />
+<%= f.submit "Open Recipe" %>
+<%= f.label :public_private %><br />
+<%= f.label :public_private, "Private", :value => "true"  %>
+<%= f.radio_button :public_private, true %>
+<%= f.label :public_private, "Public", :value => "false" %>
+<% end %>

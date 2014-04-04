@@ -2,28 +2,30 @@
 <head><title>Recispeak.com</title>
 <link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
 </head>
+    
 <body>
   <header>
     <div id="logo">
-      <h1> <span>R</span>eci<span>s</span>peak </h1>
+      <h1> Welcome To </h1>
+      <h1> <span>R</span>eci<span>s</span>peak</h1>
     </div>
     
-<!--     <div id="speakblurb">
-    </br>
-      <button>Click to start cookin'!</button>
-      <p>Me: Step One</p>
-      <p>Season the Chicken with salt and Pepper</p>
-      <p>You:<em>Next</em></p>
-      <p>Me: Pan fry the chicken for 10 minutes on either side</p>
-      <p>You:<em>Next</em></p>
-      <p>Me: Spread chicken over crescent rolls</p>
-      <p><em>...so easy</em></p>
-    </div> -->
+    <div id="login">
+      <% if session[:user_id].nil? %>
+        <%= form_tag session_path do%>
+        <%= label_tag "email: " %>
+        <%= text_field_tag :email%>
+        <%= label_tag "password: " %>
+        <%= password_field_tag :password%>
+        <%= submit_tag "Sign In" %>
+        <% end %>
+      <% end %>
+    </div>
 
     <ul>
-      <li><%= link_to "Sign Up", new_user_path %></li>
-      <li>Login</li>
+      <li><%= link_to "Click Here to Get Started", new_user_path %></li>
       <li>Browse Recipes</li>
     </ul>
+
   </header>
 </body>

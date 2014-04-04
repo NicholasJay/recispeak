@@ -35,6 +35,7 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'httparty'
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -43,3 +44,14 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'jasmine'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'simplecov'
+end

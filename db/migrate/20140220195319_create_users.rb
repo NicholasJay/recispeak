@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :email
       t.string  :phone_number
       t.string  :profile_pic
-      t.string  :gender
       t.date    :birthday
       t.string  :facebook_url
       t.string  :twitter_name

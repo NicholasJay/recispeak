@@ -1,0 +1,21 @@
+<div class="page-left-container">
+  <h1><%= @user.first_name %></h1>
+  <ul>
+    <li><button id="edit-profile">Edit Profile</button></li>
+    <li><%= button_to "Add Recipe", new_user_recipe_path(@user) %></li>
+    <li><button id="my-recipes">My Recipes</button></li>
+    <li><button id="all-recipes">View All Recipes</button></li>
+  </ul>
+</div>
+
+<div class="page-right-container">
+  <div id="edit-form">
+    <%= render "form" %>
+  </div>
+</div>
+
+<script>
+$('#edit-profile').click(function(){
+  $('#edit-form').toggle("slow");
+});
+</script>

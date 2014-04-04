@@ -1,4 +1,37 @@
+.page-left-container {
+  width: 40%;
+  margin-left: 20px;
+  border: 2px solid green;
+  text-align: center;
+  display: inline-block;
+}
 
+.page-right-container {
+  width: 50%;
+  border: 2px solid red;
+  float: right;
+  margin-right: 50px;
+}
+
+#edit-form {
+  width: 75%;
+  text-align: right;
+  display: none;
+}
+
+ul li{
+  list-style-type: none;
+}
+
+form input{
+  width: 200px;
+}
+
+button {
+  width: 200px;
+}
+
+/*
 header {
   text-align: center;
   background: url('recispeakcover.jpg');
@@ -80,6 +113,6 @@ input[type="submit"], button{
   color: white;
   border-radius: 10px;
   width: 215px;
-}
+}*/
 
 

@@ -1,4 +1,4 @@
-# encoding: UTF-8
+:# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220202527) do
+ActiveRecord::Schema.define(version: 20140403182054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "ingredients", force: true do |t|
+    t.text    "entry"
+    t.integer "recipe_id"
+  end
+
   create_table "recipe_books", force: true do |t|
     t.string   "title"
-    t.date     "date",        default: '2014-02-23'
     t.string   "cover_photo"
     t.integer  "user_id"
     t.integer  "recipe_id"
@@ -36,13 +40,19 @@ ActiveRecord::Schema.define(version: 20140220202527) do
   end
 
   create_table "recipes", force: true do |t|
+    t.string   "category"
     t.string   "title"
-    t.text     "recipe_info"
+    t.text     "notes"
     t.string   "recipe_photo"
-    t.string   "public_private"
+    t.boolean  "public_private"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "steps", force: true do |t|
+    t.string  "step_number"
+    t.integer "recipe_id"
   end
 
   create_table "users", force: true do |t|
@@ -51,7 +61,6 @@ ActiveRecord::Schema.define(version: 20140220202527) do
     t.string  "email"
     t.string  "phone_number"
     t.string  "profile_pic"
-    t.string  "gender"
     t.date    "birthday"
     t.string  "facebook_url"
     t.string  "twitter_name"

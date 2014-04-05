@@ -1,4 +1,4 @@
-:# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20140403182054) do
     t.string   "title"
     t.text     "notes"
     t.string   "recipe_photo"
-    t.boolean  "public_private"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140403182054) do
 
   create_table "steps", force: true do |t|
     t.string  "step_number"
+    t.text    "instructions"
     t.integer "recipe_id"
   end
 

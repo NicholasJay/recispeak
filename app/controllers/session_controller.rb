@@ -11,7 +11,7 @@ class SessionController < ApplicationController
       redirect_to( user_path(user) )
     else
       @message = "Email or Password is incorrect!"
-      render(:new)
+      redirect_to root_path
     end
   end
 

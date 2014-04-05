@@ -2,16 +2,10 @@ Recispeak::Application.routes.draw do
   resources :users do
     # /recipes/:id
     # /users/:id/recipes
-    resources :recipes do 
-      resources :ingredients
-      resources :steps
-    end
+    resources :recipes
   end
 
-  resources :recipes, only: [:index, :show] do
-    resources :ingredients, only: [:index]
-    resources :steps, only: [:index]
-  end
+  resources :recipes, only: [:index, :show]
 
 
   get '/session', to: 'session#new'

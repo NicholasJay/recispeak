@@ -8,20 +8,23 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    3.times { @recipe.ingredients.build}
+    3.times { @recipe.steps.build}
   end
 
   def create
-    @recipe = @user.recipes.create(recipe_params)
-
+    @recipe = @user.recipes.new(recipe_params)
+    
     if @recipe.save
-      redirect_to user_recipe_path(@recipe.id)
+      redirect_to user_recipe_path(@user.id, @recipe.id)
     else
-      @message = "Recipe not created!"
-      redirect_to new_user_recipes_path(@user)
+      render :new
     end
   end
 
   def show
+    @ingredients = Ingredient.where(recipe_id: @recipe)
+    @steps = Step.where(recipe_id: @recipe)
     render :show
   end
 
@@ -35,7 +38,7 @@ class RecipesController < ApplicationController
     if @changed
       redirect_to user_recipe_path(@recipe.id)
     else 
-      render 
+      redirect_to user_recipe_path(@recipe.id)
     end
   end
 
@@ -55,7 +58,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:category, :title, :notes, :public_private) 
+    params.require(:recipe).permit(:category, :title, :notes, ingredients_attributes: [:id, :entry], steps_attributes: [:id, :instructions]) 
   end
 
 end

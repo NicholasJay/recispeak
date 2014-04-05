@@ -5,7 +5,6 @@ class CreateRecipes < ActiveRecord::Migration
       t.string :title
       t.text :notes
       t.string :recipe_photo
-      t.boolean :public_private
       t.references :user
       t.timestamps
     end

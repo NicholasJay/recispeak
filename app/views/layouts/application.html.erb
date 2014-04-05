@@ -5,15 +5,21 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <% unless @user.nil? %>
+    <script>
+    localStorage["user_id"] = <%= @user.id %>
+    </script>
+  <% end %>
+
 </head>
 <body>
   <% unless session["user_id"].nil? %>
   <nav>
     <ul>
-      <li><%= @user.first_name %></li>
       <li><span>ReciSpeak</span></li>
       <li><%= link_to "Log Out", "/session", method: "delete", class: "logout" unless session[:user_id].nil? %>
       </li>
+    </ul>
   </nav>
   <% end %>
 

@@ -3,14 +3,18 @@
   <ul>
     <li><button id="new-recipe">New Recipe</button></li>
     <li><button id="add-ingredients">Add Ingredients</button></li>
-    <li><button id="add-instructions">Add Instructions</button></li>
   </ul>
 </div>
 
 <div class="page-right-container">
   <div id="recipe-form">
-    <%= render "form" %>
+    <%= render "form_new_recipe"%>
   </div>
+
+  <div id="ingredient-form">
+    <h1> Please add a recipe first</h1>
+  </div>
+
   <div id="banner-right">
     <h2>Click New Recipe</h2>
     <h2>To get Started!</h2>
@@ -20,17 +24,15 @@
 <script>
 $('#new-recipe').click(function(){
   $('#recipe-form').toggle("slow", function(){
-    $('#banner-right').hide("slow");
+    $('#banner-right').hide("slow", function(){
+      $('#ingredient-form').hide("slow");
+    });
   });
 });
 
 $('#add-ingredients').click(function(){
   $('#ingredient-form').toggle("slow", function(){
-    $('#banner-right').hide("slow");
+    $('#recipe-form').hide("slow");
   });
-});
-
-$('#add-instructions').click(function(){
-  $('#instructions-form').toggle("slow");
 });
 </script>

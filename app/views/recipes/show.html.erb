@@ -1,0 +1,25 @@
+<div class="center-titles">
+  <h1><%= @recipe.title %></h1>
+</div>
+
+<div class="page-left-container">
+  <ul>
+    <% @ingredients.each do |ingredient| %>
+      <li><%= ingredient.entry %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="page-right-container">
+  <ul>
+    <% @steps.each do |step| %>
+      <li><%= step.instructions %></li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+var voices = window.speechSynthesis.getVoices();
+var welcome = new SpeechSynthesisUtterance("Welcome to Ressa speak.");
+speechSynthesis.speak(welcome);
+</script>

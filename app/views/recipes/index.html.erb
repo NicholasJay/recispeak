@@ -1,0 +1,15 @@
+<div class="center-titles">
+  <h1> All of your recipes </h1>
+
+<ul>
+<% @allrecipes.each do |recipe| %>
+  <li><%= recipe.title %></li>
+<% end %>
+</ul>
+</div>
+
+<script>
+$(document).ready(function(){
+    $(".center-titles").hide(0).delay(10).fadeIn(2000)
+});
+</script>

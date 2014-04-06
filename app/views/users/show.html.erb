@@ -1,21 +1,30 @@
 <div class="page-left-container">
-  <h1><%= @user.first_name %></h1>
   <ul>
     <li id="edit-profile"><button>Edit Profile</button></li>
     <li><button><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
-    <li><button id="my-recipes">My Recipes</button></li>
+    <li><button><%= link_to "My Recipes", user_recipes_path(@user) %></button></li>
     <li><button id="all-recipes">View All Recipes</button></li>
   </ul>
 </div>
 
 <div class="page-right-container">
+  <div id="welcome-blurb">
+    <h1>Welcome to your ReciSpeak Page <%= @user.first_name %></h1>
+    <h2>Choose an option on the left to get started!</h2>
+  </div>
   <div id="edit-form">
     <%= render "form" %>
   </div>
 </div>
 
 <script>
+$(document).ready(function(){
+  $('#page-left-container').fadeIn();
+});
+
 $('#edit-profile').click(function(){
-  $('#edit-form').toggle("slow");
+  $('#edit-form').toggle("slow", function(){
+    $('#welcome-blurb').toggle("slow");
+  });
 });
 </script>

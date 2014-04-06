@@ -1,38 +1,15 @@
-<div class="page-left-container">
+<div class="center-titles">
+  
   <h1>Add A Recipe</h1>
-  <ul>
-    <li><button id="new-recipe">New Recipe</button></li>
-    <li><button id="add-ingredients">Add Ingredients</button></li>
-  </ul>
-</div>
 
-<div class="page-right-container">
+</div>
   <div id="recipe-form">
     <%= render "form_new_recipe"%>
   </div>
 
-  <div id="ingredient-form">
-    <h1> Please add a recipe first</h1>
-  </div>
-
-  <div id="banner-right">
-    <h2>Click New Recipe</h2>
-    <h2>To get Started!</h2>
-  </div>
-</div>
 
 <script>
-$('#new-recipe').click(function(){
-  $('#recipe-form').toggle("slow", function(){
-    $('#banner-right').hide("slow", function(){
-      $('#ingredient-form').hide("slow");
-    });
-  });
-});
-
-$('#add-ingredients').click(function(){
-  $('#ingredient-form').toggle("slow", function(){
-    $('#recipe-form').hide("slow");
-  });
+$(document).ready(function(){
+  $('#recipe-form').toggle("slow");
 });
 </script>

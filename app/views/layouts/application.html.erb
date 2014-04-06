@@ -16,9 +16,13 @@
   <% unless session["user_id"].nil? %>
   <nav>
     <ul>
-      <li><span>ReciSpeak</span></li>
-      <li><%= link_to "Log Out", "/session", method: "delete", class: "logout" unless session[:user_id].nil? %>
-      </li>
+      <div class='nav-middle'>
+        <li><span>ReciSpeak</span></li>
+      </div>
+      <div class='nav-right'>
+        <li><%= link_to "Home", user_path(session["user_id"]) %></li>
+        <li><%= link_to "Log Out", "/session", method: "delete" %></li>
+      </div>
     </ul>
   </nav>
   <% end %>

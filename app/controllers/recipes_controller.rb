@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :load_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @allrecipes = Recipe.all
+    @allrecipes = Recipe.where(user_id: @user)
   end
 
   def new

@@ -1,7 +1,36 @@
 
+nav {
+  background: grey;
+}
+
 nav ul li{
   display: inline;
+  padding: 5px;
 }
+
+nav ul{
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-right {
+  float: right;
+  margin-top: -10px;
+  padding-right: 15px;
+}
+
+.nav-middle {
+  text-align: center;
+}
+
+#logo {
+  text-align: center;
+}
+
 .center-titles {
   text-align: center;
 }
@@ -46,17 +75,10 @@ button {
 
 #recipe-form {
   display: none;
-  width: 75%;
+  width: 60%;
   padding: 15px;
   text-align: right;
 }
 
-#ingredient-form {
-  display: none;
-}
-
-#step-form {
-  display: none;
-}
 
 

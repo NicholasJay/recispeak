@@ -1,5 +1,6 @@
 <div class="center-titles">
   <h1><%= @recipe.title %></h1>
+  <button id='start-reading'>Begin</button>
 </div>
 
 <div class="page-left-container">
@@ -19,7 +20,19 @@
 </div>
 
 <script>
+var steps = <%= raw @allsteps %>
 var voices = window.speechSynthesis.getVoices();
-var welcome = new SpeechSynthesisUtterance("Welcome to Ressa speak.");
+var recipeName = '<%=escape_javascript @recipe.title %>'
+var welcome = new SpeechSynthesisUtterance("Let's get cookin' with Ressa Speak");
 speechSynthesis.speak(welcome);
+
+var i = 0
+$("#start-reading").click(function(){
+  if(i < steps.length){
+    readStep(steps[i])
+    i += 1
+  } else {
+    console.log("no more steps!!")
+  }
+});
 </script>

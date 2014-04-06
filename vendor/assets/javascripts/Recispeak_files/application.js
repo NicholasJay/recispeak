@@ -10,16 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require underscore
-//= require backbone
-//= require underscore
-//= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
-//= require backbone/recispeak
-//= require_tree .
+
+
+
+
+
+
+
+
+
+
+
 
 var recipes = [];

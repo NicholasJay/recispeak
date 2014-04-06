@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:3000/users/1/recipes/23 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Recispeak</title>
+  <link data-turbolinks-track="true" href="http://localhost:3000/assets/application.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/normalize.css?body=1" media="all" rel="stylesheet">
+<link data-turbolinks-track="true" href="http://localhost:3000/assets/zrecispeak.css?body=1" media="all" rel="stylesheet">
+  <script data-turbolinks-track="true" src="./Recispeak_files/jquery.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/jquery_ujs.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/turbolinks.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/underscore.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/backbone.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/backbone_rails_sync.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/backbone_datalink.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/recispeak.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/recipe.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/recipe(1).js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/main.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/Player.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/Song.js"></script>
+<script data-turbolinks-track="true" src="./Recispeak_files/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="FwpX0avEOSnH7MSxL3avqf9hk+xbCpm7FIPjlWPCsOs=" name="csrf-token">
+    <script>
+    localStorage["user_id"] = 1
+    </script>
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><span>ReciSpeak</span></li>
+      <li><a class="logout" data-method="delete" href="http://localhost:3000/session" rel="nofollow">Log Out</a>
+      </li>
+    </ul>
+  </nav>
+
+<div class="center-titles">
+  <h1>Pizza</h1>
+  <button id="start-reading">Begin</button>
+</div>
+
+<div class="page-left-container">
+  <ul>
+      <li>3 1/2 cups of flour</li>
+      <li>1 tablespoon of yeast</li>
+      <li>1 teaspoon of sugar</li>
+  </ul>
+</div>
+
+<div class="page-right-container">
+  <ul>
+      <li>mix ingredients in a bowl</li>
+      <li>let sit for one hour</li>
+      <li>roll out dough</li>
+  </ul>
+</div>
+
+<script>
+var steps = ["mix ingredients in a bowl", "let sit for one hour", "roll out dough"]
+var voices = window.speechSynthesis.getVoices();
+var recipeName = 'Pizza'
+var welcome = new SpeechSynthesisUtterance("Let's get cookin' with Ressa Speak");
+speechSynthesis.speak(welcome);
+
+$('#start-reading').on("click", function(){
+  
+})
+
+</script>
+
+
+
+
+</body></html>

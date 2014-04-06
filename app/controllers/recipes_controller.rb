@@ -25,6 +25,8 @@ class RecipesController < ApplicationController
   def show
     @ingredients = Ingredient.where(recipe_id: @recipe)
     @steps = Step.where(recipe_id: @recipe)
+    @allsteps = []
+    @steps.each {|step| @allsteps << step.instructions}
     render :show
   end
 

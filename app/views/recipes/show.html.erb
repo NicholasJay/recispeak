@@ -19,6 +19,10 @@
   </ul>
 </div>
 
+<div class="recipe-notes">
+  <p><%= @recipe.notes %></p>
+</div>
+
 <script>
 var steps = <%= raw @allsteps %>
 var voices = window.speechSynthesis.getVoices();

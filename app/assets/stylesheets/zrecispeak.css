@@ -33,6 +33,7 @@ nav a {
 
 .center-titles {
   text-align: center;
+  padding: 10px;
 }
 
 .page-left-container {
@@ -84,5 +85,7 @@ button {
   display: none;
 }
 
-
+.recipe-notes {
+  text-align: center;
+}
 

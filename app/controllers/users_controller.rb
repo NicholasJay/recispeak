@@ -24,17 +24,14 @@ class UsersController < ApplicationController
     @allrecipes = Recipe.where(user_id: @user)
   end
 
-  def edit
-    render :edit
-  end
-
   def update
     @changed = @user.update(user_params)
 
     if @changed
       redirect_to user_path(@user.id)
     else
-      render :edit
+      @message = "Update Failed"
+      redirect_to user_path(@user.id)
     end
   end
 
@@ -51,7 +48,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :facebook_url, :twitter_name, :address, :city, :state, :zipcode, :password, :password_confirmation, :birthday)
     end
 
     def authenticate

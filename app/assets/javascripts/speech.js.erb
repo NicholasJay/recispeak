@@ -1,0 +1,30 @@
+//var voices = window.speechSynthesis.getVoices();
+
+Recispeak.recognizer = new webkitSpeechRecognition(); // create a new speech recognition object
+Recispeak.recognizer.continuous = true;               // keeps the microphone open
+
+// this will read aloud the step from the recipe array
+Recispeak.readStep = function(step){ speechSynthesis.speak(new SpeechSynthesisUtterance(step)); };
+
+// a seeeeeecret console log to show that the recognition has correctly been executed
+Recispeak.recognizer.onstart = function(){ 
+  consolelog("recognition has started");
+  //setTimeout( Recispeak.recognizer.stop, 5000 );
+};
+
+Recispeak.recognizer.onend = function() {
+  consolelog("recognition has ended")
+};
+
+$(function(){
+  consolelog("consoling...");
+  Recispeak.readStep("Let's get cookin' with Ressa Speak!");
+
+  $('#start-reading').click(function(){
+    Recispeak.readStep("Please get everything ready. When you are comfortable, " +
+                       "click to allow microphone access and then say the word " +
+                       "'Next!' to hear the following step.");
+    Recispeak.recognizer.start();
+  });
+});
+

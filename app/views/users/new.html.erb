@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-
 <head><title>Become a New Member</title>
-<link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css'>
 </head>
 
-<fieldset>
-  <div id="logo">
-    <h1> <span>R</span>eci<span>s</span>peak </h1>
-  </div>
-  <h3>Become a New Member</h3>
+<body>
+  <fieldset>
+    <div id="logo">
+      <h1> <span>R</span>eci<span>s</span>peak </h1>
+    </div>
+    <h3>Become a New Member</h3>
 
-<%= form_for @user do |f| %>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %><br/>
+  <%= form_for @user do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br/>
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %><br/>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br/>
 
-<%= f.label :email %>
-<%= f.email_field :email %><br />
+    <%= f.label :email %>
+    <%= f.email_field :email %><br />
 
-<%= f.label :password %>
-<%= f.password_field :password %><br />
+    <%= f.label :password %>
+    <%= f.password_field :password %><br />
 
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %><br />
-<%= f.submit "Join"%>
-<% end %>
-</fieldset>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br />
+    <%= f.submit "Join"%>
+  <% end %>
+  </fieldset>
 </body>

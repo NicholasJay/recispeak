@@ -10,8 +10,8 @@
     localStorage["user_id"] = <%= @user.id %>
     </script>
   <% end %>
-
 </head>
+
 <body>
   <% unless session["user_id"].nil? %>
   <nav>
@@ -28,6 +28,10 @@
   <% end %>
 
 <%= yield %>
+
+<div>
+<pre id="console"></pre>
+</div>
 
 </body>
 </html>

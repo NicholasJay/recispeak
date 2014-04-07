@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    render :show
+    @allrecipes = Recipe.where(user_id: @user)
   end
 
   def edit

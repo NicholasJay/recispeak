@@ -2,7 +2,7 @@
   <ul>
     <li id="edit-profile"><button>Edit Profile</button></li>
     <li><button><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
-    <li><button><%= link_to "My Recipes", user_recipes_path(@user) %></button></li>
+    <li><button id="all-my-recipes">My Recipes</button></li>
     <li><button id="all-recipes">View All Recipes</button></li>
   </ul>
 </div>
@@ -10,21 +10,48 @@
 <div class="page-right-container">
   <div id="welcome-blurb">
     <h1>Welcome to your ReciSpeak Page <%= @user.first_name %></h1>
-    <h2>Choose an option on the left to get started!</h2>
+    <h2>Let's Get Cookin'</h2>
   </div>
+
   <div id="edit-form">
     <%= render "form" %>
   </div>
+
+  <div id="all-user-recipes">
+    <div class="center-titles">
+      <h1> All of your recipes </h1>
+      <ul>
+        <% @allrecipes.each do |recipe| %>
+          <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
 <script>
 $(document).ready(function(){
-  $('#page-left-container').fadeIn();
+  $(".page-left-container").hide(0).delay(10).fadeIn(500)
+});
+
+$(document).ready(function(){
+  $(".page-right-container").hide(0).delay(10).fadeIn(500)
 });
 
 $('#edit-profile').click(function(){
   $('#edit-form').toggle("slow", function(){
-    $('#welcome-blurb').toggle("slow");
+    $('#welcome-blurb').toggle("slow", function(){
+      $('#all-user-recipes').hide("slow");
+    });
+  });
+});
+
+$('#all-my-recipes').click(function(){
+  $('#all-user-recipes').toggle("slow", function(){
+    $('#welcome-blurb').toggle("slow", function(){
+      $('#edit-form').hide("slow");
+    });
   });
 });
 </script>

@@ -1,4 +1,6 @@
 <div id="ingredients">
   <%= f.label :entry, "Ingredients" %>
-  <%= f.text_field :entry %><br />
+  <%= f.text_field :entry %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_function "remove", "remove_steps(this)" %>
 </div>

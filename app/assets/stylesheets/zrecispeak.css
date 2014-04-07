@@ -80,5 +80,9 @@ button {
   text-align: right;
 }
 
+#all-user-recipes {
+  display: none;
+}
+
 
 

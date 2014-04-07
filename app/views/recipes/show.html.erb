@@ -26,13 +26,19 @@ var recipeName = '<%=escape_javascript @recipe.title %>'
 var welcome = new SpeechSynthesisUtterance("Let's get cookin' with Ressa Speak");
 speechSynthesis.speak(welcome);
 
-var i = 0
-$("#start-reading").click(function(){
-  if(i < steps.length){
-    readStep(steps[i])
-    i += 1
-  } else {
-    console.log("no more steps!!")
-  }
+// $("#start-reading").click(function(){
+//   if(i < steps.length){
+//     readStep(steps[i])
+//     i += 1
+//   } else {
+//     console.log("no more steps!!")
+//   }
+// });
+
+$('#start-reading').click(function(){
+  var begin = new SpeechSynthesisUtterance("Please get everything ready. When you are comfortable, click to allow microphone access and then say the word next to hear the following step.");
+  speechSynthesis.speak(begin);
+  recognizer.start();
 });
+
 </script>

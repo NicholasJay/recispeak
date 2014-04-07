@@ -2,13 +2,25 @@
   <%= f.label "Category: " %>
   <%= f.text_field :category %><br />
   <%= f.label "Title: " %>
-  <%= f.text_field :title %><br /><br />
+  <%= f.text_field :title %><br />
+  <br />
+
+  <div id="ingredient-field">
   <%= f.fields_for :ingredients do |builder| %>
   <%= render "ingredient_fields", f: builder %>
-  <% end %><br />
+  <% end %>
+  <%= link_to_add_fields "Add Ingredient", f, :ingredients %><br />
+  <br />
+  </div>
+
+  <div id="steps-field">
   <%= f.fields_for :steps do |builder| %>
   <%= render "step_fields", f: builder %>
   <% end %>
+  <%= link_to_add_fields "Add Step", f, :steps %><br />
+  <br />
+  </div>
+  
   <%= f.label "Notes: "%>
   <%= f.text_area :notes, rows:"3", cols: "40" %><br />
   <%= f.submit "Create Recipe" %>

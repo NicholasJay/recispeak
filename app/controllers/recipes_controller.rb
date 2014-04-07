@@ -3,20 +3,19 @@ class RecipesController < ApplicationController
   before_action :load_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @allrecipes = Recipe.where(user_id: @user)
   end
 
   def new
     @recipe = Recipe.new
-    3.times { @recipe.ingredients.build}
-    3.times { @recipe.steps.build}
+    5.times { @recipe.ingredients.build}
+    5.times { @recipe.steps.build}
   end
 
   def create
     @recipe = @user.recipes.new(recipe_params)
     
     if @recipe.save
-      redirect_to user_recipe_path(@user.id, @recipe.id)
+      redirect_to user_path(@user.id)
     else
       render :new
     end

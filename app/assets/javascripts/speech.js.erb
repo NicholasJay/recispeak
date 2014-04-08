@@ -34,26 +34,6 @@ Recispeak.recognizer.onresult = function(event) {
         Recispeak.readStep(Recispeak.steps[counter]);
         counter += 1;
       }, 1000);
-    } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'beginning')){
-      counter = 0;
-      setTimeout(function(){
-        Recispeak.readStep(Recispeak.steps[counter]);
-        counter += 1;
-      }, 1000);
-    } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'back')){
-      if(counter !== 0){
-        counter -= 1;
-        setTimeout(function(){
-          Recispeak.readStep(Recispeak.steps[counter]);
-          counter += 1;
-        }, 1000);
-      } else {
-        counter = 0;
-        setTimeout(function(){
-          Recispeak.readStep(Recispeak.steps[counter]);
-          counter += 1;
-        }, 1000);
-      }
     } else {
       console.log(event.results[i][0].transcript);
       theResult = event.results[i][0].transcript.replace(" ","");
@@ -69,8 +49,8 @@ Recispeak.recognizer.onresult = function(event) {
         }, 1000);
       } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
         setTimeout(function(){
-          Recispeak.readStep(Recispeak.steps[counter]);
           counter = 0;
+          Recispeak.readStep(Recispeak.steps[counter]);
         }, 1000);
       } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
         setTimeout(function(){

@@ -16,7 +16,8 @@ nav {
   background-image: linear-gradient(to bottom, #403E38 0%, #727371 46%);
   height: 40px;
   width: 100%;
-  border-bottom: 2px solid rgb(237,62,20);
+  border-bottom: 2px solid rgb(95, 147,20);
+
 }
 
 nav ul li{
@@ -44,14 +45,19 @@ nav a {
   color: lightgrey;
 }
 
+.user-page-container {
+  height: 680px;
+  background: rgb(50,50,50);
+}
+
 .page-container {
-  height: 690px;
+  height: 600px;
   background: url('recispeak.jpg') no-repeat;
   background-size: cover;
   position: relative;
 }
 
-#logo-main {
+.logo-main {
   font-family: 'Allura', cursive;
   font-size: 130px;
   text-align: center;
@@ -66,7 +72,7 @@ nav a {
   color: white;
   width: 225px;
   border-radius: 10px;
-  background: black;
+  box-shadow: inset 0px 0px 277px 40px black;
 }
 
 #login input{
@@ -90,8 +96,34 @@ nav a {
 }
 
 .how-it-works{
-  height: 300px;
-  background: rgb(30,30,30);
+   background: rgb(30,30,30);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  width: 100%;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.list{
+  background: rgb(80,80,80);
+  margin: 0 auto;
+  color: white;
+  font-size: 12pt;
+}
+
+.step{
+  width: 20%;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  padding-bottom: 100px;
+  }
+
+.step:nth-of-type(2) {
+  margin-right: 15%;
+  margin-left: 15%;
 }
 
 .center-titles {
@@ -99,11 +131,17 @@ nav a {
   padding: 10px;
 }
 
+.middle-container {
+  background: lightgrey;
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid rgb(95, 147,20);
+  height: 600px;
+}
+
 .page-left-container {
   margin-top: 50px;
-  width: 40%;
-  margin-left: 20px;
-  border: 2px solid green;
+  width: 30%;
   text-align: center;
   display: inline-block;
 }
@@ -113,16 +151,26 @@ nav a {
 }
 
 .page-right-container {
+  background: white;
   margin-top: 50px;
-  width: 50%;
+  height: 500px;
+  overflow-y: scroll;
+  width: 60%;
+  border: 3px double black;
+  padding: 5px;
+  margin-right: 20px;
   text-align: center;
-  border: 2px solid red;
   float: right;
-  margin-right: 50px;
 }
 
 #edit-form {
-  width: 75%;
+  width: 100%;
+  text-align: right;
+  display: none;
+}
+
+#new-form {
+  width: 65%;
   text-align: right;
   display: none;
 }

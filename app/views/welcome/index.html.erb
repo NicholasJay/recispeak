@@ -21,34 +21,44 @@
         <%= link_to "Sign Up", new_user_path, class:"btn btn-danger"%>
       <% end %> 
     </div>
-  <div class="footer-bar">
-    <ul>
-      <li>• Browse Recipes •</li>
-    </ul>
-  </div>
-</div>
 
 <div class="how-it-works">
   <ul class="list">
       <li class="step">
-        <%= image_tag("arrowicon.png") %>
-        <span>Add new recipes to your profile!</span>
+        <%= image_tag("plus.png") %>
+        <p>Add new</p>
+        <p>recipes to</p>
+        <p>your profile!</p>
       </li>
       <li class="step">
-        <%= image_tag("arrowicon.png") %>
-        <span>Click on the recipe you want to cook and then press Begin</span>
+        <%= image_tag("play.png") %>
+        <p>Click on the recipe</p>
+        <p>you want to cook</p>
+        <p>and then press Begin</p>
   
       </li>
       <li class="step">
-         <%= image_tag("arrowicon.png") %>
-         <span>
-         Recispeak will walk you step by step through your recipe while you cook.</span>
+        <%= image_tag("listen.png") %>
+        <p>Recispeak will walk you</p>
+        <p>step by stepthrough </p>
+        <p>your recipe while you cook.</p>
       </li>
     </ul>
+</div>
+  <div class="footer-bar">
+    <ul>
+      <li>• Browse Recipes •</li>
+      <li id="how-it-works-link">•How does it work? •</li>
+    </ul>
+  </div>
 </div>
 </body>
 <script>
   $(document).ready(function(){
     $("#logo").hide(0).delay(10).fadeIn(2000)
+  });
+
+  $('#how-it-works-link').click(function(){
+    $('.how-it-works').toggle("slow");
   });
 </script>

@@ -1,26 +1,30 @@
-<div class="center-titles">
-  <h1><%= @recipe.title %></h1>
-  <button id='start-reading'>Begin</button>
-</div>
+<div class="user-page-container">
+  <div class="middle-container">
+    <div class="center-titles">
+      <h1><%= @recipe.title %></h1>
+      <button id='start-reading' class='btn btn-success'>Begin</button>
+    </div>
 
-<div class="page-left-container">
-  <ul>
-    <% @ingredients.each do |ingredient| %>
-      <li><%= ingredient.entry %></li>
-    <% end %>
-  </ul>
-</div>
+    <div class="page-left-recipe-container">
+      <ul>
+        <% @ingredients.each do |ingredient| %>
+        <li><%= ingredient.entry %></li>
+        <% end %>
+      </ul>
+    </div>
 
-<div class="page-right-container">
-  <ul>
-    <% @steps.each do |step| %>
-      <li><%= step.instructions %></li>
-    <% end %>
-  </ul>
-</div>
+    <div class="page-right-recipe-container">
+      <ul>
+        <% @steps.each do |step| %>
+        <li><%= step.instructions %></li>
+        <% end %>
+      </ul>
+    </div>
 
-<div class="recipe-notes">
-  <p><%= @recipe.notes %></p>
+    <div class="recipe-notes">
+      <p><%= @recipe.notes %></p>
+    </div>
+  </div>
 </div>
 
 <script>

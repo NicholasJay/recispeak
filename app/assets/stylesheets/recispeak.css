@@ -51,7 +51,7 @@ nav a {
 }
 
 .page-container {
-  height: 600px;
+  height: 675px;
   background: url('recispeak.jpg') no-repeat;
   background-size: cover;
   position: relative;
@@ -137,6 +137,7 @@ nav a {
   margin: 0 auto;
   border: 2px solid rgb(95, 147,20);
   height: 600px;
+  overflow-y: scroll;
 }
 
 .page-left-container {

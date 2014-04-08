@@ -1,14 +1,15 @@
-<div class="center-titles">
-  <h1>Add A Recipe</h1>
-</div>
-
-<div id="recipe-form">
-  <%= render "form_new_recipe"%>
+<div class="user-page-container">
+  <div class="middle-container">
+    <div id="new-form">
+        <h1>Add a Recipe</h1>
+      <%= render "form_new_recipe"%>
+    </div>
+  </div>
 </div>
 
 
 <script>
   $(document).ready(function(){
-    $('#recipe-form').toggle("slow");
+    $('#new-form').toggle("slow");
   });
 </script>

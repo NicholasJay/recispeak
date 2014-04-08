@@ -62,6 +62,21 @@ Recispeak.recognizer.onresult = function(event) {
           Recispeak.readStep(Recispeak.steps[counter]);
           counter += 1;
         }, 1000);
+      } else if(event.results[i][0].transcript.replace(" ", "") == 'back'){
+        setTimeout(function(){
+          counter -= 2;
+          Recispeak.readStep(Recispeak.steps[counter]);
+        }, 1000);
+      } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
+        setTimeout(function(){
+          Recispeak.readStep(Recispeak.steps[counter]);
+          counter = 0;
+        }, 1000);
+      } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
+        setTimeout(function(){
+          counter -= 1
+          Recispeak.readStep(Recispeak.steps[counter]);
+        }, 1000);
       }
     }
   }

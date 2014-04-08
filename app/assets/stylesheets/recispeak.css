@@ -45,24 +45,24 @@ nav a {
 }
 
 .page-container {
-  height: 700px;
-  background: url('cuttingtoms.jpg') no-repeat;
+  height: 690px;
+  background: url('recispeak.jpg') no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 #logo-main {
   font-family: 'Allura', cursive;
-  font-size: 160px;
-  margin-left: 100px;
+  font-size: 130px;
+  text-align: center;
   color: rgb(95, 147,20);
-  text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
+  text-shadow: 3px 3px 3px rgba(255, 255, 255, 1);
 }
 
 #login {
   padding: 10px;
-  float: right;
-  margin-right: 40px;
-  margin-top: -200px;
+  margin-left: 40px;
+  margin-top: -150px;
   color: white;
   width: 225px;
   border-radius: 10px;
@@ -73,44 +73,25 @@ nav a {
   color: black;
 }
 
-.main-page-blurb {
-  box-shadow: inset 0px 0px 277px 3px rgb(239, 37, 17);
-  margin-left: 125px;
+.footer-bar {
   padding: 10px;
-  width: 500px;
-  height: 400px;
-  border-radius: 20px;
+  box-shadow: inset 0px 0px 277px 3px black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
   text-align: center;
-  border: 2px solid white;
 }
 
-.main-page-blurb h2 {
-  border-bottom: 2px solid white;
-  text-shadow: 3px 3px 3px black;
-  color: white;
-  font-size: 23px;
+.footer-bar ul li{
+  display: inline;
+  padding: 0 10px 0 10px;
   letter-spacing: 1.5px;
 }
 
-.inner-blurb {
-  margin: 0 auto;
-  box-shadow: inset 0px 0px 277px 75px lightgrey;
-  width: 90%;
-  padding: 10px;
-  border-radius: 15px;
-  text-align: left;
-  font-size: 17px;
-  font-weight: 500;
-  border: 2px solid rgb(95,147,20);
-}
-
-.inner-blurb span{
-  color: rgb(95, 147,20);
-  font-size: 18px;
-}
-
-.inner-blurb h4{
-  text-align: center;
+.how-it-works{
+  height: 300px;
+  background: rgb(30,30,30);
 }
 
 .center-titles {

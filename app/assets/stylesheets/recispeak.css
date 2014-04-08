@@ -1,6 +1,22 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  
+pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 nav {
-  background: grey;
+  background-image: -webkit-gradient(
+  linear,
+  right top,
+  right bottom,
+  color-stop(0, #403E38),
+  color-stop(0.46, #727371)
+  );
+  background-image: -o-linear-gradient(bottom, #403E38 0%, #727371 46%);
+  background-image: -moz-linear-gradient(bottom, #403E38 0%, #727371 46%);
+  background-image: -webkit-linear-gradient(bottom, #403E38 0%, #727371 46%);
+  background-image: -ms-linear-gradient(bottom, #403E38 0%, #727371 46%);
+  background-image: linear-gradient(to bottom, #403E38 0%, #727371 46%);
+  height: 40px;
+  width: 100%;
+  border-bottom: 2px solid rgb(237,62,20);
 }
 
 nav ul li{
@@ -13,22 +29,64 @@ nav ul{
 }
 
 nav a {
-  text-decoration: none;
-  color: white;
+  list-style-type: none;
+  color: white; 
 }
 
 .nav-right {
   float: right;
-  margin-top: -10px;
   padding-right: 15px;
+  padding-top: 5px;
 }
 
 .nav-middle {
   text-align: center;
+  color: lightgrey;
 }
 
-#logo {
+.page-container {
+  height: 700px;
+  background: url('cuttingtoms.jpg') no-repeat;
+  background-size: cover;
+}
+
+#logo-main {
+  font-family: 'Allura', cursive;
+  font-size: 160px;
+  margin-left: 100px;
+  color: rgb(95, 147,20);
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 1);
+}
+
+#login {
+  float: right;
+  padding-right: 40px;
+  margin-top: -200px;
+}
+
+.main-page-blurb {
+  box-shadow: inset 0px 0px 277px 3px rgb(239, 37, 17);
+  margin-left: 125px;
+  padding: 10px;
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
   text-align: center;
+  color: white;
+  font-size: 20px;
+  text-shadow: 3px 3px 3px black;
+  border: 2px solid white;
+}
+
+.main-page-blurb h2 {
+  border-bottom: 2px solid white;
+}
+
+.inner-blurb {
+  box-shadow: inset 0px 0px 277px 100px rgb(95, 147,20);
+  padding: 10px;
+  border-radius: 15px;
+  text-align: left;
 }
 
 .center-titles {
@@ -37,6 +95,7 @@ nav a {
 }
 
 .page-left-container {
+  margin-top: 50px;
   width: 40%;
   margin-left: 20px;
   border: 2px solid green;
@@ -44,7 +103,12 @@ nav a {
   display: inline-block;
 }
 
+.btn-danger {
+  width: 200px;
+}
+
 .page-right-container {
+  margin-top: 50px;
   width: 50%;
   text-align: center;
   border: 2px solid red;

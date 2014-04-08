@@ -6,25 +6,50 @@ Recispeak.recognizer.continuous = true;               // keeps the microphone op
 // this will read aloud the step from the recipe array
 Recispeak.readStep = function(step){ speechSynthesis.speak(new SpeechSynthesisUtterance(step)); };
 
-// a seeeeeecret console log to show that the recognition has correctly been executed
-Recispeak.recognizer.onstart = function(){ 
-  consolelog("recognition has started");
-  //setTimeout( Recispeak.recognizer.stop, 5000 );
-};
-
-Recispeak.recognizer.onend = function() {
-  consolelog("recognition has ended")
-};
-
 $(function(){
-  consolelog("consoling...");
-  Recispeak.readStep("Let's get cookin' with Ressa Speak!");
+  setTimeout(function(){
+    Recispeak.readStep("Let's get cookin' with Ressa Speak!");
+  }, 500);
 
   $('#start-reading').click(function(){
     Recispeak.readStep("Please get everything ready. When you are comfortable, " +
                        "click to allow microphone access and then say the word " +
                        "'Next!' to hear the following step.");
-    Recispeak.recognizer.start();
+    setTimeout(function(){
+      Recispeak.recognizer.start();
+    }, 3000);
   });
 });
 
+// Set the counter to 0 to iterate through the steps. Each if statement handles a different
+// voice command. Next, Beginning, and Back, will all navigate through the array of steps
+// so the user can easily communicate what they need.
+
+counter = 0;
+Recispeak.recognizer.onresult = function(event) {
+  for (var i = event.resultIndex; i < event.results.length; i++) {
+    if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'next')){
+      Recispeak.readStep(Recispeak.steps[counter]);
+      counter += 1;
+    } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'beginning')){
+      counter = 0;
+      Recispeak.readStep(Recispeak.steps[counter]);
+      counter += 1;
+    } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'back')){
+      if(counter !== 0){
+        counter -= 1;
+        Recispeak.readStep(Recispeak.steps[counter]);
+        counter += 1;
+      } else {
+        counter = 0;
+        Recispeak.readStep(Recispeak.steps[counter]);
+        counter += 1;
+      }
+    } else {
+      console.log(event.results);
+      Recispeak.readStep(Recispeak.steps[counter]);
+      counter += 1;
+      }
+    }
+  }
+};

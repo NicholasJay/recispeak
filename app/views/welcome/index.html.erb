@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <head>
   <title>Recispeak.com</title>
-</head>
-    
+</head>   
 <body>
+<div class="page-container"> 
   <header>
-    <div id="logo">
-      <h1> Welcome To </h1>
-      <h1> <span>R</span>eci<span>s</span>peak</h1>
+  </header>
+    <div id="logo-main">
+      <p>Recispeak</p>
     </div>
-    
     <div id="login">
       <% if session[:user_id].nil? %>
         <%= form_tag session_path do%>
-        <%= label_tag "email: " %>
-        <%= text_field_tag :email%>
-        <%= label_tag "password: " %>
-        <%= password_field_tag :password%>
-        <%= submit_tag "Sign In" %>
+        <%= text_field_tag :email%><br />
+        <%= password_field_tag :password %><br />
+        <%= submit_tag "Sign In", class:"btn btn-success" %>
         <% end %>
+        <%= link_to "Sign Up", new_user_path, class:"btn btn-danger"%>
       <% end %>
+      
     </div>
 
-    <ul>
-      <li><%= link_to "Click Here to Get Started", new_user_path %></li>
-      <li>Browse Recipes</li>
-    </ul>
-
-  </header>
+  <div class="main-page-blurb">
+    <h2>Sign up and Let's Get Cookin'</h2><br />
+    <div class="inner-blurb">
+      <p>What happens when you click to begin a recipe?</p><br />
+      <p>Me: <em>Say 'Next' when you are ready to start</em></p>
+      <p>You:<em> Next</em></p>
+      <p>Me: <em>Boil the water for 10 minutes</em></p>
+      <p>You:<em> Next</em></p>
+      <p>Me: <em>Add in the pasta and 2 pinches of salt</em></p>
+    </div>
+  </div>
+  </div>
 </body>
 <script>
   $(document).ready(function(){
     $("#logo").hide(0).delay(10).fadeIn(2000)
-  })
+  });
 </script>

@@ -31,3 +31,9 @@ function add_fields(link, association, content) {
   $(link).before(content.replace(regexp, new_id));
 }
 
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.flash-message').remove();
+  }, 5000);
+
+});

@@ -59,9 +59,18 @@ nav a {
 }
 
 #login {
+  padding: 10px;
   float: right;
-  padding-right: 40px;
+  margin-right: 40px;
   margin-top: -200px;
+  color: white;
+  width: 225px;
+  border-radius: 10px;
+  background: black;
+}
+
+#login input{
+  color: black;
 }
 
 .main-page-blurb {
@@ -72,21 +81,36 @@ nav a {
   height: 400px;
   border-radius: 20px;
   text-align: center;
-  color: white;
-  font-size: 20px;
-  text-shadow: 3px 3px 3px black;
   border: 2px solid white;
 }
 
 .main-page-blurb h2 {
   border-bottom: 2px solid white;
+  text-shadow: 3px 3px 3px black;
+  color: white;
+  font-size: 23px;
+  letter-spacing: 1.5px;
 }
 
 .inner-blurb {
-  box-shadow: inset 0px 0px 277px 100px rgb(95, 147,20);
+  margin: 0 auto;
+  box-shadow: inset 0px 0px 277px 75px lightgrey;
+  width: 90%;
   padding: 10px;
   border-radius: 15px;
   text-align: left;
+  font-size: 17px;
+  font-weight: 500;
+  border: 2px solid rgb(95,147,20);
+}
+
+.inner-blurb span{
+  color: rgb(95, 147,20);
+  font-size: 18px;
+}
+
+.inner-blurb h4{
+  text-align: center;
 }
 
 .center-titles {

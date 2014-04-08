@@ -1,3 +1,4 @@
+
 //var voices = window.speechSynthesis.getVoices();
 
 Recispeak.recognizer = new webkitSpeechRecognition(); // create a new speech recognition object
@@ -29,26 +30,38 @@ counter = 0;
 Recispeak.recognizer.onresult = function(event) {
   for (var i = event.resultIndex; i < event.results.length; i++) {
     if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'next')){
-      Recispeak.readStep(Recispeak.steps[counter]);
-      counter += 1;
+      setTimeout(function(){
+        Recispeak.readStep(Recispeak.steps[counter]);
+        counter += 1;
+      }, 1000);
     } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'beginning')){
       counter = 0;
-      Recispeak.readStep(Recispeak.steps[counter]);
-      counter += 1;
+      setTimeout(function(){
+        Recispeak.readStep(Recispeak.steps[counter]);
+        counter += 1;
+      }, 1000);
     } else if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'back')){
       if(counter !== 0){
         counter -= 1;
-        Recispeak.readStep(Recispeak.steps[counter]);
-        counter += 1;
+        setTimeout(function(){
+          Recispeak.readStep(Recispeak.steps[counter]);
+          counter += 1;
+        }, 1000);
       } else {
         counter = 0;
-        Recispeak.readStep(Recispeak.steps[counter]);
-        counter += 1;
+        setTimeout(function(){
+          Recispeak.readStep(Recispeak.steps[counter]);
+          counter += 1;
+        }, 1000);
       }
     } else {
-      console.log(event.results);
-      Recispeak.readStep(Recispeak.steps[counter]);
-      counter += 1;
+      console.log(event.results[i][0].transcript);
+      theResult = event.results[i][0].transcript.replace(" ","");
+      if(event.results[i][0].transcript.replace(" ", "") == 'next'){
+        setTimeout(function(){
+          Recispeak.readStep(Recispeak.steps[counter]);
+          counter += 1;
+        }, 1000);
       }
     }
   }

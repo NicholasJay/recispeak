@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate, :authorize, only: [:edit, :show]
+  before_action :authenticate, :authorize, only: [:show]
 
   def index
   end
@@ -25,12 +25,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @changed = @user.update(user_params)
 
     if @changed
       redirect_to user_path(@user.id)
     else
-      @message = "Update Failed"
+      flash[:message] = 'Update Failed!'
       redirect_to user_path(@user.id)
     end
   end

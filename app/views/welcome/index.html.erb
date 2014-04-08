@@ -12,10 +12,12 @@
     <div id="login">
       <% if session[:user_id].nil? %>
         <%= form_tag session_path do%>
-        <%= text_field_tag :email%><br />
+        <%= label_tag "Email" %><br />
+        <%= text_field_tag :email %><br />
+        <%= label_tag "Password" %><br />
         <%= password_field_tag :password %><br />
         <%= submit_tag "Sign In", class:"btn btn-success" %>
-        <% end %>
+        <% end %><br />
         <%= link_to "Sign Up", new_user_path, class:"btn btn-danger"%>
       <% end %>
       
@@ -24,12 +26,12 @@
   <div class="main-page-blurb">
     <h2>Sign up and Let's Get Cookin'</h2><br />
     <div class="inner-blurb">
-      <p>What happens when you click to begin a recipe?</p><br />
-      <p>Me: <em>Say 'Next' when you are ready to start</em></p>
-      <p>You:<em> Next</em></p>
-      <p>Me: <em>Boil the water for 10 minutes</em></p>
-      <p>You:<em> Next</em></p>
-      <p>Me: <em>Add in the pasta and 2 pinches of salt</em></p>
+      <h4>What happens when you click to begin a recipe?</h4><br />
+      <p><span>Me: </span>  Say 'Next' when you are ready to start</p>
+      <p><span>You:</span>  Next</p>
+      <p><span>Me: </span>  Boil the water for 10 minutes</p>
+      <p><span>You:</span>  Next</em></p>
+      <p><span>Me: </span>  Add in the pasta and 2 pinches of salt</p>
     </div>
   </div>
   </div>

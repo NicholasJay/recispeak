@@ -1,10 +1,11 @@
 <div class="page-left-container">
   <ul>
-    <li id="edit-profile"><button>Edit Profile</button></li>
-    <li><button><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
-    <li><button id="all-my-recipes">My Recipes</button></li>
+    <li id="edit-profile"><button class="btn btn-danger">Edit Profile</button></li>
+    <li><button class="btn btn-success"><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
+    <li><button id="all-my-recipes", class="btn btn-warning">My Recipes</button></li>
   </ul>
 </div>
+<%= raw("<p><strong class='success'>#{flash[:notice]}</strong></p>") unless flash[:notice].nil? %>
 
 <div class="page-right-container">
   

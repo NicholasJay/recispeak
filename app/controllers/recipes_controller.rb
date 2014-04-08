@@ -1,8 +1,9 @@
 class RecipesController < ApplicationController
-  before_action :load_user
+  before_action :load_user, except: [:index]
   before_action :load_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
+    @websiterecipes = Recipe.all
   end
 
   def new

@@ -1,1 +1,23 @@
-<h1> all recipes here</h1>
+<nav>
+  <ul>
+    <div class='nav-right'>
+      <li><%= link_to "Back", root_path %></li>
+    </div>
+  </ul>
+</nav>
+<div class="user-page-container">
+  <div class="middle-container">
+    <div class="center-titles">
+      <h1> A list of all recipes on</h1>
+      <div class='logo-main'>
+        <p>Recispeak</p>
+      </div>
+
+      <ul>
+        <% @websiterecipes.each do |recipe| %>
+        <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

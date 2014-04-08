@@ -95,6 +95,15 @@ nav a {
   letter-spacing: 1.5px;
 }
 
+.footer-bar a {
+  color: white;
+}
+
+.footer-bar a:hover {
+  color: rgb(95,147,20);
+  text-decoration: none;
+}
+
 .how-it-works{
   width: 65%;
   display: none;

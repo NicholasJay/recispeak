@@ -14,7 +14,7 @@
 ###API's
 - Google Chrome Web Speech Synthesis
 - Google Chrome Web Speech Recognition
-#####Future API Additions
+Future Additions -
 - Food2Fork
 - Yummly
 

@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @websiterecipes = Recipe.all
     @allrecipes = Recipe.where(user_id: @user)
   end
 

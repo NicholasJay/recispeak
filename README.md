@@ -12,11 +12,12 @@
 * On the command Back, it will go one step back
 
 ###API's
-- Google Chrome Web Speech Synthesis
-- Google Chrome Web Speech Recognition
-Future Additions -
-- Food2Fork
-- Yummly
+* Google Chrome Web Speech Synthesis
+* Google Chrome Web Speech Recognition
+
+##### Future Additions
+* Food2Fork
+* Yummly
 
 ####ERD For Recispeak
 ![ScreenShot](RSerd.png)

@@ -4,9 +4,8 @@
     <div class="page-left-container">
     <ul>
       <li id="edit-profile"><button class="btn btn-danger">Edit Profile</button></li>
-      <li><button class="btn btn-success"><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
-      <li><button id="all-recipes", class='btn btn-danger'>Browse All Recipes</button></li>
       <li><button id="all-my-recipes", class="btn btn-success">My Recipes</button></li>
+      <li><button class="btn btn-danger"><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
     </ul>
   </div>
   <%= raw("<p><strong class='success'>#{flash[:notice]}</strong></p>") unless flash[:notice].nil? %>
@@ -30,17 +29,6 @@
           <ul>
             <% @allrecipes.each do |recipe| %>
               <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-
-      <div id="all-website-recipes">
-        <div class="center-titles">
-          <h1> All Recipes on Recispeak </h1>
-          <ul>
-            <% @websiterecipes.each do |recipe| %>
-              <li><%= link_to recipe.title, recipe_path(recipe.id) %></li>
             <% end %>
           </ul>
         </div>
@@ -75,9 +63,4 @@ $('#all-my-recipes').click(function(){
   });
 });
 
-$('#all-recipes').click(function(){
-  $('#welcome-blurb').toggle("slow", function(){
-    $('#all-website-recipes').toggle("slow");
-  })
-});
 </script>

@@ -12,6 +12,7 @@ $(function(){
     Recispeak.readStep("Let's get cookin' with Ressa Speak!");
   }, 500);
 
+// These instructions are spoken aloud to the user so they know how to navigate through vocally
   $('#start-reading').click(function(){
     Recispeak.readStep("Please get everything ready. When you are comfortable, " +
                        "click to allow microphone access and then say the word " +
@@ -35,28 +36,32 @@ Recispeak.recognizer.onresult = function(event) {
         counter += 1;
       }, 1000);
     } else {
-      console.log(event.results[i][0].transcript);
-      theResult = event.results[i][0].transcript.replace(" ","");
-      if(event.results[i][0].transcript.replace(" ", "") == 'next'){
-        setTimeout(function(){ 
-          Recispeak.readStep(Recispeak.steps[counter]);
-          counter += 1;
-        }, 1000);
-      } else if(event.results[i][0].transcript.replace(" ", "") == 'back'){
-        setTimeout(function(){
-          counter -= 2;
-          Recispeak.readStep(Recispeak.steps[counter]);
-        }, 1000);
-      } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
-        setTimeout(function(){
-          counter = 0;
-          Recispeak.readStep(Recispeak.steps[counter]);
-        }, 1000);
-      } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
-        setTimeout(function(){
-          counter -= 1
-          Recispeak.readStep(Recispeak.steps[counter]);
-        }, 1000);
+      // console.log(event.results[i][0].transcript);
+      // theResult = event.results[i][0].transcript.replace(" ","");
+      if(counter < Recispeak.steps.length){
+        if(event.results[i][0].transcript.replace(" ", "") == 'next'){
+          setTimeout(function(){ 
+            Recispeak.readStep(Recispeak.steps[counter]);
+            counter += 1;
+          }, 1000);
+        } else if(event.results[i][0].transcript.replace(" ", "") == 'back'){
+          setTimeout(function(){
+            if(counter !== 0){
+            counter -= 1;
+            Recispeak.readStep(Recispeak.steps[counter]);
+            }, 1000);
+          }
+        } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
+          setTimeout(function(){
+            counter = 0;
+            Recispeak.readStep(Recispeak.steps[counter]);
+          }, 1000);
+        } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
+          setTimeout(function(){
+            counter -= 1
+            Recispeak.readStep(Recispeak.steps[counter]);
+          }, 1000);
+        }
       }
     }
   }

@@ -44,13 +44,6 @@ Recispeak.recognizer.onresult = function(event) {
             Recispeak.readStep(Recispeak.steps[counter]);
             counter += 1;
           }, 1000);
-        } else if(event.results[i][0].transcript.replace(" ", "") == 'back'){
-          setTimeout(function(){
-            if(counter !== 0){
-            counter -= 1;
-            Recispeak.readStep(Recispeak.steps[counter]);
-            }, 1000);
-          }
         } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
           setTimeout(function(){
             counter = 0;

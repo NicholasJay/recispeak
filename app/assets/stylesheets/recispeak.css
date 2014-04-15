@@ -79,6 +79,20 @@ nav a {
   color: black;
 }
 
+.splash-button {
+  box-shadow: inset 0px 0px 200px 3px rgb(95, 147,20);
+  border-radius: 5px;
+}
+
+.splash-button-signup a {
+  color: white;
+}
+
+.splash-button-signup {
+  border-radius: 5px;
+  background:rgb(97, 147, 20);
+}
+
 .footer-bar {
   padding: 10px;
   box-shadow: inset 0px 0px 277px 3px black;
@@ -105,12 +119,13 @@ nav a {
 }
 
 .how-it-works{
-  width: 65%;
+  width: 75%;
   display: none;
   padding: 10px 0;
   float: right;
   margin-right: 80px;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 #how-it-works-link:hover {
@@ -123,6 +138,15 @@ nav a {
   margin: 0 auto;
   color: white;
   font-size: 12px
+}
+
+.user-menu-buttons {
+  box-shadow: inset 0px 0px 200px 3px rgb(95, 147,20);
+  border-radius: 5px;
+  border: 2px solid white;
+  color: white;
+  height: 50px;
+  width: 250px;
 }
 
 .step{

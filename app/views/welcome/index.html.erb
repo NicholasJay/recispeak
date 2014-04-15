@@ -16,9 +16,9 @@
         <%= text_field_tag :email %><br />
         <%= label_tag "Password" %><br />
         <%= password_field_tag :password %><br />
-        <%= submit_tag "Sign In", class:"btn btn-success" %>
+        <%= submit_tag "Sign In", class:"splash-button" %>
         <% end %><br />
-        <%= link_to "Sign Up", new_user_path, class:"btn btn-danger"%>
+        <button class="splash-button-signup"><%= link_to "Sign Up", new_user_path%></button>
       <% end %> 
     </div>
 

@@ -44,15 +44,16 @@ Recispeak.recognizer.onresult = function(event) {
             Recispeak.readStep(Recispeak.steps[counter]);
             counter += 1;
           }, 1000);
-        } else if(event.results[i][0].transcript.replace(" ", "") == 'beginning'){
+        } else if(event.results[i][0].transcript.replace(" ", "") == 'start'){
           setTimeout(function(){
             counter = 0;
             Recispeak.readStep(Recispeak.steps[counter]);
           }, 1000);
         } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
           setTimeout(function(){
-            counter -= 1
+            counter -= 1;
             Recispeak.readStep(Recispeak.steps[counter]);
+            counter += 1;
           }, 1000);
         }
       }

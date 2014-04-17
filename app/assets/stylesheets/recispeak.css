@@ -291,3 +291,15 @@ button {
   margin-top: 10px;
 }
 
+.recipe-search-input {
+  background: url('Search.png') no-repeat;
+  background-size: 5%;
+  background-color: white;
+  color: rgb(95, 147,20);
+  margin-top: 30px;
+  width: 75%;
+  text-align: right;
+  padding-right: 15px;
+  font-size: 25px;
+  border-radius: 10px;
+}

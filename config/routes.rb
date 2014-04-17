@@ -3,6 +3,7 @@ Recispeak::Application.routes.draw do
     # /recipes/:id
     # /users/:id/recipes
     resources :recipes
+    resources :search
   end
 
   resources :recipes, only: [:index, :show]

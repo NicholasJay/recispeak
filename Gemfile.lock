@@ -185,6 +185,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  nokogiri
   pg
   pry-rails
   rails (= 4.0.2)

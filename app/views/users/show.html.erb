@@ -3,10 +3,10 @@
   <div class="middle-container">
     <div class="page-left-container">
     <ul>
-      <li id="edit-profile"><button class="user-menu-buttons">Edit Profile</button></li>
-      <li><button id="all-my-recipes", class="user-menu-buttons">My Recipes</button></li>
-      <li><button class="user-menu-buttons"><%= link_to "Add Recipe", new_user_recipe_path(@user) %></button></li>
-      <li><button class="user-menu-buttons"><%= link_to "Search Recipes", user_search_index_path(@user) %></button></li>
+      <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
+      <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
+      <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
+      <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>
     </ul>
   </div>
   <%= raw("<p><strong class='success'>#{flash[:notice]}</strong></p>") unless flash[:notice].nil? %>

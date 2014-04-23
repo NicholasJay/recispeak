@@ -288,7 +288,17 @@ button {
 
 .recipe-notes {
   text-align: center;
-  margin-top: 10px;
+  background: white;
+  margin-top: 30px;
+  height: 200px;
+  font-size: 17px;
+  border-top: 3px double black;;
+  border-bottom: 3px double black;;
+}
+
+.recipe-notes h3 {
+  color: rgb(95, 147,20);
+  text-decoration: underline;
 }
 
 .recipe-search-input {
@@ -302,4 +312,9 @@ button {
   padding-right: 15px;
   font-size: 25px;
   border-radius: 10px;
+}
+
+.search-results {
+  margin-left: 200px;
+  overflow-y: scroll;
 }

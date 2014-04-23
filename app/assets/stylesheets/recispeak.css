@@ -318,3 +318,11 @@ button {
   margin-left: 200px;
   overflow-y: scroll;
 }
+
+.flash-message {
+  position: absolute;
+  font-size: 17px;
+  padding-left: 50px;
+  color: red;
+  font-style: italic;
+}

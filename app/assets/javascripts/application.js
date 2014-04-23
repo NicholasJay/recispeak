@@ -34,6 +34,7 @@ function add_fields(link, association, content) {
 $(document).ready(function(){
   setTimeout(function(){
     $('.flash-message').remove();
-  }, 5000);
+  }, 4000);
 
 });
+

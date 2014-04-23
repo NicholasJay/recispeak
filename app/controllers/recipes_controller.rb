@@ -16,6 +16,7 @@ class RecipesController < ApplicationController
     @recipe = @user.recipes.new(recipe_params)
     
     if @recipe.save
+      flash[:message] = "Recipe Created!"
       redirect_to user_path(@user.id)
     else
       render :new

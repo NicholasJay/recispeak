@@ -26,10 +26,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     @changed = @user.update(user_params)
 
     if @changed
+      flash[:message] = "Updated Successfully"
       redirect_to user_path(@user.id)
     else
       flash[:message] = 'Update Failed!'

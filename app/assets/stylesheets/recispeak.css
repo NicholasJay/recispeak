@@ -326,3 +326,12 @@ button {
   color: red;
   font-style: italic;
 }
+
+.new-book-form {
+  display: none;
+  text-align: center;
+}
+
+.user-menu-buttons-add {
+  background: red;
+}

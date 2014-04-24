@@ -4,7 +4,6 @@ class CreateRecipeBooks < ActiveRecord::Migration
       t.string :title
       t.string :cover_photo
       t.references :user
-      t.references :recipe
       t.timestamps
     end
   end

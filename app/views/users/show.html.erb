@@ -8,7 +8,7 @@
     <div class="page-left-container">
     <ul>
       <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
-      <button class="user-menu-buttons"><li>Recipe Books</li></button>
+      <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
       <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
       <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>

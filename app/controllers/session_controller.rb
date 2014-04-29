@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id 
       redirect_to user_path(user) 
     else
-      @message = "Email or Password is incorrect!"
+      flash[:message] = "Email or Password is incorrect!"
       redirect_to root_path
     end
   end

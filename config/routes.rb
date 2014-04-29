@@ -4,6 +4,7 @@ Recispeak::Application.routes.draw do
     # /users/:id/recipes
     resources :recipes
     resources :recipe_books
+    resources :recipe_book_entries
     resources :search
   end
 

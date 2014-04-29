@@ -38,3 +38,9 @@ $(document).ready(function(){
 
 });
 
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.flash-message-login').remove();
+  }, 4000);
+
+});

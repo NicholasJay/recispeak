@@ -9,11 +9,11 @@ nav {
   color-stop(0, #403E38),
   color-stop(0.46, #727371)
   );
-  background-image: -o-linear-gradient(bottom, #403E38 0%, #727371 46%);
-  background-image: -moz-linear-gradient(bottom, #403E38 0%, #727371 46%);
-  background-image: -webkit-linear-gradient(bottom, #403E38 0%, #727371 46%);
-  background-image: -ms-linear-gradient(bottom, #403E38 0%, #727371 46%);
-  background-image: linear-gradient(to bottom, #403E38 0%, #727371 46%);
+  background-image: -o-linear-gradient(bottom, rgb(212,46,0) 0%,rgb(243,81,21)  46%);
+  background-image: -moz-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
+  background-image: -webkit-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
+  background-image: -ms-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
+  background-image: linear-gradient(to bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
   height: 40px;
   width: 100%;
   border-bottom: 2px solid rgb(95, 147,20);
@@ -32,6 +32,7 @@ nav ul{
 nav a {
   list-style-type: none;
   color: white; 
+  font-size: 17px;
 }
 
 .nav-right {
@@ -46,8 +47,9 @@ nav a {
 }
 
 .user-page-container {
-  height: 680px;
-  background: rgb(50,50,50);
+  height: 650px;
+  background: url('veggies.jpg') no-repeat;
+  background-size: cover;
 }
 
 .page-container {
@@ -178,7 +180,7 @@ nav a {
   width: 75%;
   margin: 0 auto;
   border: 2px solid rgb(95, 147,20);
-  height: 600px;
+  height: 650px;
   overflow-y: scroll;
 }
 
@@ -333,5 +335,18 @@ button {
 }
 
 .user-menu-buttons-add {
-  background: red;
+  background: white;
+  color: rgb(95, 147,20);
+  width: 225px;
+  border-radius: 10px;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.flash-message-login {
+  position: absolute;
+  font-size: 17px;
+  padding-left: 50px;
+  color: white;
+  font-style: italic;
 }

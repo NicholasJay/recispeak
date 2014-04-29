@@ -21,7 +21,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @recipe_book_entry = RecipeBookEntry.new
     @websiterecipes = Recipe.all
+    @allbooks = RecipeBook.where(user_id: @user)
     @allrecipes = Recipe.where(user_id: @user)
   end
 

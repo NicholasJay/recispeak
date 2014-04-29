@@ -33,7 +33,8 @@
           <h1> All of your recipes </h1>
           <ul>
             <% @allrecipes.each do |recipe| %>
-              <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
+              <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %>
+              </li>
             <% end %>
           </ul>
         </div>

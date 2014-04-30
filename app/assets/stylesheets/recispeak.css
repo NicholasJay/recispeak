@@ -2,27 +2,16 @@ html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
 pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
 nav {
-  background-image: -webkit-gradient(
-  linear,
-  right top,
-  right bottom,
-  color-stop(0, #403E38),
-  color-stop(0.46, #727371)
-  );
-  background-image: -o-linear-gradient(bottom, rgb(212,46,0) 0%,rgb(243,81,21)  46%);
-  background-image: -moz-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
-  background-image: -webkit-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
-  background-image: -ms-linear-gradient(bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
-  background-image: linear-gradient(to bottom,rgb(212,46,0) 0%, rgb(243,81,21) 46%);
+  background: rgb(65, 100, 0);
   height: 40px;
   width: 100%;
   border-bottom: 2px solid rgb(95, 147,20);
+  border-top: 2px solid rgb(95, 147,20);
 
 }
 
 nav ul li{
   display: inline;
-  padding: 5px;
 }
 
 nav ul{
@@ -33,11 +22,19 @@ nav a {
   list-style-type: none;
   color: white; 
   font-size: 17px;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 5px;
+  padding-bottom: 7px;
+  border: 1px solid rgb(95, 147, 20);
+}
+nav a:hover {
+  color: tomato;
+  text-decoration: none;
 }
 
 .nav-right {
-  float: right;
-  padding-right: 15px;
+  text-align: center;
   padding-top: 5px;
 }
 
@@ -145,10 +142,20 @@ nav a {
 .user-menu-buttons {
   box-shadow: inset 0px 0px 200px 3px rgb(95, 147,20);
   border-radius: 5px;
-  border: 2px solid white;
+  border: 1px solid rgb(65, 100, 0);
   color: white;
+  margin-left: 75px;
   height: 50px;
   width: 250px;
+}
+
+.user-menu-buttons:hover {
+  background: black;
+  color: tomato;
+}
+
+.user-menu-buttons a:hover {
+  color: tomato;
 }
 
 .step{
@@ -176,7 +183,8 @@ nav a {
 }
 
 .middle-container {
-  background: lightgrey;
+/*  background: lightgrey;*/
+  box-shadow: inset 0px 0px 277px 50px black;
   width: 75%;
   margin: 0 auto;
   border: 2px solid rgb(95, 147,20);

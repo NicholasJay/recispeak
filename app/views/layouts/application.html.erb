@@ -20,6 +20,8 @@
     <ul>
       <div class='nav-right'>
         <li><%= link_to "Home", user_path(session["user_id"]) %></li>
+        <li><%= link_to "Books", user_recipe_books_path(session["user_id"]) %></li>
+        <li><%= link_to "Search", user_search_index_path(session["user_id"]) %></li>
         <li><%= link_to "Log Out", "/session", method: "delete" %></li>
       </div>
     </ul>

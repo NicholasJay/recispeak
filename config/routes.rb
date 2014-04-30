@@ -16,4 +16,5 @@ Recispeak::Application.routes.draw do
   delete '/session', to: 'session#destroy'
 
   root 'welcome#index'
+  get 'search' => 'search#search'
 end

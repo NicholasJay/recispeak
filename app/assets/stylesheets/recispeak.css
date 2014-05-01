@@ -108,6 +108,15 @@ nav a:hover {
   letter-spacing: 1.5px;
 }
 
+ul li a{
+  color: white;
+}
+
+ul li a:hover {
+  color: tomato;
+  text-decoration: none;
+}
+
 .footer-bar a {
   color: white;
 }
@@ -216,6 +225,7 @@ nav a:hover {
 .page-left-container img{
   margin-left: 100px;
   padding-bottom: 10px;
+  border-radius: 20px;
 }
 
 .btn-danger {
@@ -305,6 +315,22 @@ button {
 
 #all-user-recipes {
   display: none;
+}
+#all-user-recipes h1{
+  color: black;
+  text-decoration: underline;
+}
+
+#all-user-recipes a{
+  color: rgb(94,147,20);
+}
+
+#all-user-recipes a:hover {
+  color: tomato;
+}
+
+#all-user-recipes ul li{
+  font-size: 17px;
 }
 
 .recipe-notes {

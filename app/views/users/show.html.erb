@@ -7,11 +7,13 @@
 
     <div class="page-left-container">
     <ul>
+      <%= image_tag 'user-orange.svg' %>
       <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
       <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
       <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>
+      <button class="user-menu-buttons"><li><%= link_to "Input Recipe from URL", user_input_path(@user) %></li></button>
     </ul>
   </div>
     <div class="page-right-container">

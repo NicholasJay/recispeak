@@ -213,6 +213,11 @@ nav a:hover {
   text-decoration: none;
 }
 
+.page-left-container img{
+  margin-left: 100px;
+  padding-bottom: 10px;
+}
+
 .btn-danger {
   width: 200px;
 }
@@ -351,6 +356,7 @@ button {
 .user-menu-buttons-add {
   background: white;
   color: rgb(95, 147,20);
+  margin-left: 90px;
   width: 225px;
   border-radius: 10px;
   font-size: 17px;

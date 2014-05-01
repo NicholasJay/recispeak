@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def input
+  end
+  
   def show
     @recipe_book_entry = RecipeBookEntry.new
     @websiterecipes = Recipe.all

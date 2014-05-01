@@ -182,9 +182,15 @@ nav a:hover {
   padding: 10px;
 }
 
+.center-titles h1 {
+  color: white;
+  font-family: 'Allura', cursive;
+  font-size: 50px;
+
+}
+
 .middle-container {
-/*  background: lightgrey;*/
-  box-shadow: inset 0px 0px 277px 50px black;
+  box-shadow: inset 0px 0px 200px 50px black;
   width: 75%;
   margin: 0 auto;
   border: 2px solid rgb(95, 147,20);

@@ -167,6 +167,24 @@ ul li a:hover {
   color: tomato;
 }
 
+.user-menu-buttons-input {
+  box-shadow: inset 0px 0px 200px 3px rgb(95, 147,20);
+  border-radius: 5px;
+  border: 1px solid rgb(65, 100, 0);
+  color: white;
+  height: 50px;
+  width: 250px;
+}
+
+.user-menu-buttons-input:hover {
+  background: black;
+  color: tomato;
+}
+
+.user-menu-buttons-input a:hover {
+  color: tomato;
+}
+
 .step{
   box-shadow: inset 0px 0px 277px 3px rgb(95, 147,20);
   width: 20%;
@@ -239,7 +257,7 @@ ul li a:hover {
 .page-right-container {
   background: white;
   margin-top: 50px;
-  height: 500px;
+  height: 450px;
   overflow-y: scroll;
   width: 60%;
   border: 3px double black;
@@ -361,6 +379,18 @@ button {
   border-radius: 10px;
 }
 
+.recipe-url-input {
+  background-size: 5%;
+  background-color: white;
+  color: rgb(95, 147,20);
+  margin-top: 30px;
+  width: 75%;
+  text-align: right;
+  padding-right: 15px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
 .search-results {
   margin-left: 200px;
   overflow-y: scroll;
@@ -395,4 +425,33 @@ button {
   padding-left: 50px;
   color: white;
   font-style: italic;
+}
+
+.page-right-recipe-container-url {
+  background: white;
+  height: 500px;
+  overflow-y: scroll;
+  width: 50%;
+  border: 3px double black;
+  padding: 10px;
+  padding-top: 30px;
+  margin-right: 20px;
+  text-align: center;
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.page-left-recipe-container-url {
+  background: white;
+  width: 45%;
+  height: 500px;
+  border: 3px double black;
+  overflow-y: scroll;
+  text-align: center;
+  padding: 10px;
+  padding-top: 20px;
+  margin-left: 20px;
+  display: inline-block;
+  font-weight: bold;
 }

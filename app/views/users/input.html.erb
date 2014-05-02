@@ -1,13 +1,27 @@
 <div class="user-page-container">
   <div class="middle-container">
     <div class="center-titles">
-      <input type="text" name="address_input" class="recipe-search-input" placeholder="Paste Recipe Address Here"/>
+    <button class="user-menu-buttons-input">Save Recipe To Recispeak</button>
     </div>
       <div class="recipe-information">
-        <ul class='ingredient-results'>
+        <div class="page-left-recipe-container-url">
+          <h2>Ingredients</h2><br />
+        <ul>
+          <li><%= @message_ingredient %></li>
+          <% @ingredients.each do |item| %>
+          <li><%= item %><li>
+          <% end %>
         </ul>
-        <ul class="direction-results">
+      </div>
+        <div class="page-right-recipe-container-url">
+          <h2>Directions</h2><br />
+        <ul>
+          <li><%= @message_direction %></li>
+          <% @directions.each do |direction| %>
+          <li><%= direction %><li>
+          <% end %>
         </ul>
+        </div>
       </div>
   </div>
 </div>

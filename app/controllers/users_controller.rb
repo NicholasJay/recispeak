@@ -21,6 +21,15 @@ class UsersController < ApplicationController
   end
 
   def input
+    @ingredients = get_ingredients_from_url(params[:address_input])
+    @directions = get_directions_from_url(params[:address_input])
+
+    if @ingredients.empty?
+      @message_ingredient = "Ingredients Not Found"
+    end
+    if @directions.empty?
+      @message_direction = "Directions Not Found"
+    end
   end
   
   def show
@@ -69,5 +78,15 @@ class UsersController < ApplicationController
         redirect_to root_path
       end
     end
+
+  def get_ingredients_from_url(url)
+    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"]', 'span [class="ingredient-amount"]', 'span [class="ingredient-name"]')
+    return ingredients
+  end
+
+  def get_directions_from_url(url)
+    directions = Nokogiri::HTML(open(url)).css('instructions', 'li span[class="plaincharacterwrap break"]', 'div [class="recipeDirections"] li', 'div [id="instructions"] li', 'li[class="instruction"]', 'div [class="instructions"] p', 'div[itemprop="instructions"] p', 'div[class="col12 directions"] p', 'div[itemprop="recipeInstructions"] p')
+    return directions
+  end
 
 end

@@ -13,7 +13,6 @@
       <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
       <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>
-      <button class="user-menu-buttons"><li><%= link_to "Input Recipe from URL", user_input_path(@user) %></li></button>
     </ul>
   </div>
     <div class="page-right-container">
@@ -41,6 +40,11 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div class='center-titles'>
+      <form method="GET" action="<%= @user.id%>/input" />
+        <input type="text" name="address_input" class="recipe-url-input" placeholder="Input Recipe from URL Here"/><br />
+      </form>
     </div>
   </div>
 

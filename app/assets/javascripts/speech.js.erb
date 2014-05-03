@@ -1,19 +1,27 @@
+var voices;
 
-//var voices = window.speechSynthesis.getVoices();
+window.speechSynthesis.onvoiceschanged = function() {
+    voices = window.speechSynthesis.getVoices();
+};
 
 Recispeak.recognizer = new webkitSpeechRecognition(); // create a new speech recognition object
 Recispeak.recognizer.continuous = true;               // keeps the microphone open
 
 // this will read aloud the step from the recipe array
-Recispeak.readStep = function(step){ speechSynthesis.speak(new SpeechSynthesisUtterance(step)); };
+Recispeak.readStep = function(step){ 
+  var message = new SpeechSynthesisUtterance(step)
+  message.voice = voices[2];
+  speechSynthesis.speak(message); 
+};
 
 $(function(){
   setTimeout(function(){
-    Recispeak.readStep("Let's get cookin' with Ressa Speak!");
+    Recispeak.readStep("Let's get cookin! Click begin to start.");
   }, 500);
 
 // These instructions are spoken aloud to the user so they know how to navigate through vocally
   $('#start-reading').click(function(){
+    Recispeak.voice = voices[1];
     Recispeak.readStep("Please get everything ready. When you are comfortable, " +
                        "click to allow microphone access and then say the word " +
                        "'Next!' to hear the following step.");
@@ -56,6 +64,9 @@ Recispeak.recognizer.onresult = function(event) {
             counter += 1;
           }, 1000);
         }
+      } else {
+        Recispeak.readStep("Your Recipe is Complete");
+        counter = 0;
       }
     }
   }

@@ -2,14 +2,15 @@
   <div class="middle-container">
     <div class="center-titles">
     <button class="user-menu-buttons-input">Save Recipe To Recispeak</button>
+    <button id='start-reading' class='user-menu-buttons-input'>Begin</button>
     </div>
       <div class="recipe-information">
         <div class="page-left-recipe-container-url">
           <h2>Ingredients</h2><br />
         <ul>
           <li><%= @message_ingredient %></li>
-          <% @ingredients.each do |item| %>
-          <li><%= item %><li>
+          <% @ingredients.zip(@amounts).each do |item, amount| %>
+          <li><%= amount %> <%= item %><li>
           <% end %>
         </ul>
       </div>
@@ -18,7 +19,7 @@
         <ul>
           <li><%= @message_direction %></li>
           <% @directions.each do |direction| %>
-          <li><%= direction %><li>
+          <li><%= direction %><li><br />
           <% end %>
         </ul>
         </div>
@@ -26,3 +27,8 @@
   </div>
 </div>
 
+<script>
+  Recispeak.steps = <%= raw @directions %>;
+</script>
+
+<%= javascript_include_tag "speech", "data-turbolinks-track" => true %>

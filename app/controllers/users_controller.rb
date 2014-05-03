@@ -22,7 +22,12 @@ class UsersController < ApplicationController
 
   def input
     @ingredients = get_ingredients_from_url(params[:address_input])
-    @directions = get_directions_from_url(params[:address_input])
+
+    @amounts = get_amounts_from_url(params[:address_input])
+
+    @get_directions = []
+    @get_directions << get_directions_from_url(params[:address_input])
+    @directions = @get_directions.join("").split(".")
 
     if @ingredients.empty?
       @message_ingredient = "Ingredients Not Found"
@@ -80,12 +85,17 @@ class UsersController < ApplicationController
     end
 
   def get_ingredients_from_url(url)
-    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"]', 'span [class="ingredient-amount"]', 'span [class="ingredient-name"]')
+    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"] > text()', 'span [itemprop="name"] > text()', 'span [class="ingredient-name"] > text()')
     return ingredients
   end
 
+  def get_amounts_from_url(url)
+    amounts = Nokogiri::HTML(open(url)).css('span [class="ingredient-amount"] > text()', 'span [itemprop="amount"] > text()')
+    return amounts
+  end
+
   def get_directions_from_url(url)
-    directions = Nokogiri::HTML(open(url)).css('instructions', 'li span[class="plaincharacterwrap break"]', 'div [class="recipeDirections"] li', 'div [id="instructions"] li', 'li[class="instruction"]', 'div [class="instructions"] p', 'div[itemprop="instructions"] p', 'div[class="col12 directions"] p', 'div[itemprop="recipeInstructions"] p')
+    directions = Nokogiri::HTML(open(url)).css('instructions > text()', 'li span[class="plaincharacterwrap break"] > text()', 'div [class="recipeDirections"] li > text()', 'div [id="instructions"] li > text()', 'li[class="instruction"] > text()', 'div [class="instructions"] p > text()', 'div[itemprop="instructions"] p > text()', 'div[class="col12 directions"] p > text()', 'div[itemprop="recipeInstructions"] a > text()')
     return directions
   end
 

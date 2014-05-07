@@ -228,7 +228,6 @@ ul li a:hover {
   color: white;
   font-family: 'Allura', cursive;
   font-size: 50px;
-
 }
 
 .middle-container {
@@ -321,6 +320,7 @@ ul li a:hover {
   width: 65%;
   text-align: right;
   display: none;
+  color: white;
 }
 
 ul li {
@@ -480,4 +480,12 @@ label {
   height: 30px;
   border-radius: 10px;
   text-align: center;
+}
+
+#ingredient-field a{
+  color: white;
+}
+
+#steps-field a{
+  color: white;
 }

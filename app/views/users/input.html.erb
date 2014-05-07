@@ -1,8 +1,15 @@
 <div class="user-page-container">
   <div class="middle-container">
     <div class="center-titles">
-    <button class="user-menu-buttons-input">Save Recipe To Recispeak</button>
-    <button id='start-reading' class='user-menu-buttons-input'>Begin</button>
+      <button id='start-reading' class='user-menu-buttons-input'>Begin</button>
+      <form action="<%= user_recipes_path(@user.id) %>" method="post" >
+        <input name='authenticity_token' type='hidden' value='<%= form_authenticity_token %>' />
+        <label>Enter a title to save this Recipe</label><br />
+        <input type="title" name="title" class="saving-recipe" /><br />
+ 
+
+        <input type="submit" value="Save Recipe To Recispeak" class="user-menu-buttons-input" /><br />
+      </form>
     </div>
       <div class="recipe-information">
         <div class="page-left-recipe-container-url">

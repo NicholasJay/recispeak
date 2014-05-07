@@ -51,31 +51,38 @@ nav a:hover {
 
 .page-container {
   height: 680px;
-  background: url('recispeak.jpg') no-repeat;
+  background: url('cookingbg.jpg') no-repeat;
   background-size: cover;
   position: relative;
 }
 
 .logo-main {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
   font-family: 'Allura', cursive;
   font-size: 130px;
-  text-align: center;
   color: rgb(95, 147,20);
-  text-shadow: 3px 3px 3px rgba(255, 255, 255, 1);
+  text-shadow: 3px 3px 3px khaki;
 }
 
 #login {
+  position: absolute;
+  top: 0;
+  left: 20px;
   padding: 10px;
-  margin-left: 40px;
-  margin-top: -150px;
-  color: white;
-  width: 225px;
-  border-radius: 10px;
-  box-shadow: inset 0px 0px 277px 40px black;
+  color: black;
 }
 
 #login input{
   color: black;
+}
+
+#login label {
+  color: rgb(95, 147,20);
+  font-family: 'Allura', cursive;
+  font-size: 25px;
 }
 
 .splash-button {
@@ -83,8 +90,14 @@ nav a:hover {
   border-radius: 5px;
 }
 
+#login input[type="submit"] {
+  color: white;
+  letter-spacing: 1px;
+}
+
 .splash-button-signup a {
   color: white;
+  letter-spacing: 1px;
 }
 
 .splash-button-signup {
@@ -127,13 +140,14 @@ ul li a:hover {
 }
 
 .how-it-works{
-  width: 75%;
+  width: 100%;
+  margin-top: 30px;
   display: none;
   padding: 10px 0;
   float: right;
-  margin-right: 80px;
   text-align: center;
   letter-spacing: 1px;
+  background: white;
 }
 
 #how-it-works-link:hover {
@@ -142,10 +156,10 @@ ul li a:hover {
 }
 
 .list{
-
   margin: 0 auto;
-  color: white;
+  color: black;
   font-size: 12px
+  font-weight: 200;
 }
 
 .user-menu-buttons {
@@ -455,4 +469,15 @@ button {
   margin-left: 20px;
   display: inline-block;
   font-weight: bold;
+}
+
+label {
+  color: white;
+}
+
+.saving-recipe {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
 }

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def input
     @user = User.find(params[:user_id])
+    @newrecipe = @user.recipes.new
     @ingredients = get_ingredients_from_url(params[:address_input])
 
     @amounts = get_amounts_from_url(params[:address_input])

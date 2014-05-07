@@ -478,7 +478,7 @@ label {
 .saving-recipe {
   width: 250px;
   height: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
 }
 
@@ -488,4 +488,33 @@ label {
 
 #steps-field a{
   color: white;
+}
+.form-add-recipe {
+  text-align: center;
+  color: rgb(95, 147,20);
+}
+
+.url-recipe-title {
+  text-align: center;
+  width: 250px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.deletebutton {
+  width: 30px;
+  background: rgb(95, 147,20);
+  color: white;
+  border: 2px solid white;
+  border-radius: 360px;
+}
+
+.recipe-display {
+  width: 20px;
+  display: inline;
+}
+
+.recipe-titles {
+  text-align: right;
+  width: 425px;
 }

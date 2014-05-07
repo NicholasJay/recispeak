@@ -1,6 +1,6 @@
 <%= form_for [@user, @recipe] do |f| %>
-  <%= f.text_field :category, placeholder:"Category" %><br />
-  <%= f.text_field :title, placeholder:"Title" %><br />
+  <%= f.text_field :category, placeholder:"Category", class:"form-add-recipe" %><br />
+  <%= f.text_field :title, placeholder:"Title", class:"form-add-recipe" %><br />
   <br />
 
   <div id="ingredient-field">
@@ -19,6 +19,6 @@
   <br />
   </div>
 
-  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "40" %><br />
+  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "40", class:"form-add-recipe" %><br />
   <%= f.submit "Create Recipe", class:"splash-button" %>
 <% end %>

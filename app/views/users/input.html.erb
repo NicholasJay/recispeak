@@ -1,15 +1,21 @@
 <div class="user-page-container">
   <div class="middle-container">
     <div class="center-titles">
-      <button id='start-reading' class='user-menu-buttons-input'>Begin</button>
-      <form action="<%= user_recipes_path(@user.id) %>" method="post" >
-        <input name='authenticity_token' type='hidden' value='<%= form_authenticity_token %>' />
-        <label>Enter a title to save this Recipe</label><br />
-        <input type="title" name="title" class="saving-recipe" /><br />
- 
+      <button id='start-reading' class='user-menu-buttons-input'>Begin</button><hr></hr>
+      <%= form_for [@user, @newrecipe] do |f| %>
+        <%= f.text_field :title, placeholder:"Enter A Title For Recipe", class:"url-recipe-title" %><br />
+    
+          <%= f.fields_for :ingredients_attributes, @ingredients.zip(@amounts).each do |item, amount| %>
+          <%= f.hidden_field :entry, value: amount.to_s + item.to_s %>
+          <% end %>
 
-        <input type="submit" value="Save Recipe To Recispeak" class="user-menu-buttons-input" /><br />
-      </form>
+          <%= f.fields_for :steps_attributes, @directions.each do |direction| %>
+          <%= f.hidden_field :instructions, value: direction %>
+          <% end %>
+
+        <%= f.submit "Save Recipe To Recispeak", class:"user-menu-buttons-input" %>
+      <% end %>
+
     </div>
       <div class="recipe-information">
         <div class="page-left-recipe-container-url">

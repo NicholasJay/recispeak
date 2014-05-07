@@ -3,7 +3,7 @@ Recispeak::Application.routes.draw do
     get 'input'
     # /recipes/:id
     # /users/:id/recipes
-    resources :recipes
+    resources :recipes 
     resources :recipe_books
     resources :recipe_book_entries
     resources :search

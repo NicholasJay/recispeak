@@ -5,11 +5,11 @@
       <%= form_for [@user, @newrecipe] do |f| %>
         <%= f.text_field :title, placeholder:"Enter A Title For Recipe", class:"url-recipe-title" %><br />
     
-          <%= f.fields_for :ingredients_attributes, @ingredients.zip(@amounts).each do |item, amount| %>
+          <% @ingredients.zip(@amounts).each do |item, amount| %>
           <%= f.hidden_field :entry, value: amount.to_s + item.to_s %>
           <% end %>
 
-          <%= f.fields_for :steps_attributes, @directions.each do |direction| %>
+          <% @directions.each do |direction| %>
           <%= f.hidden_field :instructions, value: direction %>
           <% end %>
 

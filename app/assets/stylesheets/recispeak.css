@@ -518,3 +518,7 @@ label {
   text-align: right;
   width: 425px;
 }
+
+.user-info-edit label{
+  color: rgb(95, 147,20);
+}

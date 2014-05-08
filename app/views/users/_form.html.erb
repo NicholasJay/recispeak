@@ -1,4 +1,5 @@
-<%= form_for @user do |f| %>
+<div class='user-info-edit'>
+<%= form_for @user do |f|%>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %><br />
   <%= f.label :last_name %>
@@ -27,3 +28,4 @@
   <%= f.date_field :birthday %><br />
   <%= f.submit "Save"%>
 <% end %>
+</div>

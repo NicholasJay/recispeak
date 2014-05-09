@@ -10,11 +10,18 @@
     <div class="center-titles">
       <h1> A list of our Recipes</h1>
 
-      <ul>
-        <% @websiterecipes.each do |recipe| %>
-        <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
-        <% end %>
-      </ul>
+      <div class="non-user-recipe-page">
+        <ul>
+          <% @websiterecipes.each do |recipe| %>
+          <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
+          <hr></hr>
+          <% end %>
+        </ul>
+      </div>
+      <div class="member-message">
+        <p>Become a member and get access to search features and input recipes from websites!</p>
+        <p><a href="">Click Here to Join!</a></p>
+      </div>
     </div>
   </div>
 </div>

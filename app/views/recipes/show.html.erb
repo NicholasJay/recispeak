@@ -1,3 +1,13 @@
+<% if session["user_id"].nil? %>
+<nav>
+  <ul>
+    <div class='nav-right'>
+      <li><%= link_to "Back", root_path %></li>
+    </div>
+  </ul>
+</nav>
+<% end %>
+
 <div class="user-page-container">
   <div class="middle-container">
     <div class="center-titles">

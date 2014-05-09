@@ -2,25 +2,9 @@
   <div class="middle-container">
     <div class="center-titles">
       <button id='start-reading' class='user-menu-buttons-input'>Begin</button><hr></hr>
-      <%= form_for [@user, @newrecipe] do |f| %>
-        <%= f.text_field :title, placeholder:"Enter A Title For Recipe", class:"url-recipe-title" %><br />
-    
-          <% @ingredients.zip(@amounts).each do |item, amount| %>
-          <%= f.hidden_field :entry, value: item %>
-          <% end %>
-          
-          
-          <% @directions.each do |direction| %>
-          <%= f.hidden_field :instructions, value: direction %>
-          <% end %>
-          
 
-        <%= f.submit "Save Recipe To Recispeak", class:"user-menu-buttons-input" %>
-      <% end %>
-
-      <!-- Use this for javascript post instead -->
-      <!-- <input placeholder="Enter A Title For Recipe", class="url-recipe-title" /><br />
-      <button class="user-menu-buttons-input">Save Recipe To Recispeak</button> -->
+      <input placeholder="Enter A Title For Recipe", class="url-recipe-title" /><br />
+      <button class="user-menu-buttons-input">Save Recipe To Recispeak</button>
 
     </div>
       <div class="recipe-information">

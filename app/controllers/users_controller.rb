@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def input
     @user = User.find(params[:user_id])
-    @newrecipe = @user.recipes.new
     @ingredients = get_ingredients_from_url(params[:address_input])
 
     @amounts = get_amounts_from_url(params[:address_input])
@@ -39,7 +38,26 @@ class UsersController < ApplicationController
     end
 
   end
-  
+
+  def input_recipe 
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.create(title: params[:title] )
+    @recipe.save
+    render json: @recipe
+  end
+
+  def input_ingredients
+    @ingredient = Ingredient.create(entry: params[:entry], recipe_id: params[:recipe_id])
+    @ingredient.save
+    render json: @ingredient
+  end
+
+  def input_directions
+    @direction = Step.create(instructions: params[:instructions], recipe_id: params[:recipe_id])
+    @direction.save
+    render json: @direction
+  end
+
   def show
     @recipe_book_entry = RecipeBookEntry.new
     @websiterecipes = Recipe.all

@@ -1,6 +1,9 @@
 Recispeak::Application.routes.draw do
   resources :users do
     get 'input'
+    post 'input_recipe'
+    post 'input_ingredients'
+    post 'input_directions'
     # /recipes/:id
     # /users/:id/recipes
     resources :recipes 

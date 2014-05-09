@@ -3,15 +3,22 @@
 </head>
 
 <body>
+  <% if session["user_id"].nil? %>
+<nav>
+  <ul>
+    <div class='nav-right'>
+      <li><%= link_to "Back", root_path %></li>
+    </div>
+  </ul>
+</nav>
+<% end %>
 <div class="user-page-container">
   <div class="middle-container">
     <div class="logo-main">
       <p>Recispeak</p>
     </div>
-    <div class="center-titles">
+    <div id="new-form-user">
       <h3>Become a New Member</h3>
-    </div>
-    <div id="new-form">
     <%= form_for @user do |f| %>
       <%= f.label :first_name %>
       <%= f.text_field :first_name %><br/>
@@ -37,6 +44,6 @@
 
 <script>
 $(document).ready(function(){
-  $("#new-form").toggle("slow");
+  $("#new-form-user").toggle("slow");
 });
 </script>

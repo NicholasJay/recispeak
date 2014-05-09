@@ -6,6 +6,7 @@
     </div>
 
     <div class="page-left-recipe-container">
+      <h4>Ingredients</h4><br />
       <ul>
         <% @ingredients.each do |ingredient| %>
         <li><%= ingredient.entry %></li>
@@ -14,6 +15,7 @@
     </div>
 
     <div class="page-right-recipe-container">
+      <h4>Directions</h4><br />
       <ul>
         <% @steps.each do |step| %>
         <li><%= step.instructions %></li>

@@ -11,3 +11,14 @@ $.each(getSteps, function(index, value){
 $.each(getDirections, function(index, value){
   directions.push(value.trim());
 });
+
+// function saveRecipe(steps, directions){
+//   var saveRecipeTitle = $('.url-recipe-title').val();
+//     $.ajax({
+//     url: "recipes",
+//     data: {title: saveRecipeTitle},
+//     type: "POST"
+//   });
+// }
+
+// $('.user-menu-buttons-input').click(saveRecipe);

@@ -288,13 +288,17 @@ ul li a:hover {
   width: 60%;
   border: 3px double black;
   padding: 10px;
-  padding-top: 30px;
+  padding-top: 10px;
   margin-right: 20px;
   text-align: center;
   float: right;
   font-size: 15px;
   font-weight: bold;
 }
+
+.page-right-recipe-container h4{
+  text-decoration: underline;
+} 
 
 .page-left-recipe-container {
   background: white;
@@ -304,11 +308,15 @@ ul li a:hover {
   overflow-y: scroll;
   text-align: center;
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   margin-left: 20px;
   display: inline-block;
   font-weight: bold;
 }
+
+.page-left-recipe-container h4{
+  text-decoration: underline;
+} 
 
 #edit-form {
   width: 100%;

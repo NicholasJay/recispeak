@@ -37,18 +37,31 @@
               <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id)%><span><form action="<%= user_recipe_path(recipe.user_id, recipe.id) %>" method="POST" class="recipe-display">
                 <input type="hidden" name="_method" value="DELETE" />
                 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-                <button class='deletebutton'>x</button></form></span></li>
-                
-              
+                <button class='deletebutton'>x</button></form></span></li>            
             <% end %>
           </ul>
         </div>
       </div>
+
+      <div id="compatible-sites">
+        <h2>Current sites compatible with Recispeak</h2>
+        <hr></hr>
+        <ul>
+          <li>Pioneer Woman</li>
+          <li>Epicurious</li>
+          <li>Simply Recipes</li>
+          <li>Cooking Light</li>
+        </ul>
+        <hr></hr>
+        <p>More coming soon...</p>
+      </div>
+
     </div>
     <div class='center-titles'>
       <form method="GET" action="<%= @user.id%>/input" />
-        <input type="text" name="address_input" class="recipe-url-input" placeholder="Input Recipe from URL Here"/><br />
+        <input type="text" name="address_input" class="recipe-url-input" placeholder="Paste Recipe URL Here to Input into Recispeak"/><br />
       </form>
+      <h4 class="input-site-info">Click here to see a list compatible sites</h4>
     </div>
   </div>
 
@@ -77,6 +90,14 @@ $('#all-my-recipes').click(function(){
       $('#edit-form').hide("slow");
     });
   });
+});
+
+$('.input-site-info').click(function(){
+  $('#compatible-sites').toggle("slow", function(){
+    $('#welcome-blurb').toggle("slow", function(){
+      $('#edit-form').hide("slow");
+    });
+  });    
 });
 
 </script>

@@ -106,7 +106,7 @@ class UsersController < ApplicationController
     end
 
   def get_ingredients_from_url(url)
-    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"] > text()', 'span [itemprop="name"] > text()', 'span [class="ingredient-name"] > text()', 'span [itemprop="ingredients"] > text()')
+    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"] > text()', 'span [itemprop="name"] > text()', 'span [class="ingredient-name"] > text()', 'span [itemprop="ingredients"] > text()', 'div [class="clrLeft"] > text()')
     if url.include?("thepioneerwoman" || "epicurious")
       ingredients.shift
       return ingredients

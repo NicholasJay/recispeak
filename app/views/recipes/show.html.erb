@@ -10,6 +10,11 @@
 
 <div class="user-page-container">
   <div class="middle-container">
+
+    <div class="flash-message">
+     <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
+    </div>
+
     <div class="center-titles">
       <h1><%= @recipe.title %></h1>
       <button id='start-reading' class='splash-button'>Begin</button>
@@ -37,9 +42,11 @@
       <h3>Notes</h3>
       <p><%= @recipe.notes %></p>
     </div>
+
     <div class="update-link">
       <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
     </div>
+    
   </div>
 </div>
 

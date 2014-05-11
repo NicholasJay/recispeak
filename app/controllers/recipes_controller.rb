@@ -39,9 +39,11 @@ class RecipesController < ApplicationController
     @changed = @recipe.update(recipe_params)
 
     if @changed
-      redirect_to user_recipe_path(@recipe.id)
+      flash[:message] = "Recipe Updated!"
+      redirect_to user_recipe_path(@recipe.user_id, @recipe.id)
     else 
-      redirect_to user_recipe_path(@recipe.id)
+      flash[:message] = "Recipe did not update!"
+      redirect_to user_recipe_path(@recipe.user_id, @recipe.id)
     end
   end
 

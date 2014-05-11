@@ -1,3 +1,4 @@
+<div id="recipe-create-update">
 <%= form_for [@user, @recipe] do |f| %>
   <%= f.text_field :category, placeholder:"Category", class:"form-add-recipe" %><br />
   <%= f.text_field :title, placeholder:"Title", class:"form-add-recipe" %><br />
@@ -19,6 +20,7 @@
   <br />
   </div>
 
-  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "40", class:"form-add-recipe" %><br />
-  <%= f.submit "Create Recipe", class:"splash-button" %>
+  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "50", class:"form-add-recipe" %><br />
+  <%= f.submit @recipe.id.nil? ? "Create Recipe" : "Update Recipe", class:"splash-button" %>
 <% end %>
+</div>

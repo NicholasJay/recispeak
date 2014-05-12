@@ -43,9 +43,11 @@
       <p><%= @recipe.notes %></p>
     </div>
 
+<% unless session["user_id"].nil? %>
     <div class="update-link">
       <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
     </div>
+<% end %>
     
   </div>
 </div>

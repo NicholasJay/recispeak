@@ -1,3 +1,6 @@
-<div id="steps">
-  <%= f.text_field :instructions, placeholder:"Steps", class:"form-add-recipe" %>
+<div class='fields'>
+  <div id="steps">
+    <%= f.text_field :instructions, placeholder:"Steps", class:"form-add-recipe" %>
+    <%= link_to_remove_fields "remove", f %>
+  </div>
 </div>

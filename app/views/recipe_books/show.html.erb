@@ -1,0 +1,39 @@
+<div class="user-page-container">
+
+  <div class="middle-container">
+    <div class="flash-message">
+     <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
+    </div>
+
+    <div class="page-left-container">
+    <ul>
+      <button class="user-menu-buttons-add"><li id="new-book-form">Add A Recipe Book</li></button>
+      <br><br />
+      <% @books.each do |book| %>
+      <button class="user-menu-buttons"><li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li></button>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="page-right-container-books"> 
+    <h2><%= @recipe_book.title %></h2>
+    <hr></hr>   
+    <ul class="list-recipes-in-book">
+      <% @recipes.each do |recipe| %>
+      <% recipe_name = Recipe.find_by(id: recipe.recipe_id) %>
+        <li><%= link_to "#{recipe_name.title}", user_recipe_path(@user, recipe_name.id) %><span><form action="<%= user_recipe_book_entry_path(@user.id, recipe.id) %>" method="POST" class="recipe-display">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <button class='deletebutton'>x</button></form></span></li> 
+      <% end %>
+    </ul>
+  </div>
+
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".page-right-container-books").hide(0).delay(20).fadeIn(900)
+});
+</script>

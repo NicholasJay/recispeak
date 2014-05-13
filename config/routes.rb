@@ -4,8 +4,7 @@ Recispeak::Application.routes.draw do
     post 'input_recipe'
     post 'input_ingredients'
     post 'input_directions'
-    # /recipes/:id
-    # /users/:id/recipes
+
     resources :recipes 
     resources :recipe_books
     resources :recipe_book_entries

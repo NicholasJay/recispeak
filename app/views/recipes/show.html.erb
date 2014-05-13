@@ -9,11 +9,27 @@
 <% end %>
 
 <div class="user-page-container">
+
+  <div class="book-options">
+    <%= form_for [@user, RecipeBookEntry.new] do |f| %>
+    <%= hidden_field_tag :recipe_id, @recipe.id %>
+    <%= select_tag :recipe_book_id, options_for_select(@books.collect{ |b| [b.title, b.id] }), class:"options-menu" %><br />
+    <br />
+    <%= f.submit "Save to Book" %>
+    <% end %>
+  </div>
+
   <div class="middle-container">
 
     <div class="flash-message">
      <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
     </div>
+    
+    <% unless session["user_id"].nil? %>
+    <div class="add-recipe-to-book" title="Add to Recipe Book">
+      <%= image_tag 'plus.png' %>
+    </div>
+    <% end %>
 
     <div class="center-titles">
       <h1><%= @recipe.title %></h1>
@@ -43,17 +59,22 @@
       <p><%= @recipe.notes %></p>
     </div>
 
-<% unless session["user_id"].nil? %>
-    <div class="update-link">
-      <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
-    </div>
-<% end %>
-    
+    <% unless session["user_id"].nil? %>
+      <div class="update-link">
+        <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
+      </div>
+    <% end %>
+
   </div>
 </div>
 
 <script>
-  Recispeak.steps      = <%= raw @allsteps %>;
+  Recispeak.steps = <%= raw @allsteps %>;
+
+  $('.add-recipe-to-book').click(function(){
+    $('.book-options').toggle("slow")
+  });
+
 </script>
 
 <%= javascript_include_tag "speech", "data-turbolinks-track" => true %>

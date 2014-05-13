@@ -7,7 +7,7 @@
   <div id="ingredient-field">
     <%= f.fields_for :ingredients do |builder| %>
     <%= render "ingredient_fields", f: builder %>
-    <% end %>
+    <% end %><br />
     <%= link_to_add_fields "Add Ingredient", f, :ingredients %><br />
   <br />
   </div>
@@ -15,12 +15,12 @@
   <div id="steps-field">
     <%= f.fields_for :steps do |builder| %>
     <%= render "step_fields", f: builder %>
-    <% end %>
+    <% end %><br />
     <%= link_to_add_fields "Add Step", f, :steps %><br />
   <br />
   </div>
 
-  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "50", class:"form-add-recipe" %><br />
+  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "57", class:"form-add-recipe" %><br />
   <%= f.submit @recipe.id.nil? ? "Create Recipe" : "Update Recipe", class:"splash-button" %>
 <% end %>
 </div>

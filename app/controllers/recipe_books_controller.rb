@@ -21,6 +21,9 @@ class RecipeBooksController < ApplicationController
   end
 
   def show
+    @recipe_book = RecipeBook.find(params[:id])
+    @books = @user.recipe_books.all
+    @recipes = RecipeBookEntry.where(recipe_book_id: params[:id])
   end
 
   def edit

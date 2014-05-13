@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @books = @user.recipe_books.all
     @ingredients = Ingredient.where(recipe_id: @recipe)
     @steps = Step.where(recipe_id: @recipe)
     @allsteps = []

@@ -10,25 +10,24 @@
       <button class="user-menu-buttons-add"><li id="new-book-form">Add A Recipe Book</li></button>
       <br><br />
       <% @books.each do |book| %>
-      <button class="user-menu-buttons"><li><%= book.title %></li></button>
+      <button class="user-menu-buttons"><li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li></button>
       <% end %>
     </ul>
   </div>
-    <div class="page-right-container">
-      
-      <div id="welcome-blurb">
-        <div class="logo-main">
-          <p>Recispeak</p>
-          <p>Books</p>
-        </div>
-      </div>
 
-      <div class="new-book-form">
-        <%= render "new_book_form" %>
+  <div class="page-right-container-books">    
+    <div id="welcome-blurb">
+      <div class="logo-main">
+        <p>Recispeak</p>
+        <p>Books</p>
       </div>
+    </div>
+    <div class="new-book-form">
+      <%= render "new_book_form" %>
     </div>
   </div>
 
+  </div>
 </div>
 
 <script>

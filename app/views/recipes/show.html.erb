@@ -9,16 +9,6 @@
 <% end %>
 
 <div class="user-page-container">
-
-  <div class="book-options">
-    <%= form_for [@user, RecipeBookEntry.new] do |f| %>
-    <%= hidden_field_tag :recipe_id, @recipe.id %>
-    <%= select_tag :recipe_book_id, options_for_select(@books.collect{ |b| [b.title, b.id] }), class:"options-menu" %><br />
-    <br />
-    <%= f.submit "Save to Book" %>
-    <% end %>
-  </div>
-
   <div class="middle-container">
 
     <div class="flash-message">
@@ -30,6 +20,15 @@
       <%= image_tag 'plus.png' %>
     </div>
     <% end %>
+
+    <div class="book-options">
+      <%= form_for [@user, RecipeBookEntry.new] do |f| %>
+      <%= hidden_field_tag :recipe_id, @recipe.id %>
+      <%= select_tag :recipe_book_id, options_for_select(@books.collect{ |b| [b.title, b.id] }), class:"options-menu" %><br />
+      <br />
+      <%= f.submit "Save to Book" %>
+      <% end %>
+    </div>
 
     <div class="center-titles">
       <h1><%= @recipe.title %></h1>

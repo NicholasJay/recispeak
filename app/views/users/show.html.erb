@@ -61,11 +61,11 @@
         <h2>Current sites compatible with Recispeak</h2>
         <hr></hr>
         <ul>
-          <li>Pioneer Woman</li>
-          <li>Epicurious</li>
-          <li>Simply Recipes</li>
-          <li>Cooking Light</li>
-          <li>myrecipes.com</li>
+          <li><a href="http://www.thepioneerwoman.com/cooking/" target="_blank">Pioneer Woman</a></li>
+          <li><a href="http://www.simplyrecipes.com/" target="_blank">Simply Recipes</a></li>
+          <li><a href="http://www.cookinglight.com/" target="_blank">Cooking Light</a></li>
+          <li><a href="http://www.myrecipes.com/" target="_blank">MyRecipes.com</a></li>
+          <li><a href="http://www.epicurious.com/" target="_blank">Epicurious</a></li>
         </ul>
         <hr></hr>
         <p>More coming soon...</p>
@@ -93,32 +93,46 @@ $(document).ready(function(){
 
 $('#edit-profile').click(function(){
   $('#edit-form').toggle("slow", function(){
-    $('#welcome-blurb').toggle("slow", function(){
-      $('#all-user-recipes').hide("slow");
+    $('#welcome-blurb').hide("slow", function(){
+      $('#all-user-recipes').hide("slow", function(){
+        $('#recispeak-recipe-list').hide("slow");
+      });
     });
   });
 });
 
 $('#all-my-recipes').click(function(){
   $('#all-user-recipes').toggle("slow", function(){
-    $('#welcome-blurb').toggle("slow", function(){
-      $('#edit-form').hide("slow");
+    $('#welcome-blurb').hide("slow", function(){
+      $('#edit-form').hide("slow", function(){
+        $('#compatible-sites').hide("slow", function(){
+          $('#recispeak-recipe-list').hide("slow");
+        });
+      });
     });
   });
 });
 
 $('#all-recispeak-recipes').click(function(){
   $('#recispeak-recipe-list').toggle("slow", function(){
-    $('#welcome-blurb').toggle("slow", function(){
-      $('#edit-form').hide("slow");
+    $('#welcome-blurb').hide("slow", function(){
+      $('#edit-form').hide("slow", function(){
+        $('#compatible-sites').hide("slow", function(){
+          $('#all-user-recipes').hide("slow");
+        });
+      });
     });
   });
 });
 
 $('.input-site-info').click(function(){
   $('#compatible-sites').toggle("slow", function(){
-    $('#welcome-blurb').toggle("slow", function(){
-      $('#edit-form').hide("slow");
+    $('#welcome-blurb').hide("slow", function(){
+      $('#edit-form').hide("slow", function(){
+        $('#all-user-recipes').hide("slow", function(){
+          $('#recispeak-recipe-list').hide("slow");
+        });
+      });
     });
   });    
 });

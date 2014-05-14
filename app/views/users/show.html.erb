@@ -13,7 +13,6 @@
       <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
       <button id="all-recispeak-recipes", class="user-menu-buttons"><li>All Recispeak Recipes</li></button>
-      <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>
       <% if current_user.is_admin? %>
       <button class="user-menu-buttons"><li><%= link_to "View All Users", users_path %></li></button>
     <% end %>

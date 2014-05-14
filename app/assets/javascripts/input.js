@@ -15,6 +15,7 @@ $.each(getDirections, function(index, value){
 function saveRecipe(){
   if($('.url-recipe-title').val() === ""){
   $("input[type=submit]").attr("disabled", "disabled");
+  $('.url-recipe-title').css("border", "3px solid tomato");
   } else {
     var saveRecipeTitle = $('.url-recipe-title').val();
       $.ajax({

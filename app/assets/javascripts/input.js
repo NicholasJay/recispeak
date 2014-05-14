@@ -13,16 +13,20 @@ $.each(getDirections, function(index, value){
 });
 
 function saveRecipe(){
-  var saveRecipeTitle = $('.url-recipe-title').val();
-    $.ajax({
-    url: "input_recipe",
-    data: {title: saveRecipeTitle},
-    type: "POST",
-    success: function(data){
-    saveIngredients(data.id);
-    saveDirections(data.id);
-    },
-  });
+  if($('.url-recipe-title').val() === ""){
+  $("input[type=submit]").attr("disabled", "disabled");
+  } else {
+    var saveRecipeTitle = $('.url-recipe-title').val();
+      $.ajax({
+      url: "input_recipe",
+      data: {title: saveRecipeTitle},
+      type: "POST",
+      success: function(data){
+      saveIngredients(data.id);
+      saveDirections(data.id);
+      },
+    });
+  }
 }
 
 function saveIngredients(recipe){

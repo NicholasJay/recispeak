@@ -56,7 +56,7 @@ class RecipesController < ApplicationController
   private
 
   def load_user
-    @user = User.find(params[:user_id])
+    @user = User.find(current_user || params[:user_id])
   end
 
   def load_recipe

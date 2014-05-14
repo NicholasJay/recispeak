@@ -1,2 +1,16 @@
-<h1> index of all users </h1>
-<h2> Should only be seen by the admin </h2>
+<div class="user-page-container">
+  <div class="middle-container">
+    <div class="center-titles">
+      <h1> All Users</h1>
+
+      <div class="non-user-recipe-page">
+        <ul>
+          <% @users.each do |user| %>
+          <li><%= user.first_name %> <%= user.last_name %></li>
+          <hr></hr>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

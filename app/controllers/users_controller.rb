@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :authenticate, :authorize, only: [:show]
 
   def index
+    if current_user.is_admin?
+      @users = User.all
+    else
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def new
@@ -63,6 +68,7 @@ class UsersController < ApplicationController
     @websiterecipes = Recipe.all
     @allbooks = RecipeBook.where(user_id: @user)
     @allrecipes = Recipe.where(user_id: @user)
+    @allrecipes_on_recispeak = Recipe.all
   end
 
   def update

@@ -12,7 +12,11 @@
       <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
       <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
+      <button id="all-recispeak-recipes", class="user-menu-buttons"><li>All Recispeak Recipes</li></button>
       <button class="user-menu-buttons"><li><%= link_to "Search Recipes", user_search_index_path(@user) %></li></button>
+      <% if current_user.is_admin? %>
+      <button class="user-menu-buttons"><li><%= link_to "View All Users", users_path %></li></button>
+    <% end %>
     </ul>
   </div>
     <div class="page-right-container">
@@ -38,6 +42,17 @@
                 <input type="hidden" name="_method" value="DELETE" />
                 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
                 <button class='deletebutton'>x</button></form></span></li>            
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div id="recispeak-recipe-list">
+        <div class="center-titles">
+          <h1> All recipes on Recispeak</h1>
+          <ul class="recipe-titles">
+            <% @allrecipes_on_recispeak.each do |recipe| %>
+              <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id)%></li>           
             <% end %>
           </ul>
         </div>
@@ -87,6 +102,14 @@ $('#edit-profile').click(function(){
 
 $('#all-my-recipes').click(function(){
   $('#all-user-recipes').toggle("slow", function(){
+    $('#welcome-blurb').toggle("slow", function(){
+      $('#edit-form').hide("slow");
+    });
+  });
+});
+
+$('#all-recispeak-recipes').click(function(){
+  $('#recispeak-recipe-list').toggle("slow", function(){
     $('#welcome-blurb').toggle("slow", function(){
       $('#edit-form').hide("slow");
     });

@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   self.has_secure_password()
 
+  def is_admin?
+    email == "nicholas@nick.com"
+  end
+
   def get_ingredients_from_url(url)
     ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"]')
     return ingredients

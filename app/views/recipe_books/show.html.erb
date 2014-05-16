@@ -6,14 +6,14 @@
     </div>
 
     <div class="page-left-container">
-    <ul>
-      <button class="user-menu-buttons-add"><li id="new-book-form">Add A Recipe Book</li></button>
-      <br><br />
-      <% @books.each do |book| %>
-      <button class="user-menu-buttons"><li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li></button>
-      <% end %>
-    </ul>
-  </div>
+      <ul>
+        <button class="user-menu-buttons-add"><li id="new-book-form">Add A Recipe Book</li></button>
+        <br><br />
+        <% @books.each do |book| %>
+        <button class="user-menu-buttons"><li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li></button>
+        <% end %>
+      </ul>
+    </div>
 
   <div class="page-right-container-books"> 
     <h2><%= @recipe_book.title %></h2>

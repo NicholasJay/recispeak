@@ -1,11 +1,11 @@
 <% if session["user_id"].nil? %>
-<nav>
-  <ul>
-    <div class='nav-right'>
-      <li><%= link_to "Back", root_path %></li>
-    </div>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <div class='nav-right'>
+        <li><%= link_to "Back", root_path %></li>
+      </div>
+    </ul>
+  </nav>
 <% end %>
 
 <div class="user-page-container">
@@ -16,9 +16,9 @@
     </div>
     
     <% unless session["user_id"].nil? %>
-    <div class="add-recipe-to-book" title="Add to Recipe Book">
-      <%= image_tag 'plus.png' %>
-    </div>
+      <div class="add-recipe-to-book" title="Add to Recipe Book">
+        <%= image_tag 'plus.png' %>
+      </div>
     <% end %>
 
     <div class="book-options">

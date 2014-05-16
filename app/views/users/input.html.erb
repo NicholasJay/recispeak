@@ -1,15 +1,16 @@
 <div class="user-page-container">
   <div class="middle-container">
+    
     <div class="center-titles">
       <button id='start-reading' class='user-menu-buttons-input'>Begin</button><hr></hr>
 
       <input placeholder="Enter A Title For Recipe", class="url-recipe-title" /><br />
       <button class="user-menu-buttons-input">Save Recipe To Recispeak</button>
-
     </div>
-      <div class="recipe-information">
-        <div class="page-left-recipe-container-url">
-          <h2>Ingredients</h2><br />
+
+    <div class="recipe-information">
+      <div class="page-left-recipe-container-url">
+        <h2>Ingredients</h2><br />
         <ul>
           <li><%= @message_ingredient %></li>
           <% @ingredients.zip(@amounts).each do |item, amount| %>
@@ -17,16 +18,18 @@
           <% end %>
         </ul>
       </div>
-        <div class="page-right-recipe-container-url">
-          <h2>Directions</h2><br />
+
+      <div class="page-right-recipe-container-url">
+        <h2>Directions</h2><br />
         <ul>
           <li><%= @message_direction %></li>
           <% @directions.each do |direction| %>
           <li><%= direction %><li><br />
           <% end %>
         </ul>
-        </div>
       </div>
+
+    </div>
   </div>
 </div>
 

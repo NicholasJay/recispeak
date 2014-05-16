@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<head><title>Become a New Member</title>
+<head>
+  <title>Become a New Member</title>
 </head>
 
 <body>
   <% if session["user_id"].nil? %>
-<nav>
-  <ul>
-    <div class='nav-right'>
-      <li><%= link_to "Back", root_path %></li>
+    <nav>
+      <ul>
+        <div class='nav-right'>
+          <li><%= link_to "Back", root_path %></li>
+        </div>
+      </ul>
+    </nav>
+  <% end %>
+
+  <div class="user-page-container">
+    <div class="middle-container">
+      <div class="logo-main">
+        <p>Recispeak</p>
+      </div>
+
+      <div id="new-form-user">
+        <h3>Become a New Member</h3>
+      <%= form_for @user do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %><br/>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %><br/>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %><br />
+
+        <%= f.label :password %>
+        <%= f.password_field :password %><br />
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %><br />
+        <%= f.submit "Join"%>
+      <% end %>
+      </div>
+
     </div>
-  </ul>
-</nav>
-<% end %>
-<div class="user-page-container">
-  <div class="middle-container">
-    <div class="logo-main">
-      <p>Recispeak</p>
-    </div>
-    <div id="new-form-user">
-      <h3>Become a New Member</h3>
-    <%= form_for @user do |f| %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %><br/>
-
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %><br/>
-
-      <%= f.label :email %>
-      <%= f.email_field :email %><br />
-
-      <%= f.label :password %>
-      <%= f.password_field :password %><br />
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %><br />
-      <%= f.submit "Join"%>
-    <% end %>
   </div>
-  </div>
-</div>
-
 </body>
 
 <script>

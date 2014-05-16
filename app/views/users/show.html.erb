@@ -6,24 +6,25 @@
     </div>
 
     <div class="page-left-container">
-    <ul>
-      <%= image_tag 'user-orange.svg' %>
-      <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
-      <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
-      <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
-      <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
-      <button id="all-recispeak-recipes", class="user-menu-buttons"><li>All Recispeak Recipes</li></button>
-      <% if current_user.is_admin? %>
-      <button class="user-menu-buttons"><li><%= link_to "View All Users", users_path %></li></button>
-    <% end %>
-    </ul>
-  </div>
+      <ul>
+        <%= image_tag 'user-orange.svg' %>
+        <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
+        <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
+        <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
+        <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
+        <button id="all-recispeak-recipes", class="user-menu-buttons"><li>All Recispeak Recipes</li></button>
+        <% if current_user.is_admin? %>
+        <button class="user-menu-buttons"><li><%= link_to "View All Users", users_path %></li></button>
+      <% end %>
+      </ul>
+    </div>
+
     <div class="page-right-container">
       
       <div id="welcome-blurb">
         <h1>Welcome <%= @user.first_name %> to</h1>
         <div class="logo-main">
-          <p>Recispeak</p>
+          <p>Recispeak<span>&trade;</span></p>
         </div>
         <h2>Let's Get Cookin'</h2>
       </div>

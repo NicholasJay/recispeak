@@ -75,6 +75,7 @@
           <ul>
             <% @comment_user = User.find(comment.user_id) %>
             <li class="comments-left"><span class="username"><%= @comment_user.first_name %>:</span> <em><%= comment.comments %></em></li><br />
+            <hr></hr>
           </ul>
           <% end %>
 

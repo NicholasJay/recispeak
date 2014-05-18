@@ -53,9 +53,35 @@
       </ul>
     </div>
 
+    <div class="comment-notes-links">
+      <p class='note-link'>Notes</p>
+      <p class='comment-link'>Comments</p>
+    </div>
+
     <div class="recipe-notes">
-      <h3>Notes</h3>
-      <p><%= @recipe.notes %></p>
+      <div class="note-section">
+        <h4>Notes</h4>
+        <p><%= @recipe.notes %></p>
+      </div>
+
+      <div class="comments-section">
+        <h4>Comments</h4>
+        <% if @comments.empty? %>
+          <p> There are no comments yet for this recipe <p>
+        <% end %>
+          <% @comments.each do |comment| %>
+          <ul>
+            <% @comment_user = User.find(comment.user_id) %>
+            <li class="comments-left"><span class="username"><%= @comment_user.first_name %>:</span> <em><%= comment.comments %></em></li><br />
+          </ul>
+          <% end %>
+
+          <%= form_for [@user, @recipe, RecipeComment.new] do |f| %>
+            <%= hidden_field_tag :user_id, @user.id %>
+            <%= text_area_tag :comments %><br />
+            <%= f.submit "Submit Comment", class:"comment-button"%>
+          <% end %>
+      </div>
     </div>
 
     <% unless session["user_id"].nil? || (session["user_id"] != @recipe.user_id) %>
@@ -71,7 +97,19 @@
   Recispeak.steps = <%= raw @allsteps %>;
 
   $('.add-recipe-to-book').click(function(){
-    $('.book-options').toggle("slow")
+    $('.book-options').toggle("slow");
+  });
+
+  $('.note-link').click(function(){
+    $('.note-section').toggle("slow", function(){
+      $('.comments-section').hide("slow");
+    });
+  });
+
+  $('.comment-link').click(function(){
+    $('.comments-section').toggle("slow", function(){
+      $('.note-section').hide("slow");
+    });
   });
 
 </script>

@@ -5,7 +5,9 @@ Recispeak::Application.routes.draw do
     post 'input_ingredients'
     post 'input_directions'
 
-    resources :recipes 
+    resources :recipes do 
+      resources :recipe_comments
+    end
     resources :recipe_books
     resources :recipe_book_entries
     resources :search

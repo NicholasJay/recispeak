@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
     @steps = Step.where(recipe_id: @recipe)
     @allsteps = []
     @steps.each {|step| @allsteps << step.instructions}
+    @comments = RecipeComment.where(recipe_id: @recipe)
     render :show
   end
 

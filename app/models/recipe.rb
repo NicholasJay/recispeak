@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
+  has_many :recipe_comments
   has_many :ingredients, dependent: :destroy
   has_many :steps, dependent: :destroy
   accepts_nested_attributes_for :ingredients, reject_if: lambda { |a| a[:entry].blank? }, allow_destroy: true

@@ -7,7 +7,7 @@
 
     <div class="page-left-container">
       <ul>
-        <%= image_tag 'user-orange.svg' %>
+        <%= image_tag @user.profile_pic.url(:thumb) %>
         <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
         <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
         <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>

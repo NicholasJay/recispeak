@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423192824) do
+ActiveRecord::Schema.define(version: 20140519172011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,19 +60,22 @@ ActiveRecord::Schema.define(version: 20140423192824) do
   end
 
   create_table "users", force: true do |t|
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "email"
-    t.string  "phone_number"
-    t.string  "profile_pic"
-    t.date    "birthday"
-    t.string  "facebook_url"
-    t.string  "twitter_name"
-    t.string  "address"
-    t.string  "city"
-    t.string  "state"
-    t.integer "zipcode"
-    t.string  "password_digest"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.date     "birthday"
+    t.string   "facebook_url"
+    t.string   "twitter_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zipcode"
+    t.string   "password_digest"
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
   end
 
 end

@@ -40,6 +40,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'httparty'
 
 gem 'nokogiri'
+
+gem 'paperclip'
 # Use unicorn as the app server
 # gem 'unicorn'
 

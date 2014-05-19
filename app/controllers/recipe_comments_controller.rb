@@ -14,4 +14,12 @@ class RecipeCommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = RecipeComment.find(params[:id])
+    @comment.destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @user = User.find(params[:user_id])
+    redirect_to user_recipe_path(@user, @recipe)
+  end
+
 end

@@ -91,4 +91,12 @@
   $(document).ready(function(){
     $("#logo").hide(0).delay(10).fadeIn(2000)
   });
+
+    $(window).scroll(function() {
+    if ( $(window).scrollTop() >= 325 ) {
+        $('.more-info').fadeIn(2000);
+    } else {
+      $('.more-info').attr("style", '');
+    }
+});
 </script>

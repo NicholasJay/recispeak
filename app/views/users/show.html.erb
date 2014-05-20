@@ -97,7 +97,8 @@ $('#edit-profile').click(function(){
   $('#edit-form').toggle("slow", function(){
     $('#welcome-blurb').hide("slow", function(){
       $('#all-user-recipes').hide("slow", function(){
-        $('#recispeak-recipe-list').hide("slow");
+        $('#recispeak-recipe-list').hide("slow", function(){
+          $('.input-site-info').hide("slow");
       });
     });
   });

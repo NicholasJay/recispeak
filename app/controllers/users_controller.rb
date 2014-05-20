@@ -112,7 +112,7 @@ class UsersController < ApplicationController
     end
 
   def get_ingredients_from_url(url)
-    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"] > text()', 'span [itemprop="name"] > text()', 'span [class="ingredient-name"] > text()', 'span [itemprop="ingredients"] > text()', 'div [class="clrLeft"] > text()')
+    ingredients = Nokogiri::HTML(open(url)).css('li [itemprop="ingredients"] > text()', 'span [itemprop="name"] > text()', 'span [class="ingredient-name"] > text()', 'span [itemprop="ingredients"] > text()', 'div [class="clrLeft"] > text()', 'ul [class="recipeIngredient"] li span > text()')
     if url.include?("thepioneerwoman" || "epicurious")
       ingredients.shift
       return ingredients
@@ -127,7 +127,7 @@ class UsersController < ApplicationController
   end
 
   def get_directions_from_url(url)
-    directions = Nokogiri::HTML(open(url)).css('instructions > text()', 'li span[class="plaincharacterwrap break"] > text()', 'div [class="recipeDirections"] li > text()', 'div [id="instructions"] li > text()', 'li[class="instruction"] > text()', 'div [class="instructions"] p > text()', 'div[itemprop="instructions"] p > text()', 'div[class="col12 directions"] p > text()', 'div[itemprop="recipeInstructions"] p > text()', 'ol[itemprop="instructions"] li > text()')
+    directions = Nokogiri::HTML(open(url)).css('instructions > text()', 'li span[class="plaincharacterwrap break"] > text()', 'div [class="recipeDirections"] li > text()', 'div [id="instructions"] li > text()', 'li[class="instruction"] > text()', 'div [class="instructions"] p > text()', 'div[itemprop="instructions"] p > text()', 'div[class="col12 directions"] p > text()', 'div[itemprop="recipeInstructions"] p > text()', 'ol[itemprop="instructions"] li > text()', 'div [class="articleInstructionsDiv version1"] ol li > text()')
     return directions
   end
 

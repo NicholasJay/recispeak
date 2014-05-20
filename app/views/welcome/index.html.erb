@@ -6,26 +6,39 @@
 <div class="page-container"> 
   <header>
   </header>
-    <div class="logo-main">
-      <p>Recispeak<span>&reg;<span></p>
-    </div>
+  <nav>
     <div id="login">
       <% if session[:user_id].nil? %>
         <%= form_tag session_path do%>
-        <%= label_tag "Email" %><br />
-        <%= text_field_tag :email %><br />
-        <%= label_tag "Password" %><br />
-        <%= password_field_tag :password %><br />
+        <%= label_tag "Email: " %>
+        <%= text_field_tag :email %>
+        <%= label_tag "Password: " %>
+        <%= password_field_tag :password %>
         <%= submit_tag "Sign In", class:"splash-button" %>
-        <% end %><br />
-        <button class="splash-button-signup"><%= link_to "Join", new_user_path%></button>
+          <p class="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
+        <% end %>
       <% end %> 
     </div>
+  </nav>
+    <div class="logo-main">
+      <p>Recispeak<span>&reg;<span></p>
+    </div>
+    
     <div class="flash-message-login">
      <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
     </div>
 
 <div class="how-it-works">
+</div>
+  <div class="footer-bar">
+    <ul>
+      <li><%= link_to "• Browse Recipes •", recipes_path %></li>
+    </ul>
+  </div>
+</div>
+
+<div class='explanation'>
+  <h3>HOW IT WORKS</h3>
   <ul class="list">
       <li class="step">
         <%= image_tag("plus.png") %>
@@ -54,20 +67,25 @@
       </li>
     </ul>
 </div>
-  <div class="footer-bar">
-    <ul>
-      <li><%= link_to "• Browse Recipes •", recipes_path %></li>
-      <li id="how-it-works-link">•How does it work? •</li>
-    </ul>
+
+<div class='more-info'>
+  <p>Check us out!</p>
+  <div class="spoon-icons-email">
+    <a href="#"><%= image_tag 'email.png' %></a>
+  </div>
+
+  <div class="spoon-icons-pinterest">
+    <a href="#"><%= image_tag 'pinterest.png' %></a>
+  </div>
+
+  <div class="spoon-icons-twitter">
+    <a href="#"><%= image_tag 'twitter.png' %></a>
   </div>
 </div>
 </body>
+
 <script>
   $(document).ready(function(){
     $("#logo").hide(0).delay(10).fadeIn(2000)
-  });
-
-  $('#how-it-works-link').click(function(){
-    $('.how-it-works').toggle("slow");
   });
 </script>

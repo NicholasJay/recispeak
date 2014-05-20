@@ -22,11 +22,15 @@
     <% end %>
 
     <div class="book-options">
+      <% if @books.empty? %>
+      <p> You don't have any recipe books yet </p>
+      <% else %>
       <%= form_for [@user, RecipeBookEntry.new] do |f| %>
       <%= hidden_field_tag :recipe_id, @recipe.id %>
       <%= select_tag :recipe_book_id, options_for_select(@books.collect{ |b| [b.title, b.id] }), class:"options-menu" %><br />
       <br />
       <%= f.submit "Save to Book" %>
+      <% end %>
       <% end %>
     </div>
 

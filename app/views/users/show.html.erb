@@ -7,7 +7,7 @@
 
     <div class="page-left-container">
       <ul>
-        <% if @user.profile_pic.url(:thumb).nil? %>
+        <% if @user.profile_pic.url(:thumb).empty? %>
         <%= image_tag 'user-orange.svg' %>
         <% else %>
         <%= image_tag @user.profile_pic.url(:thumb) %>

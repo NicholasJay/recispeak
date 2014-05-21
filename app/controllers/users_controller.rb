@@ -74,13 +74,14 @@ class UsersController < ApplicationController
   def update
     @changed = @user.update(user_params)
 
-    if @changedh
+    if @changed
       flash[:message] = "Updated Successfully"
       redirect_to user_path(@user.id)
     else
       flash[:message] = 'Update Failed!'
       redirect_to user_path(@user.id)
     end
+
   end
 
     def destroy
@@ -96,7 +97,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :facebook_url, :twitter_name, :address, :city, :state, :zipcode, :password, :password_confirmation, :birthday)
+      params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :facebook_url, :twitter_name, :address, :city, :state, :zipcode, :password, :password_confirmation, :birthday, :profile_pic)
     end
 
     def authenticate

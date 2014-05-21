@@ -4,6 +4,8 @@ class SearchController < ApplicationController
   end
 
   def search
+    @recipes = Recipe.all
+    render json: @recipes
   end
 
   def new

@@ -27,24 +27,25 @@ $(function(){
                        "'Next!' to hear the following step.");
     setTimeout(function(){
       Recispeak.recognizer.start();
-    }, 3000);
+    }, 500);
   });
 });
 
 // Set the counter to 0 to iterate through the steps. Each if statement handles a different
-// voice command. Next, Beginning, Repeat, and Back, will all navigate through the array of steps
+// voice command. Next, Start, Repeat, and Back, will all navigate through the array of steps
 // so the user can easily communicate what they need.
 
 counter = 0;
 Recispeak.recognizer.onresult = function(event) {
   for (var i = event.resultIndex; i < event.results.length; i++) {
     if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'next')){
+      console.log(event.results[i][0].transcript)
       setTimeout(function(){
         Recispeak.readStep(Recispeak.steps[counter]);
         counter += 1;
       }, 1000);
     } else {
-      // console.log(event.results[i][0].transcript);
+      console.log(event.results[i][0].transcript);
       // theResult = event.results[i][0].transcript.replace(" ","");
       if(counter < Recispeak.steps.length){
         if(event.results[i][0].transcript.replace(" ", "") == 'next'){

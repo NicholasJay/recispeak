@@ -28,7 +28,11 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.where(recipe_id: @recipe)
     @steps = Step.where(recipe_id: @recipe)
     @allsteps = []
-    @steps.each {|step| @allsteps << step.instructions}
+    @steps.each do |step| 
+      unless step.nil? 
+        @allsteps << step.instructions
+      end
+    end
     @comments = RecipeComment.where(recipe_id: @recipe)
     render :show
   end

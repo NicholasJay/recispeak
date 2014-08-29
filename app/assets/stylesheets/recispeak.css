@@ -185,7 +185,6 @@ ul li a:hover {
 }
 
 .more-info{
-  display: none;
   height: 650px;
   background: url('woodtable.jpg') no-repeat;
   background-size: cover;

@@ -50,9 +50,11 @@ nav a:hover {
 }
 
 .user-page-container {
-  height: 650px;
-  background: url('veggies.jpg') no-repeat;
-  background-size: cover;
+  background: rgb(45,45,45);
+  padding: 10px;
+  box-shadow: inset 0px 0px 277px 3px black;
+  width: 100%;
+  
 }
 
 .page-container {
@@ -266,6 +268,8 @@ ul li a:hover {
 }
 
 .middle-container {
+  background: url('veggies.jpg') no-repeat;
+  background-size: cover;
   box-shadow: inset 0px 0px 200px 50px black;
   width: 75%;
   margin: 0 auto;

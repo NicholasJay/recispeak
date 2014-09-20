@@ -4,9 +4,6 @@ window.speechSynthesis.onvoiceschanged = function() {
     voices = window.speechSynthesis.getVoices();
 };
 
-Recispeak.recognizer = new webkitSpeechRecognition(); // create a new speech recognition object
-Recispeak.recognizer.continuous = true;               // keeps the microphone open
-
 // this will read aloud the step from the recipe array
 Recispeak.readStep = function(step){ 
   var message = new SpeechSynthesisUtterance(step)
@@ -26,7 +23,7 @@ $(function(){
                        "click to allow microphone access and then say the word " +
                        "'Next!' to hear the following step.");
     setTimeout(function(){
-      Recispeak.recognizer.start();
+      annyang.start({ autorestart: true });
     }, 500);
   });
 });
@@ -36,39 +33,42 @@ $(function(){
 // so the user can easily communicate what they need.
 
 counter = 0;
-Recispeak.recognizer.onresult = function(event) {
-  for (var i = event.resultIndex; i < event.results.length; i++) {
-    if ((event.results[i].isFinal) && (event.results[i][0].transcript == 'next')){
-      console.log(event.results[i][0].transcript)
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'next': function(){
       setTimeout(function(){
+        console.log('next');
         Recispeak.readStep(Recispeak.steps[counter]);
         counter += 1;
-      }, 1000);
-    } else {
-      console.log(event.results[i][0].transcript);
-      // theResult = event.results[i][0].transcript.replace(" ","");
-      if(counter < Recispeak.steps.length){
-        if(event.results[i][0].transcript.replace(" ", "") == 'next'){
-          setTimeout(function(){ 
-            Recispeak.readStep(Recispeak.steps[counter]);
-            counter += 1;
-          }, 1000);
-        } else if(event.results[i][0].transcript.replace(" ", "") == 'start'){
-          setTimeout(function(){
-            counter = 0;
-            Recispeak.readStep(Recispeak.steps[counter]);
-          }, 1000);
-        } else if(event.results[i][0].transcript.replace(" ", "") == 'repeat'){
-          setTimeout(function(){
-            counter -= 1;
-            Recispeak.readStep(Recispeak.steps[counter]);
-            counter += 1;
-          }, 1000);
-        }
-      } else {
-        Recispeak.readStep("Your Recipe is Complete");
+      }, 500);
+    },
+    'back': function(){
+      setTimeout(function() {
+        console.log('back')
+        counter -= 2;
+        Recispeak.readStep(Recispeak.steps[counter]);
+      }, 500);
+    },
+    'repeat': function(){
+      setTimeout(function() {
+        console.log('repeat')
+        counter -= 1;
+        Recispeak.readStep(Recispeak.steps[counter]);
+      }, 500);
+    },
+    'start over': function(){
+      setTimeout(function() {
+        console.log('start over')
         counter = 0;
-      }
+        Recispeak.readStep(Recispeak.steps[counter]);
+      }, 500);
     }
-  }
-};
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+
+}

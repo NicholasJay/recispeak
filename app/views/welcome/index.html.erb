@@ -1,77 +1,84 @@
 <!DOCTYPE html>
 <head>
   <title>Recispeak.com&trade;</title>
+  <%= javascript_include_tag "jquery.localscroll", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery.scrollTo", "data-turbolinks-track" => true %>
 </head>   
 <body>
-<div class="page-container"> 
-  <header>
-  </header>
-  <nav>
+  <div class="page-container"> 
+    <nav>
+      <p class="logintoggle">Login <%= image_tag("arrowdown.png")%></p>
+      <p class="browse"><%= link_to "• Browse Recipes", recipes_path %></p>
+      <p class="navlinks"><a href="#workslink">• How it works</a></p>
+      <p class="navlinks"><a href="#aboutus">• About us</a></p>
+      <p class="rspeaklogo">Recispeak.com</p>
+    </nav>
     <div id="login">
       <% if session[:user_id].nil? %>
-        <%= form_tag session_path do%>
-        <%= label_tag "Email: " %>
-        <%= text_field_tag :email %>
-        <%= label_tag "Password: " %>
-        <%= password_field_tag :password %>
-        <%= submit_tag "Sign In", class:"splash-button" %>
-          <p class="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
-        <% end %>
+      <%= form_tag session_path do%>
+      <%= label_tag "Email: " %>
+      <%= text_field_tag :email %>
+      <%= label_tag "Password: " %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "Sign In", class:"splash-button" %><br>
+      <p class="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
+      <% end %>
       <% end %> 
     </div>
-  </nav>
     <div class="logo-main">
-      <p>Recispeak<span>&trade;<span></p>
     </div>
     
     <div class="flash-message-login">
      <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
-    </div>
+   </div>
+ </div>
 
-<div class="how-it-works">
-</div>
-  <div class="footer-bar">
-    <ul>
-      <li><%= link_to "• Browse Recipes •", recipes_path %></li>
-    </ul>
-  </div>
-</div>
-
-<div class='explanation'>
+ <div class='explanation'>
+  <h3 id="workslink">How it works...</h3>
   <ul class="list">
-      <li class="step">
-        <%= image_tag("plus.png") %>
-        <p>Add new</p>
-        <p>recipes to</p>
-        <p>your profile!</p>
-      </li>
-      <li class="step">
+    <li class="step">
+      <div class="image-copy">
         <%= image_tag("play.png") %>
+      </div>
+      <div class="image-copy">
         <p>Click on the recipe</p>
         <p>you want to cook</p>
         <p>and then press Begin</p>
-  
-      </li>
-      <li class="step">
+      </div>
+
+    </li>
+    <li class="step">
+      <div class="image-copy">
         <%= image_tag("mic.png") %>
+      </div>
+      <div class="image-copy">
         <p>Recispeak waits</p>
         <p>for your command</p>
         <p>speak "next" to advance</p>
-      </li>
-      <li class="step">
+      </div>
+    </li>
+    <li class="step">
+      <div class="image-copy">
         <%= image_tag("listen.png") %>
+      </div>
+      <div class="image-copy">
         <p>Recispeak will walk you</p>
         <p>step by step through </p>
         <p>your recipe while you cook.</p>
-      </li>
-    </ul>
-    <h3>How It Works</h3>
+      </div>
+    </li>
+  </ul>
 </div>
+<div id="aboutus">
+  </div>
 
 </body>
 
 <script>
-  $(document).ready(function(){
-    $("#logo").hide(0).delay(10).fadeIn(2000)
-  });
-s</script>
+$(document).ready(function(){
+  $("#logo").hide(0).delay(10).fadeIn(2000)
+});
+$(".logintoggle").mouseenter(function(){
+  $("#login").slideDown("slow");
+});
+</script>

@@ -6,10 +6,75 @@ body {
 }
 
 nav {
-  padding: 10px;
-  box-shadow: inset 0px 0px 277px 3px black;
+  padding: 15px;
+  height: 50px;
+  box-shadow: inset 0px 0px 277px 3px #000000;
   width: 100%;
-  color: white;
+  color: black;
+}
+
+nav p{
+  display: inline;
+}
+
+.browse {
+  margin-left: 300px;
+  font-family: palatino;  
+  letter-spacing: 1.5px;
+}
+
+.browse a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.browse a:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px red;
+}
+
+.navlinks {
+  margin-left: 5px;
+  font-family: palatino;
+  letter-spacing: 1.5px;
+}
+.navlinks a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navlinks a:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px red;
+}
+
+.rspeaklogo {
+  font-family: palatino;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding-right: 30px;
+  text-shadow: 0px 1px 1px rgb(94,147,20);
+  font-size: 20px;
+  float: right;
+}
+
+.logintoggle {
+  margin-left: 60px;
+  max-width: 80px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: palatino;
+  letter-spacing: 1px;
+  padding: 5px;
+
+}
+
+.logintoggle:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 1px rgb(94,147,20);
 }
 
 nav ul li{
@@ -18,21 +83,6 @@ nav ul li{
 
 nav ul{
   display: inline;
-}
-
-nav a {
-  list-style-type: none;
-  color: white; 
-  font-size: 17px;
-  padding-left: 90px;
-  padding-right: 90px;
-  padding-top: 5px;
-  padding-bottom: 7px;
-  border: 1px solid rgb(95, 147, 20);
-}
-nav a:hover {
-  color: tomato;
-  text-decoration: none;
 }
 
 .nav-right {
@@ -49,6 +99,12 @@ nav a:hover {
   color: lightgrey;
 }
 
+#aboutus {
+  height: 750px;
+  background: url("vegnotepad2.jpg") no-repeat;
+  background-size: cover;
+}
+
 .user-page-container {
   background: rgb(45,45,45);
   padding: 10px;
@@ -59,7 +115,7 @@ nav a:hover {
 
 .page-container {
   height: 680px;
-  background: url('woodtable.jpg') no-repeat;
+  background: url('woodtable2.jpg') no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -93,7 +149,13 @@ z-index: 2;
 }
 
 #login {
-  color: black;
+  display: none;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  margin-left: 120px;
+  width: 220px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: inset 0px 45px 277px 3px #000000;
 }
 
 #login input{
@@ -102,7 +164,7 @@ z-index: 2;
 }
 
 #login label {
-  color: white;
+  color: #fff;
   font-weight: 300;
   letter-spacing: 1px;
   font-size: 15px;
@@ -114,6 +176,7 @@ z-index: 2;
 }
 
 #login input[type="submit"] {
+  margin-top: 10px;
   color: white;
   border: 1px solid white;
   letter-spacing: 1px;
@@ -126,16 +189,20 @@ z-index: 2;
   font-weight: 200;
   border: none;
 }
-
 .splash-button-signup {
+  margin-top: 10px;
   float: right;
+}
+
+.splash-button-signup a:hover {
+  text-decoration: none;
 }
 
 .footer-bar {
   padding: 10px;
-  box-shadow: inset 0px 0px 277px 3px black;
   position: absolute;
-  bottom: 0;
+  font-family: palatino;
+  bottom: 30px;
   width: 100%;
   color: white;
   text-align: center;
@@ -145,48 +212,49 @@ z-index: 2;
   display: inline;
   padding: 0 10px 0 10px;
   letter-spacing: 1.5px;
-}
-
-ul li a{
-  color: white;
-}
-
-ul li a:hover {
-  color: tomato;
-  text-decoration: none;
+  font-size: 20px;
 }
 
 .footer-bar a {
-  color: white;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
 }
 
-.footer-bar a:hover {
-  color: rgb(95,147,20);
+.footer-bar a:hover{
+  color: red;
   text-decoration: none;
+  text-shadow: 1px 1px 1px #fff;
 }
 
 .explanation {
-  height: 350px;
-  background: rgb(42,42,42);
+  height: 750px;
+  background: url("peppers.jpg") no-repeat;
+  background-size: cover;
   border-top: 1px solid rgb(94,147,20);
   border-bottom: 1px solid rgb(94,147,20);
 }
 
-.explanation h3 {
-  text-align: center;
-  font-weight: 100;
-  font-size: 30px;
-  letter-spacing: 3px;
+.explanation h3{
   color: white;
-  text-shadow: 8px 8px 8px black;
+  text-align: center;
+  font-family: palatino;
+  font-style: italic;
+  position: relative;
+  margin-top: 75px;
+  font-size: 45px;
+
+}
+
+.image-copy {
+  display: inline-block;
 }
 
 .list{
-  text-align: center;
-  color: white;
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: 200;
+  margin-top: 300px;
+  margin-left: 75px;
+  color: #000000;
+  font-family: palatino;
 }
 
 .user-menu-buttons {
@@ -234,8 +302,7 @@ ul li a:hover {
 }
 
 .step{
-  width: 24%;
-  margin-top: 20px;
+  margin-top: 150px;
   display: inline-block;
   padding: 5px;
   text-align: center;
@@ -244,11 +311,9 @@ ul li a:hover {
   }
 
 .step img{
-  box-shadow: inset 0px 0px 277px 3px rgb(95, 147,20);
-  margin-top: 30px;
-  height: 70px;
+  margin-top: -75px;
+  height: 60px;
   padding: 10px;
-  border-radius: 180px;
   
 }
 

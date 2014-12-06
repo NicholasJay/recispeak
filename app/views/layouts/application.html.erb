@@ -16,20 +16,17 @@
 
 <body>
   <% unless session["user_id"].nil? %>
-  <nav>
+  <div class='nav-middle'>
     <ul>
-      <div class='nav-right'>
         <li><%= link_to "Home", user_path(session["user_id"]) %></li>
         <li><%= link_to "Books", user_recipe_books_path(session["user_id"]) %></li>
         <li><%= link_to "Search", user_search_index_path(session["user_id"]) %></li>
         <li><%= link_to "Log Out", "/session", method: "delete" %></li>
-      </div>
     </ul>
-  </nav>
+  </div>
+
   <% end %>
  
 <%= yield %>
-
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </body>
 </html>

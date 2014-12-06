@@ -1,5 +1,28 @@
 <div class="user-page-container">
   <div class="middle-container">
+          <div id="compatible-sites">
+        <h2>Current sites compatible with Recispeak</h2>
+        <hr></hr>
+        <ul>
+          <li><a href="http://www.thepioneerwoman.com/cooking/" target="_blank">Pioneer Woman</a></li>
+          <li><a href="http://www.simplyrecipes.com/" target="_blank">Simply Recipes</a></li>
+          <li><a href="http://www.cookinglight.com/" target="_blank">Cooking Light</a></li>
+          <li><a href="http://www.tastebook.com/" target="_blank">Taste Book</a></li>
+          <li><a href="http://www.myrecipes.com/" target="_blank">MyRecipes.com</a></li>
+          <li><a href="http://www.epicurious.com/" target="_blank">Epicurious</a></li>
+        </ul>
+        <hr></hr>
+        <p>More coming soon...</p>
+      </div>
+
+    </div>
+    <div class='center-titles'>
+      <form method="GET" action="<%= @user.id%>/input" />
+        <input type="text" name="address_input" class="recipe-url-input" placeholder="Paste Recipe URL Here to Input into Recispeak"/><br />
+      </form>
+      <h4 class="input-site-info">Click here to see a list of compatible sites</h4>
+    </div>
+  </div>
     <div id="new-form">
         <h1>Add Recipe</h1>
       <%= render "form_new_recipe"%>
@@ -12,4 +35,7 @@
   $(document).ready(function(){
     $('#new-form').toggle("slow");
   });
+  $('.input-site-info').click(function(){
+    $('#compatible-sites').toggle("slow")
+  });    
 </script>

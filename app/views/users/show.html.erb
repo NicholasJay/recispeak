@@ -1,41 +1,32 @@
-<div class="user-page-container">
-
   <div class="middle-container">
     <div class="flash-message">
      <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
     </div>
 
     <div class="page-left-container">
+      <h3>Welcome <%= @user.first_name %></h3>
       <ul>
         <%= image_tag @user.profile_pic.url(:thumb) %>
-        <button class="user-menu-buttons"><li id="edit-profile">Edit Profile</li></button>
-        <button class="user-menu-buttons"><li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li></button>
-        <button id="all-my-recipes", class="user-menu-buttons"><li>My Recipes</li></button>
-        <button class="user-menu-buttons"><li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li></button>
-        <button id="all-recispeak-recipes", class="user-menu-buttons"><li>All Recispeak Recipes</li></button>
+        <li id="edit-profile">Edit Profile</li>
+        <li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li>
+        <li id="all-my-recipes">My Recipes</li>
+        <li><%= link_to "Add Recipe", new_user_recipe_path(@user) %></li>
+        <li id="all-recispeak-recipes">All Recispeak Recipes</li>
         <% if current_user.is_admin? %>
-        <button class="user-menu-buttons"><li><%= link_to "View All Users", users_path %></li></button>
+        <li><%= link_to "View All Users", users_path %></li>
       <% end %>
-      </ul>
+      </ul><br /> 
+      <h4 style="font-style: italic">Recispeak.com</h4>
     </div>
 
     <div class="page-right-container">
-      
-      <div id="welcome-blurb">
-        <h1>Welcome <%= @user.first_name %> to</h1>
-        <div class="logo-main">
-          <p>Recispeak<span>&trade;</span></p>
-        </div>
-        <h2>Let's Get Cookin'</h2>
-      </div>
 
       <div id="edit-form">
         <%= render "form" %>
       </div>
 
       <div id="all-user-recipes">
-        <div class="center-titles">
-          <h1> All of your recipes </h1>
+          <h2> Your Recipes </h2>
           <ul class="recipe-titles">
             <% @allrecipes.each do |recipe| %>
               <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id)%><span><form action="<%= user_recipe_path(recipe.user_id, recipe.id) %>" method="POST" class="recipe-display">
@@ -44,44 +35,16 @@
                 <button class='deletebutton'>x</button></form></span></li>            
             <% end %>
           </ul>
-        </div>
       </div>
 
       <div id="recispeak-recipe-list">
-        <div class="center-titles">
-          <h1> All recipes on Recispeak</h1>
+          <h2> All Recipes</h2>
           <ul class="recipe-titles">
             <% @allrecipes_on_recispeak.each do |recipe| %>
               <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id)%></li>           
             <% end %>
           </ul>
-        </div>
       </div>
-
-      <div id="compatible-sites">
-        <h2>Current sites compatible with Recispeak</h2>
-        <hr></hr>
-        <ul>
-          <li><a href="http://www.thepioneerwoman.com/cooking/" target="_blank">Pioneer Woman</a></li>
-          <li><a href="http://www.simplyrecipes.com/" target="_blank">Simply Recipes</a></li>
-          <li><a href="http://www.cookinglight.com/" target="_blank">Cooking Light</a></li>
-          <li><a href="http://www.tastebook.com/" target="_blank">Taste Book</a></li>
-          <li><a href="http://www.myrecipes.com/" target="_blank">MyRecipes.com</a></li>
-          <li><a href="http://www.epicurious.com/" target="_blank">Epicurious</a></li>
-        </ul>
-        <hr></hr>
-        <p>More coming soon...</p>
-      </div>
-
-    </div>
-    <div class='center-titles'>
-      <form method="GET" action="<%= @user.id%>/input" />
-        <input type="text" name="address_input" class="recipe-url-input" placeholder="Paste Recipe URL Here to Input into Recispeak"/><br />
-      </form>
-      <h4 class="input-site-info">Click here to see a list of compatible sites</h4>
-    </div>
-  </div>
-
 </div>
 
 <script>
@@ -95,36 +58,25 @@ $(document).ready(function(){
 
 $('#edit-profile').click(function(){
   $('#edit-form').toggle("slow", function(){
-    $('#welcome-blurb').hide("slow", function(){
-      $('#all-user-recipes').hide("slow", function(){
-        $('#recispeak-recipe-list').hide("slow", function(){
-          $('#compatible-sites').hide("slow");
-        });
-      });
+    $('#all-user-recipes').hide("slow", function(){
+      $('#recispeak-recipe-list').hide("slow")
     });
   });
 });
 
 $('#all-my-recipes').click(function(){
   $('#all-user-recipes').toggle("slow", function(){
-    $('#welcome-blurb').hide("slow", function(){
-      $('#edit-form').hide("slow", function(){
-        $('#compatible-sites').hide("slow", function(){
-          $('#recispeak-recipe-list').hide("slow");
-        });
-      });
+    $('#edit-form').hide("slow", function(){
+      $('#recispeak-recipe-list').hide("slow");
     });
   });
 });
 
+
 $('#all-recispeak-recipes').click(function(){
   $('#recispeak-recipe-list').toggle("slow", function(){
-    $('#welcome-blurb').hide("slow", function(){
       $('#edit-form').hide("slow", function(){
-        $('#compatible-sites').hide("slow", function(){
           $('#all-user-recipes').hide("slow");
-        });
-      });
     });
   });
 });

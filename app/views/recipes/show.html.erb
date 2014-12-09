@@ -8,7 +8,7 @@
   </nav>
 <% end %>
 
-<div class="user-page-container">
+
   <div class="middle-container">
 
     <div class="flash-message">
@@ -59,8 +59,8 @@
 
     <% unless session["user_id"].nil? %>
     <div class="comment-notes-links">
-      <p class='note-link'>Notes</p>
       <p class='comment-link'>Comments</p>
+      <p class='note-link'>Notes</p>
     </div>
     <% end %>
 
@@ -100,7 +100,7 @@
           <%= form_for [@user, @recipe, RecipeComment.new] do |f| %>
             <%= hidden_field_tag :user_id, @user.id %>
             <%= text_area_tag :comments %><br />
-            <%= f.submit "Submit Comment", class:"comment-button"%>
+            <%= f.submit "Submit Comment", class:"splash-button"%>
           <% end %>
       </div>
     </div>
@@ -112,7 +112,7 @@
     <% end %>
 
   </div>
-</div>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js">
 </script>
 <script>

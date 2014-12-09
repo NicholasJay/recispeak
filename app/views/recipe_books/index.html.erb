@@ -1,46 +1,32 @@
-<div class="user-page-container">
-
   <div class="middle-container">
     <div class="flash-message">
      <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
-    </div>
+   </div>
 
-    <div class="page-left-container">
+   <div class="page-left-container">
+    <h3>Recispeak Books</h3>
     <ul>
-      <button class="user-menu-buttons-add"><li id="new-book-form">Add A Recipe Book</li></button>
-      <br><br />
+      <li id="new-book-form">Add A Recipe Book</li>
       <% @books.each do |book| %>
-      <button class="user-menu-buttons"><li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li></button>
+      <li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li>
       <% end %>
     </ul>
   </div>
-
-  <div class="page-right-container-books">    
-    <div id="welcome-blurb">
-      <div class="logo-main">
-        <p>Recispeak</p>
-        <p>Books</p>
-      </div>
-    </div>
-    <div class="new-book-form">
-      <%= render "new_book_form" %>
-    </div>
+  <div class="new-book-form">
+    <%= render "new_book_form" %>
   </div>
+  
 
-  </div>
 </div>
+
 
 <script>
 $(document).ready(function(){
   $(".page-left-container").hide(0).delay(10).fadeIn(500)
 });
 
-$(document).ready(function(){
-  $(".page-right-container").hide(0).delay(10).fadeIn(500)
-});
-
 $('#new-book-form').click(function(){
-  $('.new-book-form').toggle("slow")
+  $('.new-book-form').toggle("slow");
 });
 
 </script>

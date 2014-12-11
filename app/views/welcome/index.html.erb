@@ -8,6 +8,9 @@
   <div class="page-container"> 
     <nav>
       <p class="logintoggle">Login <%= image_tag("arrowdown.png")%></p>
+      <div class="flash-message-login">
+        <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
+      </div>
       <p class="browse"><%= link_to "• Browse Recipes", recipes_path %></p>
       <p class="navlinks"><a href="#workslink">• How it works</a></p>
       <p class="navlinks"><a href="#aboutus">• About us</a></p>
@@ -28,9 +31,6 @@
     <div class="logo-main">
     </div>
     
-    <div class="flash-message-login">
-     <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
-   </div>
  </div>
 
  <div class='explanation'>

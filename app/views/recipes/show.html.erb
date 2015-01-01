@@ -62,18 +62,18 @@
       </div>
     <% end %>
 
-    <% unless session["user_id"].nil? %>
+    <div class="recipe-notes">
+      <% unless session["user_id"].nil? %>
     <div class="comment-notes-links">
       <p class='comment-link'>Comments</p>
       <p class='note-link'>Notes</p>
     </div>
     <% end %>
-
-    <div class="recipe-notes">
-      <div class="note-section">
-        <h4>Notes</h4>
-        <p><%= @recipe.notes %></p>
-      </div>
+    <hr />
+    <div class="note-section">
+      <h4>Notes</h4>
+      <p><%= @recipe.notes %></p>
+    </div>
 
       <div class="comments-section">
         <h4>Comments</h4>
@@ -106,7 +106,7 @@
             <%= hidden_field_tag :user_id, @user.id %>
             <%= text_area_tag :comments %><br />
             <%= f.submit "Submit Comment", class:"splash-button"%>
-          <% end %>
+          <% end %><br />
       </div>
     </div>
 

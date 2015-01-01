@@ -24,12 +24,11 @@
       <%= label_tag "Password: " %>
       <%= password_field_tag :password %>
       <%= submit_tag "Sign In", class:"splash-button" %><br>
-      <p class="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
       <% end %>
       <% end %> 
     </div>
-    <div class="logo-main">
-    </div>
+    <p id="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
+
     
  </div>
 
@@ -78,7 +77,11 @@
 $(document).ready(function(){
   $("#logo").hide(0).delay(10).fadeIn(2000)
 });
-$(".logintoggle").mouseenter(function(){
-  $("#login").slideDown("slow");
+$(".logintoggle").click(function(){
+  $("#login").toggle("slow", function(){
+    $("#splash-button-signup").toggle("slow");
+  });
 });
+
+
 </script>

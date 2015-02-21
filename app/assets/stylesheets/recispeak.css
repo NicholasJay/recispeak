@@ -194,13 +194,14 @@ z-index: 2;
 .splash-button {
   background: rgb(40,40,40);
   border-radius: 5px;
-  color: white;
+  color: #fff!important;
   border: 1px solid white;
 }
 
 .splash-button:hover {
   background: silver;
   color: rgb(40,40,40);
+  color: #000!important;
 }
 
 #login input[type="submit"] {
@@ -573,13 +574,13 @@ button {
   color: white;
   float: right;
   margin-top: -620px;
-  width: 33%;
+  width: 30%;
   overflow-y: scroll;
   padding: 15px;
   background: rgb(40,40,40);
   filter:alpha(opacity=60);
   opacity:.9;
-  height: 700px;
+  height: 100%;
   font-family: palatino;
   font-size: 15px;
   letter-spacing: 1px;
@@ -1004,6 +1005,11 @@ span {
 
 .comment-link {
   cursor: pointer;
+}
+
+.note-section{
+  color: white;
+  border: 2px solid turquoise;
 }
 
 .note-link {

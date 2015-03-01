@@ -98,7 +98,7 @@
             <span><form action="<%= user_recipe_recipe_comment_path(@user.id, @recipe.id, comment.id) %>" method="POST" class="recipe-display">
                 <input type="hidden" name="_method" value="DELETE" />
                 <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-                <button class='deletecomment'>x</button></form></span> <br />
+                <button class='deletecomment'>delete comment</button></form></span> <br />
             <% end %>
             <br><br />
             <hr></hr>

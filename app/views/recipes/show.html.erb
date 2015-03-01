@@ -126,17 +126,16 @@
   });
 
   $('.note-link').click(function(){
-    $('.note-section').toggle("slow", function(){
+    $('.note-section').show("slow", function(){
       $('.comments-section').hide("slow");
-      $('.recipe-notes').css("height", "110%");
-      $('.update-link').hide(0).delay(500).fadeIn(1000)
+      $('.recipe-notes').css("height", "90%");
     });
   });
 
   $('.comment-link').click(function(){
-    $('.comments-section').toggle("slow", function(){
+    $('.comments-section').show("slow", function(){
       $('.note-section').hide("slow", function(){
-          $('.recipe-notes').css("height", "110%");
+          $('.recipe-notes').css("height", "90%");
       });
     });
   });

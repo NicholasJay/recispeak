@@ -60,8 +60,7 @@
       <div class="update-link">
         <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
       </div>
-    <% end %>
-
+    <div
     <div class="recipe-notes">
       <% unless session["user_id"].nil? %>
     <div class="comment-notes-links">
@@ -73,6 +72,10 @@
     <div class="note-section">
       <h4>Notes</h4>
       <p><%= @recipe.notes %></p>
+      <% if @recipe.notes.nil? %>
+      <br />
+      <p>There are no notes yet for this recipe</p>
+      <% end %>
     </div>
 
       <div class="comments-section">
@@ -107,6 +110,7 @@
             <%= text_area_tag :comments %><br />
             <%= f.submit "Submit Comment", class:"splash-button"%>
           <% end %><br />
+        <% end %>
       </div>
     </div>
 
@@ -124,7 +128,7 @@
   $('.note-link').click(function(){
     $('.note-section').toggle("slow", function(){
       $('.comments-section').hide("slow");
-      $('.recipe-notes').css("height", "200px");
+      $('.recipe-notes').css("height", "110%");
       $('.update-link').hide(0).delay(500).fadeIn(1000)
     });
   });
@@ -132,7 +136,7 @@
   $('.comment-link').click(function(){
     $('.comments-section').toggle("slow", function(){
       $('.note-section').hide("slow", function(){
-          $('.recipe-notes').css("height", "650px");
+          $('.recipe-notes').css("height", "110%");
       });
     });
   });

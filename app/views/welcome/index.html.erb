@@ -6,71 +6,70 @@
 </head>   
 <body>
   <div class="page-container"> 
+    <% if session["user_id"].nil? %>
     <nav>
-      <p class="logintoggle">Login <%= image_tag("arrowdown.png")%></p>
+      <div class="logintoggle">Login</div>
+      <p id="splash-button-signup">Sign Up</p>
       <div class="flash-message-login">
         <%= raw("<p>#{flash[:message]}</p>") unless flash[:message].nil? %>
       </div>
-      <p class="browse"><%= link_to "• Browse Recipes", recipes_path %></p>
-      <p class="navlinks"><a href="#workslink">• How it works</a></p>
-      <p class="navlinks"><a href="#aboutus">• About us</a></p>
-      <p class="rspeaklogo">Recispeak.com</p>
+      <p class="browse"><%= link_to "Browse Recipes", recipes_path %></p>
     </nav>
+    <% end %>
     <div id="login">
       <% if session[:user_id].nil? %>
       <%= form_tag session_path do%>
-      <%= label_tag "Email: " %>
-      <%= text_field_tag :email %>
-      <%= label_tag "Password: " %>
-      <%= password_field_tag :password %>
+      <%= label_tag "Email: " %><br />
+      <%= text_field_tag :email%><br />
+      <%= label_tag "Password: " %><br />
+      <%= password_field_tag :password %><br /><br />
       <%= submit_tag "Sign In", class:"splash-button" %><br>
       <% end %>
       <% end %> 
     </div>
-    <p id="splash-button-signup"><%= link_to "Sign Up Here", new_user_path%></p>
+    <div id="new-form-user">
+      <%= form_for @user do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %><br />
 
-    
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %><br />
+
+        <%= f.label :email %>
+        <%= f.email_field :email %><br />
+
+        <%= f.label :password %>
+        <%= f.password_field :password %><br />
+
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %><br /><br />
+        <%= f.submit "Join", class:"splash-button"%>
+      <% end %>
+      </div>
  </div>
 
- <div class='explanation'>
-  <h3 id="workslink">How it works...</h3>
-  <ul class="list">
-    <li class="step">
-      <div class="image-copy">
-        <%= image_tag("play.png") %>
+  <div class="page-container-2">
+    <div class="page-container-3">
+      <p class="how-to-text">Recispeak guides you through a recipe from start to finish... Here's How</p>
+      <h1 class="title">Recispeak</h1>
+      <div class="how-to-images">
+        <%= image_tag "tabletkitchen2.jpg" %><br />
+        <p>Choose a recipe</p>
       </div>
-      <div class="image-copy">
-        <p>Click on the recipe</p>
-        <p>you want to cook</p>
-        <p>and then press Begin</p>
+      <div class="how-to-images">
+        <%= image_tag "tabletkitchen.jpg" %><br />
+        <p>Click Begin</p>
       </div>
-
-    </li>
-    <li class="step">
-      <div class="image-copy">
-        <%= image_tag("mic.png") %>
+      <div class="how-to-images">
+        <%= image_tag "womannext.jpg" %><br />
+        <p>Speak Command</p>
       </div>
-      <div class="image-copy">
-        <p>Recispeak waits</p>
-        <p>for your command</p>
-        <p>speak "next" to advance</p>
+      <div class="how-to-images">
+        <%= image_tag "ipadcountertop.jpg" %><br />
+        <p>Listen for Directions!</p>
       </div>
-    </li>
-    <li class="step">
-      <div class="image-copy">
-        <%= image_tag("listen.png") %>
-      </div>
-      <div class="image-copy">
-        <p>Recispeak will walk you</p>
-        <p>step by step through </p>
-        <p>your recipe while you cook.</p>
-      </div>
-    </li>
-  </ul>
-</div>
-<div id="aboutus">
+    </div>
   </div>
-
 </body>
 
 <script>
@@ -78,10 +77,32 @@ $(document).ready(function(){
   $("#logo").hide(0).delay(10).fadeIn(2000)
 });
 $(".logintoggle").click(function(){
-  $("#login").toggle("slow", function(){
-    $("#splash-button-signup").toggle("slow");
+  $("#new-form-user").fadeOut("slow", function(){
+      $("#login").slideToggle();
+      });
+    });
+$("#splash-button-signup").click(function(){
+      $("#login").fadeOut("slow", function(){
+        $("#new-form-user").slideToggle();
+      });
   });
-});
+$(window).scroll(function(){                          
+            if ($(this).scrollTop() > $(window).height() - 50) {
+                $('.title').fadeIn(500);
+                $('.how-to-text').css("color:#000");
+            } else {
+                $('.title').fadeOut(500);
+                $('.how-to-text').fadeIn(1500);
+            }
+        });
+
+function windowH() {
+   var wH = $(window).height();
+
+   $('.page-container, .page-container-2').css({height: wH});
+}
+
+windowH();
 
 
 </script>

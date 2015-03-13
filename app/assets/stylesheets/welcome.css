@@ -1,0 +1,174 @@
+#new-form-user{
+  display: none;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  float: right;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: inset 0px 45px 277px 3px #000000;
+}
+
+.page-container-2{
+  background: url('woodonly.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.page-container-3{
+  height: 50%;
+  background: black;
+}
+
+.page-container-3 p{
+  color: #fff;
+  padding-top: 1%;
+  text-align: center;
+  font-family: palatino;
+  font-size: 25px;
+}
+
+
+.title {
+  display: none;
+  position: absolute;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Honey Script";
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+#new-form-user {
+  position: fixed;
+  top: 7.5%;
+  right: 0;
+  text-align: right;
+  display: none;
+  color: black;
+  padding: 5px;
+}
+
+#new-form-user h3 {
+  color: white;
+  text-decoration: underline;
+}
+
+#new-form-user [type="submit"]{
+  background: rgb(40,40,40);
+  color: white;
+}
+
+#new-form-user [type="submit"]:hover {
+  color: turquoise;
+}
+
+.splash-button {
+  background: rgb(40,40,40);
+  border-radius: 5px;
+  color: #fff!important;
+  border: 1px solid white;
+}
+
+.splash-button:hover {
+  color: turquoise!important;
+  border: 1px solid #000!important;
+}
+
+#splash-button-signup {
+  float: right;
+  margin-right: 20px;
+  font-family: palatino;
+  color: #fff;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+#splash-button-signup:hover {
+  text-decoration: none;
+  color: turquoise;
+  cursor: pointer;
+}
+
+#login {
+  display: none;
+  color: #fff;
+  position: fixed;
+  right: 0;
+  top: 7.5%;
+  padding: 10px 10px 10px 10px;
+  width: 220px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: inset 0px 45px 277px 3px #000000;
+}
+
+#login input{
+  color: rgb(95,147,20);
+  border-radius: 5px;
+}
+
+#login label {
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.page-container {
+  width: 100%;
+  background: url('woodtable2.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.logintoggle {
+  float: right;
+  margin-right: 10px;
+  max-width: 80px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: palatino;
+  letter-spacing: 1px;
+  padding: 5px;
+
+}
+
+.logintoggle:hover {
+  cursor: pointer;
+  color: turquoise;
+}
+
+.browse {
+  font-family: palatino;  
+  letter-spacing: 1.5px;
+}
+
+.browse a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.browse a:hover {
+  color: turquoise;
+  text-decoration: none;
+}
+
+.how-to-images img{
+  max-width: 100%;
+}
+
+.how-to-text {
+  border: 1px solid turquoise;
+}
+
+.how-to-images {
+  float: left;
+  padding-left: 4%;
+  padding-top: 8%;
+  width: 24%;
+}
+
+.how-to-images p{
+  font-family: palatino;
+  font-size: 1.5em;
+  color: turquoise;
+}

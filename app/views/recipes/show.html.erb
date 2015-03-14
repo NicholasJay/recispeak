@@ -8,7 +8,6 @@
   </nav>
 <% end %>
 
-
   <div class="middle-container">
 
     <div class="flash-message">
@@ -39,29 +38,26 @@
       <button id='start-reading' class='splash-button'>Begin</button>
     </div>
 
-    <div class="page-left-recipe-container">
+    <div class="recipe-containers">
       <h4>Ingredients</h4><br />
       <ul>
         <% @ingredients.each do |ingredient| %>
-        <li><%= ingredient.entry %></li>
+        <li><%= ingredient.entry %></li><br />
         <% end %>
       </ul>
     </div>
 
-    <div class="page-right-recipe-container">
+    <div class="recipe-containers">
       <h4>Directions</h4><br />
       <ul>
         <% @steps.each do |step| %>
-        <li><%= step.instructions %></li>
+        <li><%= step.instructions %></li><br />
         <% end %>
       </ul>
     </div>
-        <% unless session["user_id"].nil? || (session["user_id"] != @recipe.user_id) %>
-      <div class="update-link">
-        <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
-      </div>
-    <div
-    <div class="recipe-notes">
+    <% unless session["user_id"].nil? || (session["user_id"] != @recipe.user_id) %>
+    
+    <div class="recipe-containers">
       <% unless session["user_id"].nil? %>
     <div class="comment-notes-links">
       <p class='comment-link'>Comments</p>
@@ -110,16 +106,27 @@
             <%= text_area_tag :comments %><br />
             <%= f.submit "Submit Comment", class:"splash-button"%>
           <% end %><br />
-        <% end %>
       </div>
     </div>
-
+<div class="update-link">
+        <button class="splash-button"><%= link_to "Edit Recipe", edit_user_recipe_path(session["user_id"], @recipe) %></button>
+      </div>
+      <% end %>
   </div>
+
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.4.0/annyang.min.js">
 </script>
 <script>
   Recispeak.steps = <%= raw @allsteps %>;
+
+  function windowH() {
+   var wH = $(window).height();
+
+   $('.middle-container').css({height: wH});
+}
+
+windowH();
 
   $('.add-recipe-to-book').click(function(){
     $('.book-options').fadeToggle("slow");

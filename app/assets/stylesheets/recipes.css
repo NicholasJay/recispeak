@@ -1,0 +1,166 @@
+.middle-container {
+  background: 
+  linear-gradient(
+      rgba(40, 40, 40, 0.85), 
+      rgba(40, 40, 40, 0.85)
+    ),
+  url('baking.jpg') no-repeat;
+  background-size: cover;
+}
+
+.recipe-notes {
+  text-align: center;
+  color: white;
+  overflow-y: scroll;
+  padding: 15px;
+  font-family: palatino;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.recipe-notes h4 {
+  color: white;
+  font-family: palatino;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+.splash-button a:hover {
+  color: turquoise;
+}
+
+.book-options {
+  position: absolute;
+  margin-left: 8%;
+  margin-top: 2%;
+  display: none;
+  text-align: center;
+}
+
+.book-options [type="submit"]{
+  width: 100px;
+  height:30px;
+  background: rgb(40,40,40);
+  color: white;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.book-options [type="submit"]:hover{
+  color: turquoise;
+  }
+
+.book-options p {
+  color: white;
+}
+
+.add-recipe-to-book img{
+  position: absolute;
+  max-width: 2%;
+  margin-left: 5%;
+  margin-top: 2%;
+  border-radius: 360px;
+  border: 2px solid white;
+  background: turquoise;
+}
+
+.add-recipe-to-book:hover {
+  cursor: pointer;
+}
+
+.options-menu {
+  background: black;
+  color: turquoise;
+}
+
+.recipe-containers {
+  color: #fff;
+  display: inline-block;
+  padding: 2%;
+  border: 1px solid #fff;
+  width: 33%;
+  height: 60%;
+  overflow-y: scroll;
+}
+
+.comment-notes-links {
+  margin-top: 10px;
+}
+
+.comment-notes-links p{
+  background: rgb(40,40,40);
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  display: inline;
+  color: white;
+}
+
+.comment-notes-links p:hover{
+  color: turquoise;
+}
+
+.comments-section {
+  display: none;
+  color: white;
+}
+
+.comments-section h4 {
+  font-family: palatino;
+}
+
+.comments-section img{
+  max-width: 50px;
+  border-radius: 180px;
+}
+
+.comment-button {
+  background: tomato;
+  font-size: 13px;
+  border-radius: 5px;
+  color: white;
+}
+
+.comment-link {
+  cursor: pointer;
+}
+
+.note-section{
+  color: white;
+  height: 80%;
+}
+
+.note-link {
+  cursor: pointer;
+}
+
+.username {
+  color: turquoise;
+  font-size: 15px;
+}
+
+.comments-left {
+  float: left;
+  padding-left: 10px;
+}
+
+#comments {
+  height: 60%;
+  width: 100%;
+}
+
+#comments {
+  color: black;
+}
+
+.deletecomment {
+  width: 100px;
+  background: black;
+  color: turquoise;
+  font-size: 10px;
+  border-radius: 360px;
+  float: right;
+  margin-right: 10px;
+}

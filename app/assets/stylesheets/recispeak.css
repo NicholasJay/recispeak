@@ -266,13 +266,6 @@ z-index: 2;
   font-size: 50px;
 }
 
-.middle-container {
-  background: url('baking.jpg') no-repeat;
-  background-size: cover;
-  height: 700px;
-  overflow-y: scroll;
-}
-
 .page-left-container {
   margin-left: 20px;
   width: 25%;
@@ -447,30 +440,6 @@ button {
 
 #all-user-recipes ul li{
   font-size: 17px;
-}
-
-.recipe-notes {
-  text-align: center;
-  color: white;
-  height: 90%;
-  float: right;
-  margin-top: -620px;
-  width: 30%;
-  overflow-y: scroll;
-  padding: 15px;
-  background: rgb(40,40,40);
-  opacity:.99;
-  font-family: palatino;
-  font-size: 15px;
-  letter-spacing: 1px;
-}
-
-.recipe-notes h4 {
-  color: white;
-  font-family: palatino;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-decoration: underline;
 }
 
 .recipe-search-input {
@@ -764,52 +733,6 @@ label {
   width: 300px;
 }
 
-.book-options {
-  position: absolute;
-  margin-top: 10px;
-  margin-left: 75px;
-  display: none;
-  text-align: center;
-}
-
-.book-options [type="submit"]{
-  width: 100px;
-  height:30px;
-  background: rgb(40,40,40);
-  color: white;
-  font-size: 13px;
-  border-radius: 10px;
-  border: 1px solid white;
-}
-
-.book-options [type="submit"]:hover{
-  color: turquoise;
-  }
-
-
-.book-options p {
-  color: white;
-}
-
-.add-recipe-to-book img{
-  position: absolute;
-  max-width: 30px;
-  margin-left: 10px;
-  margin-top: 10px;
-  border-radius: 360px;
-  border: 2px solid white;
-  background: turquoise;
-}
-
-.add-recipe-to-book:hover {
-  cursor: pointer;
-}
-
-.options-menu {
-  background: black;
-  color: turquoise;
-}
-
 #recispeak-recipe-list {
   display: none;
   margin-right: 50px;
@@ -838,91 +761,6 @@ span {
   color: black;
   font-family: Verdana;
   font-size: 20px;
-}
-
-.comment-notes-links {
-  padding: 15px 15px 0px 15px;
-}
-
-.comment-notes-links p{
-  background: rgb(40,40,40);
-  padding: 5px;
-  display: inline;
-  color: white;
-}
-
-.comment-notes-links p:hover{
-  color: turquoise;
-}
-
-.comments-section {
-  display: none;
-  color: white;
-  border: 2px solid turquoise;
-}
-
-.comments-section hr{
-  background-color: turquoise;
-  height: 1px;  
-}
-
-.comments-section h4 {
-  font-family: palatino;
-}
-
-.comments-section img{
-  max-width: 50px;
-  border-radius: 180px;
-}
-
-.comment-button {
-  background: tomato;
-  font-size: 13px;
-  border-radius: 5px;
-  color: white;
-}
-
-.comment-link {
-  cursor: pointer;
-}
-
-.note-section{
-  color: white;
-  border: 2px solid turquoise;
-  height: 80%;
-}
-
-.note-link {
-  cursor: pointer;
-}
-
-.username {
-  color: turquoise;
-  font-size: 15px;
-}
-
-.comments-left {
-  float: left;
-  padding-left: 10px;
-}
-
-#comments {
-  height: 50px;
-  width: 350px;
-}
-
-#comments {
-  color: black;
-}
-
-.deletecomment {
-  width: 100px;
-  background: black;
-  color: turquoise;
-  font-size: 10px;
-  border-radius: 360px;
-  float: right;
-  margin-right: 10px;
 }
 
 .search-results {

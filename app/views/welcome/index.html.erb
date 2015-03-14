@@ -87,12 +87,10 @@ $("#splash-button-signup").click(function(){
       });
   });
 $(window).scroll(function(){                          
-            if ($(this).scrollTop() > $(window).height() - 50) {
+            if ($(this).scrollTop() > $(window).height() - 50 && $(window).width() > 838){
                 $('.title').fadeIn(500);
-                $('.how-to-text').css("color:#000");
             } else {
                 $('.title').fadeOut(500);
-                $('.how-to-text').fadeIn(1500);
             }
         });
 

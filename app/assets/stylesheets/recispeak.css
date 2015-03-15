@@ -73,28 +73,6 @@ nav ul{
   height: 30px;
 }
 
-.nav-middle {
-  padding: 10px 0px 5px 0px;
-  background: rgb(40,40,40);
-  text-align: center;
-}
-
-.nav-middle li{
-  display: inline;
-}
-
-.nav-middle a{
-  color: white;
-  font-family: palatino;
-  font-size: 15px;
-  padding-left: 40px;
-}
-
-.nav-middle a:hover {
-  color: turquoise;
-  text-decoration: none;
-}
-
 #aboutus {
   height: 750px;
   background: url("vegnotepad2.jpg") no-repeat;
@@ -508,15 +486,6 @@ button {
   border-radius: 10px;
   font-size: 17px;
   letter-spacing: 1px;
-}
-
-.flash-message-login {
-  position: absolute;
-  font-size: 17px;
-  padding-left: 150px;
-  margin-top: -20px;
-  color: red;
-  font-style: italic;
 }
 
 .page-right-recipe-container-url {

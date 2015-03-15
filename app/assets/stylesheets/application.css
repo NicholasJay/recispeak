@@ -13,4 +13,27 @@
  *= require recispeak
  *= require welcome
  *= require recipes
+ *= require user
  */
+
+.nav-middle {
+  padding: 10px 0px 5px 0px;
+  background: rgb(40,40,40);
+  text-align: center;
+}
+
+.nav-middle li{
+  display: inline;
+}
+
+.nav-middle a{
+  color: white;
+  font-family: palatino;
+  font-size: 15px;
+  padding-left: 40px;
+}
+
+.nav-middle a:hover {
+  color: turquoise;
+  text-decoration: none;
+}

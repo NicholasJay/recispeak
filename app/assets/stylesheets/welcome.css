@@ -172,3 +172,11 @@
   font-size: 1.5em;
   color: turquoise;
 }
+
+.flash-message-login {
+  position: absolute;
+  font-size: 17px;
+  margin: 0 auto;
+  color: red;
+  font-style: italic;
+}

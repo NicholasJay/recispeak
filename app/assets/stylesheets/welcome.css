@@ -1,3 +1,7 @@
+nav {
+  border-bottom: 1px solid turquoise;
+}
+
 #new-form-user{
   display: none;
   color: #fff;
@@ -21,6 +25,7 @@
 .page-container-3{
   height: 40%;
   background: black;
+  border-top: 1px solid turquoise;
   border-bottom: 1px solid turquoise;
 }
 
@@ -153,15 +158,15 @@
 
 .how-to-text {
   position: relative;
-  width: 100%;
-  border: 1px solid turquoise;
+  width: 70%;
   z-index: 10;
+  margin: 0 auto;
 }
 
 .how-to-images {
   float: left;
   padding-left: 4%;
-  padding-top: 1%;
+  padding-top: 2%;
   width: 24%;
 }
 

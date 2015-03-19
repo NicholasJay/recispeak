@@ -14,12 +14,14 @@
  *= require welcome
  *= require recipes
  *= require user
+ *= require book
  */
 
 .nav-middle {
   padding: 10px 0px 5px 0px;
   background: rgb(40,40,40);
   text-align: center;
+  z-index: 5;
 }
 
 .nav-middle li{

@@ -8,14 +8,20 @@
 }
 
 .page-container-2{
-  background: url('woodonly.jpg') no-repeat;
+  background: 
+  linear-gradient(
+      rgba(40, 40, 40, 0.45), 
+      rgba(40, 40, 40, 0.45)
+    ),
+  url('woodonly.jpg') no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .page-container-3{
-  height: 50%;
+  height: 40%;
   background: black;
+  border-bottom: 1px solid turquoise;
 }
 
 .page-container-3 p{
@@ -23,19 +29,8 @@
   padding-top: 1%;
   text-align: center;
   font-family: palatino;
-  font-size: 25px;
-}
-
-
-.title {
-  display: none;
-  position: absolute;
-  color: #fff;
-  text-decoration: none;
-  font-family: "Honey Script";
-  font-size: 60px;
-  width: 100%;
-  text-align: center;
+  font-size: 1.5em;
+  padding-bottom:.5%;
 }
 
 #new-form-user {
@@ -157,19 +152,22 @@
 }
 
 .how-to-text {
+  position: relative;
+  width: 100%;
   border: 1px solid turquoise;
+  z-index: 10;
 }
 
 .how-to-images {
   float: left;
   padding-left: 4%;
-  padding-top: 8%;
+  padding-top: 1%;
   width: 24%;
 }
 
 .how-to-images p{
   font-family: palatino;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: turquoise;
 }
 
@@ -179,4 +177,106 @@
   margin: 0 auto;
   color: red;
   font-style: italic;
+}
+
+.welcome-tag {
+  color: #fff;
+  text-align: center;
+  font-family: palatino;
+  margin-top: 5%;
+  text-shadow: 2px 2px 1px rgb(40, 40, 40);
+}
+
+.welcome-tag h1{
+  color: #fff;
+  text-decoration: none;
+  font-family: "Honey Script";
+  font-size: 8em;
+  letter-spacing: 2px;
+  width: 100%;
+}
+
+.welcome-tag h2{
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.social {
+  padding-top: 3%;
+  max-width: 100%;
+  display: inline-block;
+}
+
+.pinterest {
+  background: url('Pinterest.png');
+  background-size: cover;
+  height: 50px;
+  float: left;
+  width: 50px;
+}
+
+.facebook {
+  background: url('Facebook.png');
+  background-size: cover;
+  margin-left: 10px;
+  height: 50px;
+  float: left;
+  width: 50px;
+}
+
+.twitter {
+  background: url('Twitter.png');
+  background-size: cover;
+  margin-left: 10px;
+  height: 50px;
+  float: left;
+  width: 50px;
+}
+
+.linked {
+  background: url('LinkedIn.png');
+  background-size: cover;
+  margin-left: 10px;
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+
+.pinterest:hover {
+  background: url('Pinterest_hover.png');
+  background-size: cover;
+  height: 50px;
+  float: left;
+  width: 50px;
+  cursor: pointer;
+}
+
+.facebook:hover {
+  background: url('Facebook_hover.png');
+  background-size: cover;
+  margin-left: 10px;
+  height: 50px;
+  float: left;
+  width: 50px;
+  cursor: pointer;
+}
+
+.twitter:hover {
+  background: url('Twitter_hover.png');
+  background-size: cover;
+  margin-left: 10px;
+  height: 50px;
+  float: left;
+  width: 50px;
+  cursor: pointer;
+}
+
+.linked:hover {
+  background: url('LinkedIn_hover.png');
+  background-size: cover;
+  margin-left: 10px;
+  float: left;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }

@@ -50,8 +50,7 @@
 
   <div class="page-container-2">
     <div class="page-container-3">
-      <p class="how-to-text">Recispeak guides you through a recipe from start to finish... Here's How</p>
-      <h1 class="title">Recispeak</h1>
+      <p class="how-to-text">Guiding you through a recipe from start to finish... Here's How</p>
       <div class="how-to-images">
         <%= image_tag "tabletkitchen2.jpg" %><br />
         <p>Choose a recipe</p>
@@ -69,8 +68,19 @@
         <p>Listen for Directions!</p>
       </div>
     </div>
+
+    <div class="welcome-tag">
+      <h1>Recispeak</h1>
+      <h2>Let's talk food.</h2>
+      <div class="social">
+        <div class="pinterest"></div>
+        <div class="facebook"></div>
+        <div class="twitter"></div>
+        <div class="linked"></div>
+      </div>
+    </div>
   </div>
-</body>
+  
 
 <script>
 $(document).ready(function(){
@@ -88,9 +98,9 @@ $("#splash-button-signup").click(function(){
   });
 $(window).scroll(function(){                          
             if ($(this).scrollTop() > $(window).height() - 50 && $(window).width() > 838){
-                $('.title').fadeIn(500);
+                $('.welcome-tag').fadeIn(500);
             } else {
-                $('.title').fadeOut(500);
+                $('.welcome-tag').fadeOut(500);
             }
         });
 

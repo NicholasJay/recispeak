@@ -1,0 +1,10 @@
+.deletebook{
+  background: transparent;
+  width: 8%;
+  float: right;
+  border: transparent;
+}
+
+.deletebook:hover {
+  color: turquoise;
+}

@@ -8,7 +8,10 @@
     <ul>
       <li id="new-book-form">Add A Recipe Book</li>
       <% @books.each do |book| %>
-      <li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %></li>
+      <li><%= link_to "#{book.title}", user_recipe_book_path(@user, book.id), class:"user-menu-buttons-books" %><form action="<%= user_recipe_book_path(@user, book.id) %>" method="POST" class="recipe-display">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <button class='deletebook'>x</button></form></li>
       <% end %>
     </ul>
   </div>

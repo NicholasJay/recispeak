@@ -3,6 +3,14 @@ Recispeak CSS
 html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  
 pre, form, fieldset, table, th, td { margin: 0; padding: 0; }
 
+@font-face {
+  font-family: 'Honey Script';
+  src: url('/assets/HoneyScript-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
   background: rgb(45,45,45);
 }
@@ -421,16 +429,14 @@ button {
 }
 
 .recipe-search-input {
-  background: url('Search.png') no-repeat;
-  background-size: 5%;
   background-color: white;
-  color: rgb(95, 147,20);
+  color: turquoise;
   margin-top: 30px;
-  width: 75%;
-  text-align: right;
-  padding-right: 15px;
+  width: 50%;
+  margin-left: 15%;
+  padding-left: 15px;
   font-size: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .recipe-url-input {
@@ -446,8 +452,9 @@ button {
 }
 
 .search-results {
-  margin-left: 125px;
+  margin-left: 20%;
   overflow-y: scroll;
+  padding-top: 1%;
 }
 
 .flash-message {
@@ -544,11 +551,14 @@ label {
 
 .deletebutton {
   width: 25px;
-  background: rgb(40,40,40);
+  background: transparent;
   color: white;
   font-size: 10px;
-  border: 2px solid white;
-  border-radius: 360px;
+  border: transparent;
+}
+
+.deletebutton:hover {
+  color: red;
 }
 
 .recipe-display {

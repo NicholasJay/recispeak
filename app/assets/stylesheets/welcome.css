@@ -208,7 +208,7 @@
 }
 
 .pinterest {
-  background: url('Pinterest.png');
+  background: url('pinterest.png');
   background-size: cover;
   height: 50px;
   float: left;
@@ -225,7 +225,7 @@
 }
 
 .twitter {
-  background: url('Twitter.png');
+  background: url('twitter.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;

@@ -572,14 +572,6 @@ label {
   text-decoration: none;
   color: turquoise;
 }
-.user-info-edit label{
-  color: white;
-  letter-spacing: 1px;
-}
-
-.user-info-edit [type="file"]{
-  float: right;
-}
 
 .input-site-info {
   margin-top: 10px;

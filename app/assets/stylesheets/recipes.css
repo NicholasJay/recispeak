@@ -201,3 +201,32 @@
   float: left;
   margin-left: 5%;
 }
+
+.non-user-recipe-page {
+  margin: 0 auto;
+  height: 400px;
+  overflow-y: scroll;
+  width: 30%;
+  padding: 10px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.non-user-recipe-page h1{
+  position: relative;
+  margin-top: 50px;
+}
+
+.non-user-recipe-page a {
+  color: white;
+}
+
+.non-user-recipe-page a:hover {
+  color: turquoise;
+}
+
+.non-user-recipe-page ul li {
+  color: white;
+}

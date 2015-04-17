@@ -7,9 +7,10 @@
 </nav>
   <div class="middle-container">
     <div class="center-titles">
-      <h1> A list of our Recipes</h1>
 
       <div class="non-user-recipe-page">
+        <h1> A list of our Recipes</h1>
+        <hr></hr>
         <ul>
           <% @websiterecipes.each do |recipe| %>
           <li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe.id) %></li>
@@ -20,3 +21,12 @@
       </div>
     </div>
   </div>
+<script>
+  function windowH() {
+   var wH = $(window).height();
+
+   $('.middle-container').css({height: wH});
+}
+
+windowH();
+</script>

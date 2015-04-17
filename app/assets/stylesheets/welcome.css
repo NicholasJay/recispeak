@@ -285,3 +285,7 @@ nav {
   width: 50px;
   cursor: pointer;
 }
+
+.welcome-tag img{
+  max-width: 200px;
+}

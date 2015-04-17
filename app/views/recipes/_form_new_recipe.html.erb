@@ -20,7 +20,7 @@
   <br />
   </div>
 
-  <%= f.text_area :notes, placeholder:"notes", rows:"3", cols: "49", class:"form-add-recipe" %><br />
+  <%= f.text_area :notes, placeholder:"Notes", rows:"3", cols: "65", class:"form-add-recipe" %><br />
   <%= f.submit @recipe.id.nil? ? "Create Recipe" : "Update Recipe", class:"splash-button" %>
 <% end %>
 </div>

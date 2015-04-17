@@ -2,3 +2,22 @@
   background: url('baking.jpg') no-repeat;
   background-size: cover;
 }
+
+.user-info-edit label{
+  color: white;
+  letter-spacing: 1px;
+}
+
+.user-info-edit [type="file"]{
+  float: right;
+}
+
+.user-info-edit input{
+  color: black;
+}
+
+.recipe-titles {
+  text-align: right;
+  height: 500px;
+  overflow-y: scroll;
+}

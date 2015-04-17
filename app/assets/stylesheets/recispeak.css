@@ -368,21 +368,6 @@ z-index: 2;
   display: none;
 }
 
-#new-form {
-  width: 65%;
-  text-align: right;
-  display: none;
-  padding: 5px;
-}
-
-#new-form h3 {
-  color: white;
-  text-decoration: underline;
-  font-family: palatino;
-  padding-right: 5px;
-  letter-spacing: 1px;
-}
-
 ul li {
   list-style-type: none;
 }
@@ -668,24 +653,6 @@ label {
 
 .member-message a:hover {
   color: turquoise;
-  text-decoration: none;
-}
-
-#recipe-create-update input{
-  width: 360px;
-  color: black;
-}
-
-#recipe-create-update a{
-  background: white;
-  padding: 5px;
-  color: rgb(40,40,40);
-  border: 1px solid black;
-}
-
-#recipe-create-update a:hover {
-  background: turquoise;
-  color: rgb(40,40,40);
   text-decoration: none;
 }
 

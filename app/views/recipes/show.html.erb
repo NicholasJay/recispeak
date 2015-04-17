@@ -83,19 +83,21 @@
           <% @comments.each do |comment| %>
           <ul>
             <% @comment_user = User.find(comment.user_id) %>
-            <li class="comments-left"><span class="username"><%= comment.created_at.strftime("%m/%d/%Y - %I:%M%p") %></span></li><br />
+            <li class="comments-left"><span class="username"><%= comment.created_at.strftime("%m/%d/%Y - %I:%M%p") %></span></li>
+              <% if comment.user_id == session["user_id"] %>
+                <span><form action="<%= user_recipe_recipe_comment_path(@user.id, @recipe.id, comment.id) %>" method="POST" class="recipe-display">
+                <input type="hidden" name="_method" value="DELETE" />
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+                <button class='deletecomment'>delete comment</button></form></span> <br />
+              <% end %>
+            <br />
             <li class="comments-left">
               <%= image_tag @comment_user.profile_pic.url(:thumb) %>
               <span class="username"><%= @comment_user.first_name %>:</span>
               <em><%= comment.comments %></em>
             </li><br />
 
-            <% if comment.user_id == session["user_id"] %>
-            <span><form action="<%= user_recipe_recipe_comment_path(@user.id, @recipe.id, comment.id) %>" method="POST" class="recipe-display">
-                <input type="hidden" name="_method" value="DELETE" />
-                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-                <button class='deletecomment'>delete comment</button></form></span> <br />
-            <% end %>
+            
             <br><br />
             <hr></hr>
           </ul>

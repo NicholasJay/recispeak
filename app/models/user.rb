@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   self.has_secure_password()
 
-  has_attached_file :profile_pic, :default_url => "user-orange.svg",
+  has_attached_file :profile_pic, :default_url => "chefatar.png",
                     :styles => {:thumb => "200x200#"},
                     :url => "/assets/users/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"

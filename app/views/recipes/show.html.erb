@@ -55,7 +55,6 @@
         <% end %>
       </ul>
     </div>
-    <% unless session["user_id"].nil? || (session["user_id"] != @recipe.user_id) %>
     
     <div class="recipe-containers">
       <% unless session["user_id"].nil? %>
@@ -63,7 +62,6 @@
       <p class='comment-link'>Comments</p>
       <p class='note-link'>Notes</p>
     </div>
-    <% end %>
     <hr />
     <div class="note-section">
       <h4>Notes</h4>

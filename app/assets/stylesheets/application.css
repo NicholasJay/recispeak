@@ -39,3 +39,69 @@
   color: turquoise;
   text-decoration: none;
 }
+
+nav {
+  padding: 15px;
+  height: 50px;
+  position: fixed;
+  box-shadow: inset 0px 0px 277px 3px #000000;
+  width: 100%;
+  color: black;
+}
+
+nav p{
+  display: inline;
+}
+
+.navlinks {
+  margin-left: 5px;
+  font-family: palatino;
+  letter-spacing: 1.5px;
+}
+.navlinks a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navlinks a:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px red;
+}
+
+.rspeaklogo {
+  font-family: palatino;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  color: #fff;
+  padding-right: 30px;
+  text-shadow: 0px 1px 1px rgb(94,147,20);
+  font-size: 20px;
+  float: right;
+}
+
+nav ul li{
+  display: inline;
+}
+
+nav ul{
+  display: inline;
+}
+
+.nav-right {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.nav-right a{
+  color: white;
+  font-family: palatino;
+}
+
+.nav-right a:hover {
+  color: turquoise;
+}
+
+.nav-right img{
+  height: 30px;
+}

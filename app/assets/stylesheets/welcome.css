@@ -213,7 +213,7 @@ nav {
 }
 
 .pinterest {
-  background: url('pinterest.png');
+  background: url('ptst.png');
   background-size: cover;
   height: 50px;
   float: left;
@@ -221,7 +221,7 @@ nav {
 }
 
 .facebook {
-  background: url('Facebook.png');
+  background: url('facebook.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -230,7 +230,7 @@ nav {
 }
 
 .twitter {
-  background: url('twitter.png');
+  background: url('twtr.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -239,7 +239,7 @@ nav {
 }
 
 .linked {
-  background: url('LinkedIn.png');
+  background: url('linkedin.png');
   background-size: cover;
   margin-left: 10px;
   float: left;
@@ -248,7 +248,7 @@ nav {
 }
 
 .pinterest:hover {
-  background: url('Pinterest_hover.png');
+  background: url('ptst_hover.png');
   background-size: cover;
   height: 50px;
   float: left;
@@ -257,7 +257,7 @@ nav {
 }
 
 .facebook:hover {
-  background: url('Facebook_hover.png');
+  background: url('facebook_hover.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -267,7 +267,7 @@ nav {
 }
 
 .twitter:hover {
-  background: url('Twitter_hover.png');
+  background: url('twtr_hover.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -277,7 +277,7 @@ nav {
 }
 
 .linked:hover {
-  background: url('LinkedIn_hover.png');
+  background: url('linkedin_hover.png');
   background-size: cover;
   margin-left: 10px;
   float: left;

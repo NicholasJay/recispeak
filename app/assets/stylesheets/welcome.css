@@ -215,13 +215,14 @@ nav {
 .pinterest {
   background: url('ptst.png');
   background-size: cover;
+  margin-left: 10px;
   height: 50px;
   float: left;
   width: 50px;
 }
 
 .facebook {
-  background: url('facebook.png');
+  background: url('fbook.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -239,7 +240,7 @@ nav {
 }
 
 .linked {
-  background: url('linkedin.png');
+  background: url('lkdin.png');
   background-size: cover;
   margin-left: 10px;
   float: left;
@@ -250,6 +251,7 @@ nav {
 .pinterest:hover {
   background: url('ptst_hover.png');
   background-size: cover;
+  margin-left: 10px;
   height: 50px;
   float: left;
   width: 50px;
@@ -257,7 +259,7 @@ nav {
 }
 
 .facebook:hover {
-  background: url('facebook_hover.png');
+  background: url('fbook_hover.png');
   background-size: cover;
   margin-left: 10px;
   height: 50px;
@@ -277,7 +279,7 @@ nav {
 }
 
 .linked:hover {
-  background: url('linkedin_hover.png');
+  background: url('lkdin_hover.png');
   background-size: cover;
   margin-left: 10px;
   float: left;

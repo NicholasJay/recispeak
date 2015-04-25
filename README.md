@@ -1,4 +1,4 @@
-![ScreenShot](Recispeaklogo.png)
+<center>![ScreenShot](Recispeaklogo.png)</center>
 ### A cooking app that listens and speaks to you!
 
 * Sign in to your account and create new recipes

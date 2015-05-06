@@ -48,6 +48,14 @@
 </div>
 
 <script>
+function windowH() {
+   var wH = $(window).height();
+
+   $('.middle-container-1, .page-left-container, .page-right-container').css({height: wH});
+}
+
+windowH();
+
 $(document).ready(function(){
   $(".page-left-container").hide(0).delay(10).fadeIn(500)
 });

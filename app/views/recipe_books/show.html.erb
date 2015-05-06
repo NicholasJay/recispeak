@@ -29,6 +29,13 @@
 
 
 <script>
+function windowH() {
+   var wH = $(window).height();
+
+   $('.middle-container, .page-left-container').css({height: wH});
+}
+
+windowH();
 $(document).ready(function(){
   $(".page-right-container-books").hide(0).delay(20).fadeIn(900)
 });

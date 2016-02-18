@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# Updating Ruby Version for Heroku
+gem 'ruby', "2.2.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

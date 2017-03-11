@@ -7,7 +7,7 @@ window.speechSynthesis.onvoiceschanged = function() {
 // this will read aloud the step from the recipe array
 Recispeak.readStep = function(step){ 
   var message = new SpeechSynthesisUtterance(step)
-  message.voice = voices[2];
+  message.voice = voices[0];
   speechSynthesis.speak(message); 
 };
 
@@ -18,7 +18,7 @@ $(function(){
 
 // These instructions are spoken aloud to the user so they know how to navigate through vocally
   $('#start-reading').click(function(){
-    Recispeak.voice = voices[1];
+    Recispeak.voice = voices[0];
     Recispeak.readStep("Please get everything ready. When you are comfortable, " +
                        "click to allow microphone access and then say the word " +
                        "'Next!' to hear the following step.");

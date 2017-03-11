@@ -6,7 +6,7 @@
     <div class="page-left-container">
       <h3>Welcome <%= @user.first_name %></h3>
       <ul>
-        <%= image_tag @user.profile_pic.url(:thumb) %>
+        <%= image_tag('chefatar.png') %>
         <li id="edit-profile">Edit Profile</li>
         <li><%= link_to "Recipe Books", user_recipe_books_path(@user) %></li>
         <li id="all-my-recipes">My Recipes</li>
